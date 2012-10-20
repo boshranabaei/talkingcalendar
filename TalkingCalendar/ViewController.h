@@ -10,4 +10,11 @@
 
 @interface ViewController : UIViewController
 
+-(IBAction)dayView:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UILabel *prev;
+
+@property (weak, nonatomic) IBOutlet UILabel *curr;
+@property (weak, nonatomic) IBOutlet UILabel *next;
+
 @end
