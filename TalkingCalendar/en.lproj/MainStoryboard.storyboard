@@ -40,17 +40,47 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qqC-4O-sDS">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="leftSwipe">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="leftSwipe:" destination="2" eventType="touchUpInside" id="FxH-CG-hGr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ut6-iJ-692">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="rightSwipe">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="rightSwipe:" destination="2" eventType="touchUpInside" id="ACt-Bd-ECb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="apZ-4H-2yx" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="123" id="4VG-LC-DDF"/>
-                            <constraint firstItem="wXr-SK-Hqh" firstAttribute="centerX" secondItem="HfN-NT-nWp" secondAttribute="centerX" type="default" id="CP9-mI-qhZ"/>
-                            <constraint firstAttribute="bottom" secondItem="mcC-Gy-aPG" secondAttribute="bottom" constant="253" id="U9V-R5-zI1"/>
-                            <constraint firstAttribute="bottom" secondItem="wXr-SK-Hqh" secondAttribute="bottom" constant="182" id="aVf-Cr-FIW"/>
-                            <constraint firstItem="mcC-Gy-aPG" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="38" id="b6G-Hr-eKj"/>
-                            <constraint firstAttribute="trailing" secondItem="HfN-NT-nWp" secondAttribute="trailing" constant="48" id="cPn-3B-syB"/>
-                            <constraint firstAttribute="bottom" secondItem="apZ-4H-2yx" secondAttribute="bottom" constant="223" id="gZL-2l-rdC"/>
-                            <constraint firstItem="HfN-NT-nWp" firstAttribute="top" secondItem="3" secondAttribute="top" constant="242" id="xzk-W5-H9i"/>
+                            <constraint firstItem="HfN-NT-nWp" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="145" id="46x-oS-jy5"/>
+                            <constraint firstItem="wXr-SK-Hqh" firstAttribute="top" secondItem="3" secondAttribute="top" constant="189" id="56M-GS-r7r"/>
+                            <constraint firstItem="qqC-4O-sDS" firstAttribute="leading" secondItem="mcC-Gy-aPG" secondAttribute="leading" type="default" id="5Fq-Ik-ULT"/>
+                            <constraint firstItem="HfN-NT-nWp" firstAttribute="top" secondItem="3" secondAttribute="top" constant="62" id="88v-Hg-o2c"/>
+                            <constraint firstItem="ut6-iJ-692" firstAttribute="baseline" secondItem="qqC-4O-sDS" secondAttribute="baseline" type="default" id="9IE-UJ-IPz"/>
+                            <constraint firstAttribute="trailing" secondItem="ut6-iJ-692" secondAttribute="trailing" constant="41" id="Acf-ne-zjQ"/>
+                            <constraint firstItem="apZ-4H-2yx" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="111" id="FfR-K3-TzW"/>
+                            <constraint firstItem="mcC-Gy-aPG" firstAttribute="top" secondItem="3" secondAttribute="top" constant="118" id="Sbf-kj-Dnf"/>
+                            <constraint firstAttribute="trailing" secondItem="wXr-SK-Hqh" secondAttribute="trailing" constant="78" id="efa-Zp-Rrg"/>
+                            <constraint firstItem="qqC-4O-sDS" firstAttribute="top" secondItem="3" secondAttribute="top" constant="240" id="fRz-bu-tnS"/>
+                            <constraint firstItem="apZ-4H-2yx" firstAttribute="top" secondItem="3" secondAttribute="top" constant="160" id="pfp-9X-iyB"/>
+                            <constraint firstItem="mcC-Gy-aPG" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="33" id="xbk-gF-rJ8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ZIy-Qf-qDv"/>
@@ -72,12 +102,11 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
                 <relationship kind="action" name="dayView:"/>
+                <relationship kind="action" name="leftSwipe:"/>
+                <relationship kind="action" name="rightSwipe:"/>
                 <relationship kind="outlet" name="curr" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="currentDate" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="next" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="prev" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="tomorrowDate" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="yesterdayDate" candidateClass="UILabel"/>
             </relationships>
         </class>
     </classes>

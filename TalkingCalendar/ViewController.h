@@ -12,9 +12,18 @@
 
 -(IBAction)dayView:(id)sender;
 
+-(IBAction)leftSwipe:(id)sender;
+
+-(IBAction)rightSwipe:(id)sender;
+
 @property (weak, nonatomic) IBOutlet UILabel *prev;
 
 @property (weak, nonatomic) IBOutlet UILabel *curr;
 @property (weak, nonatomic) IBOutlet UILabel *next;
 
+@property  NSDate *rightUpdateDate;
+@property  NSDate *screenUpdateDate;
+@property  NSDate *leftUpdateDate;
+@property  NSDate *dateR;
+@property  NSDate *currentDate;
 @end
