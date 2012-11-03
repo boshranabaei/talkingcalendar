@@ -1,21 +1,14 @@
 //
-//  ViewController.h
+//  YearViewController.h
 //  TalkingCalendar
 //
-//  Created by Vito Wang on 2012-10-19.
+//  Created by Vito Wang on 2012-10-21.
 //  Copyright (c) 2012 Vito Wang. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
--(IBAction)dayView:(id)sender;
-
--(IBAction)leftSwipe:(id)sender;
-
--(IBAction)rightSwipe:(id)sender;
-
+@interface YearViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *prev;
 
 @property (weak, nonatomic) IBOutlet UILabel *curr;
@@ -23,7 +16,11 @@
 
 @property  NSDate *rightUpdateDate;
 @property  NSDate *screenUpdateDate;
+@property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *Left;
+@property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *Right;
 @property  NSDate *leftUpdateDate;
 @property  NSDate *dateR;
 @property  NSDate *currentDate;
+@property Boolean swipe;
+
 @end

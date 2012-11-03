@@ -1,109 +1,557 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12B19" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12B19" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2xU-zH-GHz">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Week View Controller - weekView-->
+        <scene sceneID="PVi-Mw-JqC">
+            <objects>
+                <viewController title="weekView" id="urA-Hx-Wsu" customClass="WeekViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eYc-t4-qWo">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="week" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="E3i-ox-unL">
+                                <rect key="frame" x="89" y="120" width="142" height="58"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <color key="textColor" red="0.47145288334461732" green="1" blue="0.23988852027493623" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Oxn-I8-LXH">
+                                <rect key="frame" x="179" y="186" width="132" height="54"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DNR-Od-3Dx">
+                                <rect key="frame" x="20" y="186" width="94" height="54"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Week View" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ovv-Vp-liS">
+                                <rect key="frame" x="77" y="20" width="167" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.54606312474484642" blue="0.41353605857008646" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="cFW-jy-Mly" appends="YES" id="otL-zm-O0T"/>
+                            <outletCollection property="gestureRecognizers" destination="lTK-0e-o1v" appends="YES" id="92T-WX-p1P"/>
+                            <outletCollection property="gestureRecognizers" destination="RYK-WA-Ojq" appends="YES" id="TgF-39-Qf2"/>
+                            <outletCollection property="gestureRecognizers" destination="vPh-6F-vhd" appends="YES" id="dEs-8G-87X"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="FAN-Pu-FwQ"/>
+                    <connections>
+                        <outlet property="curr" destination="E3i-ox-unL" id="g40-sH-J0z"/>
+                        <outlet property="next" destination="Oxn-I8-LXH" id="lV5-hP-Z0a"/>
+                        <outlet property="prev" destination="DNR-Od-3Dx" id="7oU-ja-L9v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D12-nh-dPb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="down" id="cFW-jy-Mly" userLabel="down">
+                    <connections>
+                        <segue destination="2" kind="modal" identifier="backDayView" id="ZJa-vG-JIx"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="up" id="lTK-0e-o1v" userLabel="up">
+                    <connections>
+                        <segue destination="wAL-0L-I7a" kind="modal" identifier="goMonthView" id="iyo-AZ-oCm"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="RYK-WA-Ojq" userLabel="right">
+                    <connections>
+                        <action selector="RightSwipe:" destination="urA-Hx-Wsu" id="aq5-GW-poi"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="vPh-6F-vhd" userLabel="left">
+                    <connections>
+                        <action selector="LeftSwipe:" destination="urA-Hx-Wsu" id="WRE-Im-11t"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="148" y="-572"/>
+        </scene>
+        <!--Month View Controller - monthView-->
+        <scene sceneID="xR7-Df-2d4">
+            <objects>
+                <viewController title="monthView" id="wAL-0L-I7a" customClass="MonthViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EuW-KH-Ilh">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Month" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="49D-Be-3Ab">
+                                <rect key="frame" x="89" y="140" width="196" height="68"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Month View" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bBV-3i-uX4">
+                                <rect key="frame" x="76" y="41" width="190" height="79"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ust-0W-6Pc">
+                                <rect key="frame" x="37" y="216" width="87" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Nty-Bo-6X6">
+                                <rect key="frame" x="195" y="216" width="76" height="53"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.54606312469999996" blue="0.41353605859999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="7c1-fV-EBp" appends="YES" id="oXk-EO-QOZ"/>
+                            <outletCollection property="gestureRecognizers" destination="HNt-4T-XMR" appends="YES" id="fTA-Z4-sEM"/>
+                            <outletCollection property="gestureRecognizers" destination="hEu-eX-Slq" appends="YES" id="tfS-zb-pVB"/>
+                            <outletCollection property="gestureRecognizers" destination="q2A-E2-pFi" appends="YES" id="s7e-fN-yU8"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="curr" destination="49D-Be-3Ab" id="iYZ-Qj-TlR"/>
+                        <outlet property="next" destination="Nty-Bo-6X6" id="mzW-z9-t0U"/>
+                        <outlet property="prev" destination="Ust-0W-6Pc" id="J7m-I9-Fbh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kxY-PN-FCU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="hEu-eX-Slq" userLabel="left">
+                    <connections>
+                        <action selector="LeftSwipe:" destination="wAL-0L-I7a" id="8du-T7-q6f"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="q2A-E2-pFi" userLabel="right">
+                    <connections>
+                        <action selector="RightSwipe:" destination="wAL-0L-I7a" id="fkT-D4-p6m"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="7c1-fV-EBp" userLabel="down">
+                    <connections>
+                        <segue destination="urA-Hx-Wsu" kind="modal" identifier="backWeekView" id="fgu-3C-w3R"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="up" id="HNt-4T-XMR" userLabel="up">
+                    <connections>
+                        <segue destination="tYT-fJ-6nb" kind="modal" identifier="goYearView" id="rMg-Om-smt"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="124" y="-1442"/>
+        </scene>
+        <!--Year View Controller - yearView-->
+        <scene sceneID="vYv-eg-8MW">
+            <objects>
+                <viewController title="yearView" id="tYT-fJ-6nb" customClass="YearViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ldJ-aD-Dft">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Year View" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Yzx-sg-mJM">
+                                <rect key="frame" x="92" y="45" width="137" height="64"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3ey-1B-hg5">
+                                <rect key="frame" x="114" y="131" width="115" height="79"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0pD-0H-VY1">
+                                <rect key="frame" x="46" y="242" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4VJ-tn-09E">
+                                <rect key="frame" x="245" y="242" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.54606312469999996" blue="0.41353605859999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="qRd-78-T9j" appends="YES" id="VT1-BQ-IVy"/>
+                            <outletCollection property="gestureRecognizers" destination="OuD-PI-cMk" appends="YES" id="EJ2-N3-tZv"/>
+                            <outletCollection property="gestureRecognizers" destination="xJ8-E2-dYF" appends="YES" id="vex-Ub-ldG"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="curr" destination="3ey-1B-hg5" id="P1k-8O-tNs"/>
+                        <outlet property="next" destination="4VJ-tn-09E" id="39w-mo-VdQ"/>
+                        <outlet property="prev" destination="0pD-0H-VY1" id="foH-dR-uho"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z32-XU-oix" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="xJ8-E2-dYF" userLabel="left">
+                    <connections>
+                        <action selector="LeftSwipe:" destination="tYT-fJ-6nb" id="SL5-Hj-fmj"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="OuD-PI-cMk" userLabel="right">
+                    <connections>
+                        <action selector="RightSwipe:" destination="tYT-fJ-6nb" id="1Cg-RC-RPw"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="qRd-78-T9j" userLabel="down">
+                    <connections>
+                        <segue destination="wAL-0L-I7a" kind="modal" identifier="backMonthView" id="XwI-i8-kJW"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="116" y="-2178"/>
+        </scene>
+        <!--View Controller - main-->
+        <scene sceneID="8P0-nx-WhY">
+            <objects>
+                <viewController title="main" id="2xU-zH-GHz" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YR0-dS-WhY">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Main Menu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NaM-YQ-h02">
+                                <rect key="frame" x="67" y="80" width="184" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Open Calendar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="20N-kL-iSG">
+                                <rect key="frame" x="67" y="217" width="186" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="gdC-Km-dqq" appends="YES" id="lPx-ls-FZW"/>
+                            <outletCollection property="gestureRecognizers" destination="wz5-0l-L7W" appends="YES" id="9gu-rc-b47"/>
+                            <outletCollection property="gestureRecognizers" destination="nKl-vI-uck" appends="YES" id="ZoX-rP-Up1"/>
+                        </connections>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ejE-a0-bXW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="gdC-Km-dqq" userLabel="doubleTap">
+                    <connections>
+                        <segue destination="2" kind="modal" id="auC-YW-nJ6"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="wz5-0l-L7W" userLabel="right">
+                    <connections>
+                        <segue destination="Xvt-rj-jps" kind="modal" id="4am-d6-x2D"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="nKl-vI-uck" userLabel="left">
+                    <connections>
+                        <segue destination="Xvt-rj-jps" kind="modal" id="G6x-zo-OjY"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-162" y="935"/>
+        </scene>
+        <!--Day View Controller - dayView-->
         <scene sceneID="5">
             <objects>
-                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                <viewController title="dayView" id="2" customClass="DayViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HfN-NT-nWp">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="dayView:" destination="2" eventType="touchUpInside" id="Fc3-TR-7zw"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcC-Gy-aPG">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mcC-Gy-aPG">
+                                <rect key="frame" x="0.0" y="165" width="210" height="39"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="apZ-4H-2yx">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="apZ-4H-2yx">
+                                <rect key="frame" x="68" y="96" width="184" height="53"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <color key="textColor" red="0.47145288330000001" green="1" blue="0.23988852029999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wXr-SK-Hqh">
+                                <rect key="frame" x="160" y="157" width="189" height="56"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXr-SK-Hqh">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Day View" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4Ld-Xh-5Zm">
+                                <rect key="frame" x="90" y="20" width="140" height="58"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qqC-4O-sDS">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="leftSwipe">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="leftSwipe:" destination="2" eventType="touchUpInside" id="FxH-CG-hGr"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ut6-iJ-692">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="rightSwipe">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="rightSwipe:" destination="2" eventType="touchUpInside" id="ACt-Bd-ECb"/>
-                                </connections>
-                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="HfN-NT-nWp" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="145" id="46x-oS-jy5"/>
-                            <constraint firstItem="wXr-SK-Hqh" firstAttribute="top" secondItem="3" secondAttribute="top" constant="189" id="56M-GS-r7r"/>
-                            <constraint firstItem="qqC-4O-sDS" firstAttribute="leading" secondItem="mcC-Gy-aPG" secondAttribute="leading" type="default" id="5Fq-Ik-ULT"/>
-                            <constraint firstItem="HfN-NT-nWp" firstAttribute="top" secondItem="3" secondAttribute="top" constant="62" id="88v-Hg-o2c"/>
-                            <constraint firstItem="ut6-iJ-692" firstAttribute="baseline" secondItem="qqC-4O-sDS" secondAttribute="baseline" type="default" id="9IE-UJ-IPz"/>
-                            <constraint firstAttribute="trailing" secondItem="ut6-iJ-692" secondAttribute="trailing" constant="41" id="Acf-ne-zjQ"/>
-                            <constraint firstItem="apZ-4H-2yx" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="111" id="FfR-K3-TzW"/>
-                            <constraint firstItem="mcC-Gy-aPG" firstAttribute="top" secondItem="3" secondAttribute="top" constant="118" id="Sbf-kj-Dnf"/>
-                            <constraint firstAttribute="trailing" secondItem="wXr-SK-Hqh" secondAttribute="trailing" constant="78" id="efa-Zp-Rrg"/>
-                            <constraint firstItem="qqC-4O-sDS" firstAttribute="top" secondItem="3" secondAttribute="top" constant="240" id="fRz-bu-tnS"/>
-                            <constraint firstItem="apZ-4H-2yx" firstAttribute="top" secondItem="3" secondAttribute="top" constant="160" id="pfp-9X-iyB"/>
-                            <constraint firstItem="mcC-Gy-aPG" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="33" id="xbk-gF-rJ8"/>
-                        </constraints>
+                        <color key="backgroundColor" red="1" green="0.54606312469999996" blue="0.41353605859999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="fXD-Wg-x4h" appends="YES" id="EbO-tk-MAZ"/>
+                            <outletCollection property="gestureRecognizers" destination="fc2-9N-UFJ" appends="YES" id="0gH-uJ-orQ"/>
+                            <outletCollection property="gestureRecognizers" destination="M3H-eI-nQw" appends="YES" id="dTl-br-uGr"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="ZIy-Qf-qDv"/>
                     <connections>
+                        <outlet property="Left" destination="fXD-Wg-x4h" id="c8e-Es-kl6"/>
+                        <outlet property="Right" destination="fc2-9N-UFJ" id="89X-pm-lFv"/>
                         <outlet property="curr" destination="apZ-4H-2yx" id="hdf-47-J3G"/>
                         <outlet property="next" destination="wXr-SK-Hqh" id="55K-UJ-5CO"/>
                         <outlet property="prev" destination="mcC-Gy-aPG" id="Dag-lp-QsB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="fXD-Wg-x4h" userLabel="left">
+                    <connections>
+                        <action selector="LeftSwipe:" destination="2" id="Lya-5y-2Eb"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="fc2-9N-UFJ" userLabel="right">
+                    <connections>
+                        <action selector="RightSwipe:" destination="2" id="R2a-DM-7I0"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="up" id="M3H-eI-nQw" userLabel="up">
+                    <connections>
+                        <segue destination="urA-Hx-Wsu" kind="modal" identifier="goWeekView" id="nZc-3T-wia"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="165" y="187"/>
+        </scene>
+        <!--View Controller - setting-->
+        <scene sceneID="1iR-3i-gWG">
+            <objects>
+                <viewController title="setting" id="Xvt-rj-jps" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2ZC-jY-Iqz">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Setting" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MhH-7i-d6V">
+                                <rect key="frame" x="117" y="164" width="152" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Main Menu" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mCD-kj-wno">
+                                <rect key="frame" x="79" y="70" width="162" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="vox-AH-tlb" appends="YES" id="4Eb-4f-66h"/>
+                            <outletCollection property="gestureRecognizers" destination="uIw-0n-h27" appends="YES" id="NXN-YS-aaL"/>
+                            <outletCollection property="gestureRecognizers" destination="gVY-rK-pIu" appends="YES" id="tOY-z0-Hfh"/>
+                        </connections>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zhl-3A-bpJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="vox-AH-tlb" userLabel="right">
+                    <connections>
+                        <segue destination="2xU-zH-GHz" kind="modal" id="kY2-g0-h9n"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="uIw-0n-h27" userLabel="left">
+                    <connections>
+                        <segue destination="2xU-zH-GHz" kind="modal" id="eH2-rD-BpP"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="gVY-rK-pIu" userLabel="doubleTap">
+                    <connections>
+                        <segue destination="FVx-Yf-KvI" kind="modal" id="n1p-le-3t5"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="785" y="944"/>
+        </scene>
+        <!--View Controller - tutorial-->
+        <scene sceneID="WBm-iG-QH6">
+            <objects>
+                <viewController title="tutorial" id="TLn-Ij-vNO" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rDr-cB-ef2">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Tutorial" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Sk5-D5-pNp">
+                                <rect key="frame" x="96" y="234" width="139" height="80"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Setting" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iP3-KC-MVg">
+                                <rect key="frame" x="116" y="122" width="125" height="58"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="qaM-dx-fhO" appends="YES" id="9rs-9q-Rua"/>
+                            <outletCollection property="gestureRecognizers" destination="upO-4N-YxA" appends="YES" id="hBF-w0-ug7"/>
+                        </connections>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ac0-mi-Dhj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="qaM-dx-fhO" userLabel="right">
+                    <connections>
+                        <segue destination="FVx-Yf-KvI" kind="modal" id="nxu-02-vzs"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="upO-4N-YxA" userLabel="left">
+                    <connections>
+                        <segue destination="Z3M-Qb-lpS" kind="modal" id="RiA-DD-7DQ"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1276" y="-1457"/>
+        </scene>
+        <!--View Controller - log out-->
+        <scene sceneID="B43-f3-FZG">
+            <objects>
+                <viewController title="log out" id="FVx-Yf-KvI" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="K4H-Pf-tqC">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="LogOut" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="77w-2T-52V">
+                                <rect key="frame" x="88" y="194" width="159" height="71"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Setting" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jrU-1K-TRi">
+                                <rect key="frame" x="110" y="104" width="100" height="61"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Zaa-Wi-zVs" appends="YES" id="7sg-ra-bIP"/>
+                            <outletCollection property="gestureRecognizers" destination="Wxf-cf-ekE" appends="YES" id="H1J-d3-VvA"/>
+                        </connections>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TYo-yd-D9j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="Zaa-Wi-zVs" userLabel="right">
+                    <connections>
+                        <segue destination="Z3M-Qb-lpS" kind="modal" id="nvk-UW-2vt"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="Wxf-cf-ekE" userLabel="left">
+                    <connections>
+                        <segue destination="TLn-Ij-vNO" kind="modal" id="wcs-8G-8Nb"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1314" y="207"/>
+        </scene>
+        <!--View Controller - sync-->
+        <scene sceneID="XBD-cx-DzP">
+            <objects>
+                <viewController title="sync" id="Z3M-Qb-lpS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EYb-n0-1rh">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sync" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CgN-ut-TmW">
+                                <rect key="frame" x="110" y="236" width="127" height="76"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Setting" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="I5g-B3-XZ7">
+                                <rect key="frame" x="117" y="122" width="120" height="61"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="3eY-K1-ffl" appends="YES" id="tK4-iv-0Eb"/>
+                            <outletCollection property="gestureRecognizers" destination="lYW-44-2jg" appends="YES" id="EcT-JW-kRh"/>
+                        </connections>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QHq-ks-aWk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="3eY-K1-ffl" userLabel="left">
+                    <connections>
+                        <segue destination="FVx-Yf-KvI" kind="modal" id="uKb-0n-4qm"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="lYW-44-2jg" userLabel="right">
+                    <connections>
+                        <segue destination="TLn-Ij-vNO" kind="modal" id="MCX-gG-HNr"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1290" y="-618"/>
         </scene>
     </scenes>
     <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+        <class className="DayViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DayViewController.h"/>
             <relationships>
-                <relationship kind="action" name="dayView:"/>
-                <relationship kind="action" name="leftSwipe:"/>
-                <relationship kind="action" name="rightSwipe:"/>
+                <relationship kind="action" name="LeftSwipe:"/>
+                <relationship kind="action" name="RightSwipe:"/>
+                <relationship kind="outlet" name="Left" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="Right" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="curr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="next" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="prev" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MonthViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MonthViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="LeftSwipe:"/>
+                <relationship kind="action" name="RightSwipe:"/>
+                <relationship kind="action" name="l:"/>
+                <relationship kind="outlet" name="Left" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="Right" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="curr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="next" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="prev" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="WeekViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WeekViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="LeftSwipe:"/>
+                <relationship kind="action" name="RightSwipe:"/>
+                <relationship kind="outlet" name="Left" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="Right" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="curr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="next" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="prev" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="YearViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/YearViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="LeftSwipe:"/>
+                <relationship kind="action" name="RightSwipe:"/>
+                <relationship kind="outlet" name="Left" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="Right" candidateClass="UISwipeGestureRecognizer"/>
                 <relationship kind="outlet" name="curr" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="next" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="prev" candidateClass="UILabel"/>
@@ -115,4 +563,14 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="kY2-g0-h9n"/>
+        <segue reference="G6x-zo-OjY"/>
+        <segue reference="MCX-gG-HNr"/>
+        <segue reference="nvk-UW-2vt"/>
+        <segue reference="uKb-0n-4qm"/>
+        <segue reference="nZc-3T-wia"/>
+        <segue reference="auC-YW-nJ6"/>
+        <segue reference="iyo-AZ-oCm"/>
+    </inferredMetricsTieBreakers>
 </document>
