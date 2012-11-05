@@ -203,7 +203,7 @@
                     <navigationItem key="navigationItem" id="ibU-Fd-sw3"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-247" y="935"/>
+            <point key="canvasLocation" x="-246" y="935"/>
         </scene>
         <!--Year View Controller - yearView-->
         <scene sceneID="vYv-eg-8MW">
@@ -586,51 +586,6 @@
             <point key="canvasLocation" x="-721" y="935"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="DayViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DayViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="Left" candidateClass="UISwipeGestureRecognizer"/>
-                <relationship kind="outlet" name="Right" candidateClass="UISwipeGestureRecognizer"/>
-                <relationship kind="outlet" name="curr" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="next" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="prev" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MonthViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MonthViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="l:"/>
-                <relationship kind="outlet" name="Left" candidateClass="UISwipeGestureRecognizer"/>
-                <relationship kind="outlet" name="Right" candidateClass="UISwipeGestureRecognizer"/>
-                <relationship kind="outlet" name="curr" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="next" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="prev" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="WeekViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WeekViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="Left" candidateClass="UISwipeGestureRecognizer"/>
-                <relationship kind="outlet" name="Right" candidateClass="UISwipeGestureRecognizer"/>
-                <relationship kind="outlet" name="curr" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="next" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="prev" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="YearViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/YearViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="LeftSwipe:"/>
-                <relationship kind="action" name="RightSwipe:"/>
-                <relationship kind="outlet" name="Left" candidateClass="UISwipeGestureRecognizer"/>
-                <relationship kind="outlet" name="Right" candidateClass="UISwipeGestureRecognizer"/>
-                <relationship kind="outlet" name="curr" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="next" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="prev" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

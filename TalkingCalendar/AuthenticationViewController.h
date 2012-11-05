@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "/usr/include/sqlite3.h"
 
 @interface AuthenticationViewController : UIViewController
+
+    @property sqlite3 * contactDB;
+
+
+-(IBAction)login:(id)sender;
 
 @end

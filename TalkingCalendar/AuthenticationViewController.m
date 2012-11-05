@@ -14,19 +14,30 @@
 
 @implementation AuthenticationViewController
 
+@synthesize contactDB;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
-    }
+            }
     return self;
 }
+
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	const char *dbpath = [@"/Users/bnabaei/Desktop/talkingcalendar/TalkingCalendar/talkingcalendar.db" UTF8String];
+    if (sqlite3_open(dbpath, &contactDB) == SQLITE_OK){
+        NSLog(@":))");
+    }
+    
+    else{
+        NSLog(@":(");
+    }
+
 }
 
 - (void)viewDidUnload
@@ -38,6 +49,11 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+
+-(IBAction)login:(id)sender{
+    
 }
 
 @end
