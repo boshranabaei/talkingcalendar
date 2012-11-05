@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A2919111644A6FF000462DF /* Icon-talking cal.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A2919101644A6FF000462DF /* Icon-talking cal.png */; };
+		2A4A93541648707800EC2717 /* AuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4A93531648707800EC2717 /* AuthenticationViewController.m */; };
 		5FFA9FC5163228B100FB0DF5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FFA9FC4163228B100FB0DF5 /* UIKit.framework */; };
 		5FFA9FC7163228B100FB0DF5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FFA9FC6163228B100FB0DF5 /* Foundation.framework */; };
 		5FFA9FC9163228B100FB0DF5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FFA9FC8163228B100FB0DF5 /* CoreGraphics.framework */; };
@@ -47,6 +48,8 @@
 
 /* Begin PBXFileReference section */
 		2A2919101644A6FF000462DF /* Icon-talking cal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-talking cal.png"; sourceTree = "<group>"; };
+		2A4A93521648707800EC2717 /* AuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationViewController.h; sourceTree = "<group>"; };
+		2A4A93531648707800EC2717 /* AuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationViewController.m; sourceTree = "<group>"; };
 		5FFA9FC0163228B100FB0DF5 /* TalkingCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TalkingCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FFA9FC4163228B100FB0DF5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5FFA9FC6163228B100FB0DF5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -140,6 +143,8 @@
 				5FFA9FD3163228B100FB0DF5 /* AppDelegate.h */,
 				5FFA9FD4163228B100FB0DF5 /* AppDelegate.m */,
 				5FFA9FDC163228B100FB0DF5 /* MainStoryboard.storyboard */,
+				2A4A93521648707800EC2717 /* AuthenticationViewController.h */,
+				2A4A93531648707800EC2717 /* AuthenticationViewController.m */,
 				5FFA9FDF163228B100FB0DF5 /* DayViewController.h */,
 				5FFA9FE0163228B100FB0DF5 /* DayViewController.m */,
 				5FFAA00E1634B54C00FB0DF5 /* WeekViewController.h */,
@@ -307,6 +312,7 @@
 				5FFAA01B1634B63000FB0DF5 /* MonthViewController.m in Sources */,
 				5FFAA01F1634B64800FB0DF5 /* YearViewController.m in Sources */,
 				5FFAA02C1634D4E000FB0DF5 /* MainViewController.m in Sources */,
+				2A4A93541648707800EC2717 /* AuthenticationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
