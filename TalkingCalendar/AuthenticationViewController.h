@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "/usr/include/sqlite3.h"
+#import "Accounts.h"
 
 @interface AuthenticationViewController : UIViewController
 
-    @property sqlite3 * contactDB;
-
+@property Accounts *accounts;
+@property (weak, nonatomic) IBOutlet UITextField *userName;
+@property (weak, nonatomic) IBOutlet UITextField *password;
 
 -(IBAction)login:(id)sender;
 

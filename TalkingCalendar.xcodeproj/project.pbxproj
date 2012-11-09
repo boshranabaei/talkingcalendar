@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A2919111644A6FF000462DF /* Icon-talking cal.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A2919101644A6FF000462DF /* Icon-talking cal.png */; };
+		2A3A144F164CA4D20025AB72 /* Accounts.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3A144E164CA4D20025AB72 /* Accounts.m */; };
 		2A4A93541648707800EC2717 /* AuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4A93531648707800EC2717 /* AuthenticationViewController.m */; };
 		2A4A935D164877FF00EC2717 /* talkingcalendar.db in Resources */ = {isa = PBXBuildFile; fileRef = 2A4A935C164877FF00EC2717 /* talkingcalendar.db */; };
 		2A4A936316487B4800EC2717 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A4A936216487B4800EC2717 /* libsqlite3.dylib */; };
@@ -50,6 +51,8 @@
 
 /* Begin PBXFileReference section */
 		2A2919101644A6FF000462DF /* Icon-talking cal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-talking cal.png"; sourceTree = "<group>"; };
+		2A3A144D164CA4D20025AB72 /* Accounts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Accounts.h; sourceTree = "<group>"; };
+		2A3A144E164CA4D20025AB72 /* Accounts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Accounts.m; sourceTree = "<group>"; };
 		2A4A93521648707800EC2717 /* AuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationViewController.h; sourceTree = "<group>"; };
 		2A4A93531648707800EC2717 /* AuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationViewController.m; sourceTree = "<group>"; };
 		2A4A935C164877FF00EC2717 /* talkingcalendar.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = talkingcalendar.db; sourceTree = "<group>"; };
@@ -146,6 +149,8 @@
 		5FFA9FCA163228B100FB0DF5 /* TalkingCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				2A3A144D164CA4D20025AB72 /* Accounts.h */,
+				2A3A144E164CA4D20025AB72 /* Accounts.m */,
 				5FFA9FD3163228B100FB0DF5 /* AppDelegate.h */,
 				5FFA9FD4163228B100FB0DF5 /* AppDelegate.m */,
 				5FFA9FDC163228B100FB0DF5 /* MainStoryboard.storyboard */,
@@ -321,6 +326,7 @@
 				5FFAA01F1634B64800FB0DF5 /* YearViewController.m in Sources */,
 				5FFAA02C1634D4E000FB0DF5 /* MainViewController.m in Sources */,
 				2A4A93541648707800EC2717 /* AuthenticationViewController.m in Sources */,
+				2A3A144F164CA4D20025AB72 /* Accounts.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

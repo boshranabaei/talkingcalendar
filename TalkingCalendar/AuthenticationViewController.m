@@ -13,8 +13,10 @@
 @end
 
 @implementation AuthenticationViewController
+@synthesize accounts;
+@synthesize userName;
+@synthesize password;
 
-@synthesize contactDB;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,19 +31,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	const char *dbpath = [@"/Users/bnabaei/Desktop/talkingcalendar/TalkingCalendar/talkingcalendar.db" UTF8String];
-    if (sqlite3_open(dbpath, &contactDB) == SQLITE_OK){
-        NSLog(@":))");
-    }
-    
-    else{
-        NSLog(@":(");
-    }
+    accounts=[[Accounts alloc]init];
 
 }
 
 - (void)viewDidUnload
 {
+    [self setUserName:nil];
+    [self setPassword:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -53,7 +50,12 @@
 
 
 -(IBAction)login:(id)sender{
-    
-}
+    NSString *l=[[NSString alloc]initWithFormat:@"%@",[userName text]];
+   /* if([accounts validateUsername:[userName text] password:[password text]]){
+       // NSLog([userName text]);
+    }*/
+        
+     
+  }
 
 @end
