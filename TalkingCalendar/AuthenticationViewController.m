@@ -50,10 +50,10 @@
 
 
 -(IBAction)login:(id)sender{
-    NSString *l=[[NSString alloc]initWithFormat:@"%@",[userName text]];
-   /* if([accounts validateUsername:[userName text] password:[password text]]){
-       // NSLog([userName text]);
-    }*/
+
+   if([accounts validateUsername:[userName text] password:[password text]]){
+        NSLog(@"Congrates!");
+    }
         
      
   }

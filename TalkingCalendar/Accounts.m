@@ -30,17 +30,16 @@
 
 
 -(BOOL *)validateUsername:(NSString*)username password: (NSString*)password{
-    NSString *querySQL = @"select * from accounts where username=\"username\" and password=\"password\";";
+       
+    NSString *querySQL=[[NSString alloc]initWithFormat:@"select * from accounts where username=\"%@\" and password=\"%@\";",username,password];
     const char *query_stmt = [querySQL UTF8String];
     sqlite3_stmt *statement;
     
     if (sqlite3_prepare_v2(contactDB, query_stmt, -1, &statement, NULL)==SQLITE_OK){
         if(sqlite3_step(statement)==SQLITE_ROW){
-          //  NSString *sName=[NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 0)];
-            NSLog(@"Hastesh");
-            //return sName;
+            return true;
         }
     }
-    return true;
+    return false;
 }
 @end

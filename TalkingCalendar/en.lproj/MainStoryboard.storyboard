@@ -175,9 +175,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="userName:" destination="KYZ-sq-OG3" eventType="editingDidEnd" id="csm-Eq-JV5"/>
-                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="password" borderStyle="roundedRect" minimumFontSize="17" id="s5f-fH-ReZ">
                                 <rect key="frame" x="70" y="190" width="181" height="31"/>
@@ -207,7 +204,7 @@
                     <navigationItem key="navigationItem" id="ibU-Fd-sw3"/>
                     <connections>
                         <outlet property="password" destination="s5f-fH-ReZ" id="83H-WT-VCr"/>
-                        <outlet property="userName" destination="mx1-fu-1oV" id="9c4-g9-dgB"/>
+                        <outlet property="userName" destination="mx1-fu-1oV" id="Ajz-cv-gt5"/>
                     </connections>
                 </viewController>
             </objects>
@@ -333,7 +330,7 @@
             <objects>
                 <viewController title="dayView" id="2" customClass="DayViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mcC-Gy-aPG">
