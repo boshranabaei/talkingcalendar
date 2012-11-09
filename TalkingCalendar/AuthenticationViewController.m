@@ -53,7 +53,16 @@
 
    if([accounts validateUsername:[userName text] password:[password text]]){
         NSLog(@"Congrates!");
+      // [self performSegueWithIdentifier:@"loggedin" sender:self];
     }
+   else{
+       UIAlertView *notValid=[[UIAlertView alloc]initWithTitle:@"Authentication"
+                                                 message:@"The username or password is invalid!"
+                                                 delegate:nil
+                                                 cancelButtonTitle:@"OK"
+                                                 otherButtonTitles:nil, nil];
+       [notValid show];
+   }
         
      
   }
