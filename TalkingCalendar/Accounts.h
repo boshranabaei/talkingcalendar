@@ -13,5 +13,5 @@
     @property sqlite3 * contactDB;
     
 -(BOOL *)validateUsername:(NSString*) username password: (NSString*)password;
-
+-(BOOL *)insertusername:(NSString*)username password: (NSString*)password;
 @end

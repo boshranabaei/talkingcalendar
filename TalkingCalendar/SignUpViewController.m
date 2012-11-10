@@ -16,7 +16,7 @@
 @synthesize userName;
 @synthesize password;
 @synthesize passConfirm;
-
+@synthesize accounts;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,7 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	accounts=[[Accounts alloc]init];
 }
 
 - (void)viewDidUnload
@@ -39,7 +39,7 @@
     [self setPassword:nil];
     [self setPassConfirm:nil];
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
+   
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -48,5 +48,16 @@
 }
 
 - (IBAction)create:(id)sender {
+    if([accounts insertusername:[userName text] password:[password text]]){
+    }
+    else{
+        UIAlertView *notValid=[[UIAlertView alloc]initWithTitle:@"Authentication"
+                                                        message:@"The username already exists"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil, nil];
+        [notValid show];
+    }
+
 }
 @end

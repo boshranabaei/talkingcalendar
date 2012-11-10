@@ -43,4 +43,23 @@
     }
     return NO;
 }
+
+-(BOOL *)insertusername:(NSString*)username password: (NSString*)password{
+    NSLog(@"sds");
+    NSString *querySQL=[[NSString alloc]initWithFormat:@"insert into accounts values (\"%@\" ,\"%@\");",username,password];
+    NSLog(querySQL);
+    const char *query_stmt = [querySQL UTF8String];
+    sqlite3_stmt *statement;
+    
+    if (sqlite3_prepare_v2(contactDB, query_stmt, -1, &statement, NULL)==SQLITE_OK){
+            NSLog(@"shod");
+    }
+    if(SQLITE_DONE == sqlite3_step(statement))
+        return YES;
+    else{
+        
+    }
+
+    return NO;
+}
 @end
