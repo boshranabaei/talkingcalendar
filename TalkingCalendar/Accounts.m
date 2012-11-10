@@ -20,7 +20,7 @@
         NSString *targetPath = [libraryPath stringByAppendingPathComponent:@"talkingcalendar.db"];
         
         if (![[NSFileManager defaultManager] fileExistsAtPath:targetPath]) {
-            // database doesn't exist in your library path... copy it from the bundle
+            // database doesn't exist in library path... so must copy it from the bundle
             NSString *sourcePath = [[NSBundle mainBundle] pathForResource:@"talkingcalendar" ofType:@"db"];
             NSError *error = nil;
             

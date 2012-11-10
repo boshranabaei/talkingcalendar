@@ -47,17 +47,27 @@
 }
 
 - (IBAction)create:(id)sender {
+    if(![[password text]isEqualToString:[passConfirm text]]){
+        UIAlertView *notEq=[[UIAlertView alloc]initWithTitle:@"password"
+                                               message:@"Password and confirmated password don't match!"
+                                               delegate:nil
+                                               cancelButtonTitle:@"OK"
+                                               otherButtonTitles:nil, nil];
+        [notEq show];
+    }
+    
+    else{
     accounts=[[Accounts alloc]init];
     if([accounts insertusername:[userName text] password:[password text]]){
     }
     else{
-        UIAlertView *exists=[[UIAlertView alloc]initWithTitle:@"Authentication"
-                                                        message:@"The username already exists"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil, nil];
+        UIAlertView *exists=[[UIAlertView alloc]initWithTitle:@"signUp"
+                                                message:@"The username already exists"
+                                                delegate:nil
+                                                cancelButtonTitle:@"OK"
+                                                otherButtonTitles:nil, nil];
         [exists show];
-    }
+    }}
 
 }
 @end
