@@ -16,7 +16,7 @@
 @synthesize userName;
 @synthesize password;
 @synthesize passConfirm;
-@synthesize create;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,7 +38,6 @@
     [self setUserName:nil];
     [self setPassword:nil];
     [self setPassConfirm:nil];
-    [self setCreate:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

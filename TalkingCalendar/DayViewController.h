@@ -13,7 +13,7 @@
 
     ESpeakEngine * engine;
     IBOutlet UITextView *textView;
-    __weak IBOutlet UILabel *cDate;
+   // IBOutlet UILabel *cDate;
 
 }
 

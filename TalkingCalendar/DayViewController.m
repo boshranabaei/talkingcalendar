@@ -113,12 +113,12 @@
 
     [super viewDidLoad];
 
-	engine = [[ESpeakEngine alloc] init];
-    [engine setLanguage:@"en"];
-    [engine setSpeechRate:150];
+	//engine = [[ESpeakEngine alloc] init];
+    //[engine setLanguage:@"en"];
+    //[engine setSpeechRate:150];
     //[engine setPitch:50];
     //[engine setGender:kESpeakEngineGenerFemale];
-    //[engine speak:textView.text];
+    //[engine speak:cDate.currentdayInMonth1];
 
     dateR=[[NSDate alloc] init];
     if(currentDate ==nil)
@@ -172,6 +172,16 @@
     
     [next setText:msg2];
     [prev setText:msg3];
+    
+    NSString *dayView = [[NSString alloc] initWithFormat:@"Day View%@",dateInString];
+    
+    engine = [[ESpeakEngine alloc] init];
+    [engine setLanguage:@"en"];
+    [engine setSpeechRate:150];
+    //[engine setPitch:50];
+    //[engine setGender:kESpeakEngineGenerFemale];
+    [engine speak:dayView];
+
 
     // Do any additional setup after loading the view, typically from a nib.
 }
@@ -191,7 +201,6 @@
 
 - (void)viewDidUnload {
     currentDate = nil;
-    cDate = nil;
     [super viewDidUnload];
 }
 @end
