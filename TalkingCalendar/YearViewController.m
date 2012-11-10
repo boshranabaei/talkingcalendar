@@ -55,6 +55,11 @@
     [dateComponents setYear:-1];
     currentDate=[calendar dateByAddingComponents:dateComponents toDate:currentDate options:0];
     
+    NSString *yearViewLeft = [[NSString alloc] initWithFormat:@"Year %@",dateInString2];
+    
+    [engine speak:yearViewLeft];
+    
+    
     [next setText:currentdayInMonth1];
     [curr setText:msg2];
     [prev setText:msg3];
@@ -90,6 +95,10 @@
     
     [dateComponents setYear:+1];
     currentDate=[calendar dateByAddingComponents:dateComponents toDate:currentDate options:0];
+    
+    NSString *yearViewRight = [[NSString alloc] initWithFormat:@"Year %@",dateInString2];
+    
+    [engine speak:yearViewRight];
     
     
     [next setText:msg3];
@@ -155,6 +164,13 @@
 
     // Do any additional setup after loading the view, typically from a nib.
 	// Do any additional setup after loading the view.
+    
+    NSString *yearView = [[NSString alloc] initWithFormat:@"Year, View, %@",dateInString];
+    
+    engine = [[ESpeakEngine alloc] init];
+    [engine setLanguage:@"en"];
+    [engine setSpeechRate:150];
+    [engine speak:yearView];
 }
 
 - (void)didReceiveMemoryWarning

@@ -32,7 +32,7 @@
     // instantiate a NSDateFormatter
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     // set the dateFormatter format
-    [dateFormatter setDateFormat:@"MMM,yyyy"];
+    [dateFormatter setDateFormat:@"MMMM,yyyy"];
     
 
     NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
@@ -58,6 +58,10 @@
     [dateComponents setMonth:-1];
     currentDate=[calendar dateByAddingComponents:dateComponents toDate:currentDate options:0];
     
+    NSString *monthViewLeft = [[NSString alloc] initWithFormat:@"%@",dateInString2];
+    
+    [engine speak:monthViewLeft];
+    
     [next setText:currentdayInMonth1];
     [curr setText:msg2];
     [prev setText:msg3];
@@ -68,7 +72,7 @@
     // instantiate a NSDateFormatter
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     // set the dateFormatter format
-    [dateFormatter setDateFormat:@"MMM,yyyy"];
+    [dateFormatter setDateFormat:@"MMMM,yyyy"];
     
     NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
     [dateComponents setMonth:+1];
@@ -94,6 +98,12 @@
     [dateComponents setMonth:+1];
     currentDate=[calendar dateByAddingComponents:dateComponents toDate:currentDate options:0];
 
+    
+    
+    NSString *monthViewRight = [[NSString alloc] initWithFormat:@"%@",dateInString2];
+    
+    [engine speak:monthViewRight];
+    
     
     [next setText:msg3];
     
@@ -125,7 +135,7 @@
     // instantiate a NSDateFormatter
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     // set the dateFormatter format
-    [dateFormatter setDateFormat:@"MMM,yyyy"];
+    [dateFormatter setDateFormat:@"MMMM,yyyy"];
     
     NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
     [dateComponents setMonth:+1];
@@ -163,6 +173,13 @@
     [prev setText:msg3];
     // Do any additional setup after loading the view, typically from a nib.
 	// Do any additional setup after loading the view.
+    
+    NSString *monthView = [[NSString alloc] initWithFormat:@"Month, View, %@",dateInString];
+    
+    engine = [[ESpeakEngine alloc] init];
+    [engine setLanguage:@"en"];
+    [engine setSpeechRate:150];
+    [engine speak:monthView];
 }
 
 

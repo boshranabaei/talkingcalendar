@@ -26,7 +26,7 @@
     // instantiate a NSDateFormatter
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     // set the dateFormatter format
-    [dateFormatter setDateFormat:@"E,dd,MMM,yy"];
+    [dateFormatter setDateFormat:@"EEEE,dd,MMMM,yyyy"];
     
     
     NSTimeInterval aDay = 24*60*60;
@@ -51,6 +51,10 @@
     // swipe left -> onScreenDate - 1
     // swipe right -> onScreenDate + 1
     
+    NSString *dayViewLeft = [[NSString alloc] initWithFormat:@"%@",dateInString2];
+
+    [engine speak:dayViewLeft];
+    
     
     // disappear the keyborad, push button!
     // tell the system give up the firstResponder;
@@ -63,7 +67,7 @@
     // instantiate a NSDateFormatter
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     // set the dateFormatter format
-    [dateFormatter setDateFormat:@"E,dd,MMM,yy"];
+    [dateFormatter setDateFormat:@"EEEE,dd,MMMM,yyyy"];
     
     
     NSTimeInterval aDay = 24*60*60;
@@ -87,6 +91,10 @@
     // onScreenDate.
     // swipe left -> onScreenDate - 1
     // swipe right -> onScreenDate + 1
+    
+    NSString *dayViewRight = [[NSString alloc] initWithFormat:@"%@",dateInString2];
+    
+    [engine speak:dayViewRight];
     
     
     // disappear the keyborad, push button!
@@ -130,7 +138,7 @@
     // instantiate a NSDateFormatter
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     // set the dateFormatter format
-    [dateFormatter setDateFormat:@"E,dd,MMM,yy"];
+    [dateFormatter setDateFormat:@"EEEE,dd,MMMM"];
     
     // NSString *currentdayInMonth = [dateFormatter stringFromDate:currentDateTime];
     //NSString *currentdayInMonth1 = [[NSString alloc] initWithFormat:@"%@",currentDateTime];
@@ -173,13 +181,11 @@
     [next setText:msg2];
     [prev setText:msg3];
     
-    NSString *dayView = [[NSString alloc] initWithFormat:@"Day View%@",dateInString];
+    NSString *dayView = [[NSString alloc] initWithFormat:@"Day, View, %@",dateInString];
     
     engine = [[ESpeakEngine alloc] init];
     [engine setLanguage:@"en"];
     [engine setSpeechRate:150];
-    //[engine setPitch:50];
-    //[engine setGender:kESpeakEngineGenerFemale];
     [engine speak:dayView];
 
 

@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-@interface WeekViewController : UIViewController
+#import "ESpeakEngine.h"
+
+@interface WeekViewController : UIViewController {
+        ESpeakEngine * engine;
+}
+
 @property (weak, nonatomic) IBOutlet UILabel *prev;
 
 @property (weak, nonatomic) IBOutlet UILabel *curr;

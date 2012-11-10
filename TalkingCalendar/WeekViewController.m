@@ -31,7 +31,7 @@
     swipe=YES;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     // set the dateFormatter format
-    [dateFormatter setDateFormat:@"w,MMM,yy"];
+    [dateFormatter setDateFormat:@"w,MMMM,yyyy"];
     
     
     NSTimeInterval aWeek = 7*24*60*60;
@@ -56,6 +56,10 @@
     // swipe left -> onScreenDate - 1
     // swipe right -> onScreenDate + 1
     
+    NSString *weekViewLeft = [[NSString alloc] initWithFormat:@"Week%@",dateInString2];
+    
+    [engine speak:weekViewLeft];
+    
     // disappear the keyborad, push button!
     // tell the system give up the firstResponder;
     [next setText:currentdayInMonth1];
@@ -68,7 +72,7 @@
     swipe=YES;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     // set the dateFormatter format
-    [dateFormatter setDateFormat:@"w,MMM,yy"];
+    [dateFormatter setDateFormat:@"w,MMMM,yyyy"];
     
     NSTimeInterval aWeek = 7*24*60*60;
     screenUpdateDate = [currentDate dateByAddingTimeInterval:+aWeek];
@@ -91,6 +95,10 @@
     // onScreenDate.
     // swipe left -> onScreenDate - 1
     // swipe right -> onScreenDate + 1
+    
+    NSString *weekViewRight = [[NSString alloc] initWithFormat:@"Week%@",dateInString2];
+    
+    [engine speak:weekViewRight];
     
     
     // disappear the keyborad, push button!
@@ -147,7 +155,7 @@
     // instantiate a NSDateFormatter
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     // set the dateFormatter format
-    [dateFormatter setDateFormat:@"w,MMM,yy"];
+    [dateFormatter setDateFormat:@"w,MMMM,yyyy"];
     
     // NSString *currentdayInMonth = [dateFormatter stringFromDate:currentDateTime];
     //NSString *currentdayInMonth1 = [[NSString alloc] initWithFormat:@"%@",currentDateTime];
@@ -191,6 +199,14 @@
     [prev setText:msg3];
     // Do any additional setup after loading the view, typically from a nib.
 	// Do any additional setup after loading the view.
+    
+    NSString *weekView = [[NSString alloc] initWithFormat:@"Week, View, Week%@",dateInString];
+    
+    engine = [[ESpeakEngine alloc] init];
+    [engine setLanguage:@"en"];
+    [engine setSpeechRate:150];
+    [engine speak:weekView];
+
 }
 
 - (void)didReceiveMemoryWarning

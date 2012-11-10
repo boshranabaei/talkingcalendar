@@ -12,6 +12,7 @@
 @interface DayViewController : UIViewController {
 
     ESpeakEngine * engine;
+    ESpeakEngine * engine2;
     IBOutlet UITextView *textView;
    // IBOutlet UILabel *cDate;
 

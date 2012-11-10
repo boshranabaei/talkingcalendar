@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ESpeakEngine.h"
 
-@interface MonthViewController : UIViewController
+@interface MonthViewController : UIViewController {
+    ESpeakEngine * engine;
+}
+
 @property (weak, nonatomic) IBOutlet UILabel *prev;
 
 @property (weak, nonatomic) IBOutlet UILabel *curr;
