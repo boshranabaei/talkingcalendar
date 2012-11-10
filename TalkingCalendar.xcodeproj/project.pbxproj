@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1EF68D22164DCFB8003E495B /* libeSpeak.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EF68D1E164DCF31003E495B /* libeSpeak.a */; };
 		1EF68D24164DCFBD003E495B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EF68D23164DCFBD003E495B /* AVFoundation.framework */; };
-		1EF68D26164DCFEF003E495B /* espeak-data in Resources */ = {isa = PBXBuildFile; fileRef = 1EF68D25164DCFEF003E495B /* espeak-data */; };
 		2A2919111644A6FF000462DF /* Icon-talking cal.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A2919101644A6FF000462DF /* Icon-talking cal.png */; };
 		2A3A144F164CA4D20025AB72 /* Accounts.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3A144E164CA4D20025AB72 /* Accounts.m */; };
+		2A43B3AC164E0534002E061F /* espeak-data in Resources */ = {isa = PBXBuildFile; fileRef = 2A43B3AB164E0534002E061F /* espeak-data */; };
+		2A43B3AD164E054F002E061F /* libeSpeak.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A43B3A8164E0526002E061F /* libeSpeak.a */; };
 		2A4A93541648707800EC2717 /* AuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4A93531648707800EC2717 /* AuthenticationViewController.m */; };
 		2A4A935D164877FF00EC2717 /* talkingcalendar.db in Resources */ = {isa = PBXBuildFile; fileRef = 2A4A935C164877FF00EC2717 /* talkingcalendar.db */; };
 		2A4A936316487B4800EC2717 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A4A936216487B4800EC2717 /* libsqlite3.dylib */; };
@@ -44,16 +44,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1EF68D1D164DCF31003E495B /* PBXContainerItemProxy */ = {
+		2A43B3A7164E0526002E061F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 1EF68D14164DCF30003E495B /* eSpeak.xcodeproj */;
+			containerPortal = 2A43B39E164E0526002E061F /* eSpeak.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = D2AAC07E0554694100DB518D;
 			remoteInfo = eSpeak;
 		};
-		1EF68D1F164DCF31003E495B /* PBXContainerItemProxy */ = {
+		2A43B3A9164E0526002E061F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 1EF68D14164DCF30003E495B /* eSpeak.xcodeproj */;
+			containerPortal = 2A43B39E164E0526002E061F /* eSpeak.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = C95FD76D1224230300219626;
 			remoteInfo = TestApp;
@@ -68,12 +68,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1EF68D14164DCF30003E495B /* eSpeak.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = eSpeak.xcodeproj; path = ../../Downloads/eSpeak_1.0/eSpeak.xcodeproj; sourceTree = "<group>"; };
 		1EF68D23164DCFBD003E495B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		1EF68D25164DCFEF003E495B /* espeak-data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "espeak-data"; path = "../../../Downloads/eSpeak_1.0/Libraries/espeak-data"; sourceTree = "<group>"; };
 		2A2919101644A6FF000462DF /* Icon-talking cal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-talking cal.png"; sourceTree = "<group>"; };
 		2A3A144D164CA4D20025AB72 /* Accounts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Accounts.h; sourceTree = "<group>"; };
 		2A3A144E164CA4D20025AB72 /* Accounts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Accounts.m; sourceTree = "<group>"; };
+		2A43B39E164E0526002E061F /* eSpeak.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = eSpeak.xcodeproj; path = eSpeak_1.0/eSpeak.xcodeproj; sourceTree = "<group>"; };
+		2A43B3AB164E0534002E061F /* espeak-data */ = {isa = PBXFileReference; lastKnownFileType = file; name = "espeak-data"; path = "../eSpeak_1.0/Libraries/espeak-data"; sourceTree = "<group>"; };
 		2A4A93521648707800EC2717 /* AuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationViewController.h; sourceTree = "<group>"; };
 		2A4A93531648707800EC2717 /* AuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationViewController.m; sourceTree = "<group>"; };
 		2A4A935C164877FF00EC2717 /* talkingcalendar.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = talkingcalendar.db; sourceTree = "<group>"; };
@@ -117,8 +117,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A43B3AD164E054F002E061F /* libeSpeak.a in Frameworks */,
 				1EF68D24164DCFBD003E495B /* AVFoundation.framework in Frameworks */,
-				1EF68D22164DCFB8003E495B /* libeSpeak.a in Frameworks */,
 				2A4A936316487B4800EC2717 /* libsqlite3.dylib in Frameworks */,
 				5FFA9FC5163228B100FB0DF5 /* UIKit.framework in Frameworks */,
 				5FFA9FC7163228B100FB0DF5 /* Foundation.framework in Frameworks */,
@@ -139,11 +139,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1EF68D15164DCF30003E495B /* Products */ = {
+		2A43B39F164E0526002E061F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1EF68D1E164DCF31003E495B /* libeSpeak.a */,
-				1EF68D20164DCF31003E495B /* TestApp.app */,
+				2A43B3A8164E0526002E061F /* libeSpeak.a */,
+				2A43B3AA164E0526002E061F /* TestApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,8 +151,8 @@
 		5FFA9FB5163228B100FB0DF5 = {
 			isa = PBXGroup;
 			children = (
+				2A43B39E164E0526002E061F /* eSpeak.xcodeproj */,
 				1EF68D23164DCFBD003E495B /* AVFoundation.framework */,
-				1EF68D14164DCF30003E495B /* eSpeak.xcodeproj */,
 				2A4A936216487B4800EC2717 /* libsqlite3.dylib */,
 				2A2919101644A6FF000462DF /* Icon-talking cal.png */,
 				5FFA9FCA163228B100FB0DF5 /* TalkingCalendar */,
@@ -212,7 +212,7 @@
 		5FFA9FCB163228B100FB0DF5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1EF68D25164DCFEF003E495B /* espeak-data */,
+				2A43B3AB164E0534002E061F /* espeak-data */,
 				2A4A935C164877FF00EC2717 /* talkingcalendar.db */,
 				5FFA9FCC163228B100FB0DF5 /* TalkingCalendar-Info.plist */,
 				5FFA9FCD163228B100FB0DF5 /* InfoPlist.strings */,
@@ -304,8 +304,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 1EF68D15164DCF30003E495B /* Products */;
-					ProjectRef = 1EF68D14164DCF30003E495B /* eSpeak.xcodeproj */;
+					ProductGroup = 2A43B39F164E0526002E061F /* Products */;
+					ProjectRef = 2A43B39E164E0526002E061F /* eSpeak.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -317,18 +317,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		1EF68D1E164DCF31003E495B /* libeSpeak.a */ = {
+		2A43B3A8164E0526002E061F /* libeSpeak.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libeSpeak.a;
-			remoteRef = 1EF68D1D164DCF31003E495B /* PBXContainerItemProxy */;
+			remoteRef = 2A43B3A7164E0526002E061F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		1EF68D20164DCF31003E495B /* TestApp.app */ = {
+		2A43B3AA164E0526002E061F /* TestApp.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = TestApp.app;
-			remoteRef = 1EF68D1F164DCF31003E495B /* PBXContainerItemProxy */;
+			remoteRef = 2A43B3A9164E0526002E061F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -345,7 +345,7 @@
 				5FFA9FDE163228B100FB0DF5 /* MainStoryboard.storyboard in Resources */,
 				2A2919111644A6FF000462DF /* Icon-talking cal.png in Resources */,
 				2A4A935D164877FF00EC2717 /* talkingcalendar.db in Resources */,
-				1EF68D26164DCFEF003E495B /* espeak-data in Resources */,
+				2A43B3AC164E0534002E061F /* espeak-data in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,6 +466,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /Users/bnabaei/Desktop/eSpeak_1.0/Classes;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -487,6 +488,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /Users/bnabaei/Desktop/eSpeak_1.0/Classes;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
@@ -499,7 +501,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TalkingCalendar/TalkingCalendar-Prefix.pch";
-				HEADER_SEARCH_PATHS = /Users/lamalexl/Downloads/eSpeak_1.0/Classes;
+				HEADER_SEARCH_PATHS = ./eSpeak_1.0/Classes;
 				INFOPLIST_FILE = "TalkingCalendar/TalkingCalendar-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -512,7 +514,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TalkingCalendar/TalkingCalendar-Prefix.pch";
-				HEADER_SEARCH_PATHS = /Users/lamalexl/Downloads/eSpeak_1.0/Classes;
+				HEADER_SEARCH_PATHS = ./eSpeak_1.0/Classes;
 				INFOPLIST_FILE = "TalkingCalendar/TalkingCalendar-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";

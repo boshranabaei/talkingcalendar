@@ -37,9 +37,9 @@
     
     if (sqlite3_prepare_v2(contactDB, query_stmt, -1, &statement, NULL)==SQLITE_OK){
         if(sqlite3_step(statement)==SQLITE_ROW){
-            return true;
+            return YES;
         }
     }
-    return false;
+    return NO;
 }
 @end
