@@ -5,7 +5,7 @@
 //  Created by Vito Wang on 2012-10-19.
 //  Copyright (c) 2012 Vito Wang. All rights reserved.
 //
-
+#import "ESpeakEngine.h"
 #import "DayViewController.h"
 #import "WeekViewController.h"
 @interface DayViewController ()
@@ -112,6 +112,14 @@
 {
 
     [super viewDidLoad];
+
+	engine = [[ESpeakEngine alloc] init];
+    [engine setLanguage:@"en"];
+    [engine setSpeechRate:150];
+    //[engine setPitch:50];
+    //[engine setGender:kESpeakEngineGenerFemale];
+    //[engine speak:textView.text];
+
     dateR=[[NSDate alloc] init];
     if(currentDate ==nil)
         currentDate=[[NSDate alloc] init];
@@ -178,4 +186,12 @@
 
 
 
+
+
+
+- (void)viewDidUnload {
+    currentDate = nil;
+    cDate = nil;
+    [super viewDidUnload];
+}
 @end

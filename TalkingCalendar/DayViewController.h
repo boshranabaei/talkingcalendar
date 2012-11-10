@@ -7,9 +7,15 @@
 /*/
 
 #import <UIKit/UIKit.h>
+#import "ESpeakEngine.h"
 
-@interface DayViewController : UIViewController
+@interface DayViewController : UIViewController {
 
+    ESpeakEngine * engine;
+    IBOutlet UITextView *textView;
+    __weak IBOutlet UILabel *cDate;
+
+}
 
 @property (weak, nonatomic) IBOutlet UILabel *prev;
 

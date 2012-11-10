@@ -15,7 +15,7 @@
     self = [super init];
     if (self) {
         
-        const char *dbpath = [@"/Users/bnabaei/Desktop/talkingcalendar/TalkingCalendar/talkingcalendar.db" UTF8String];
+        const char *dbpath = [@"/Users/lamalexl/Desktop/talkingcalendar/TalkingCalendar/talkingcalendar.db" UTF8String];
         
         if (sqlite3_open(dbpath, &contactDB) == SQLITE_OK){
             //Connection Successful
