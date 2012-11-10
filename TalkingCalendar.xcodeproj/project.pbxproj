@@ -213,8 +213,8 @@
 		5FFA9FCB163228B100FB0DF5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2A43B3AB164E0534002E061F /* espeak-data */,
 				2A4A935C164877FF00EC2717 /* talkingcalendar.db */,
+				2A43B3AB164E0534002E061F /* espeak-data */,
 				5FFA9FCC163228B100FB0DF5 /* TalkingCalendar-Info.plist */,
 				5FFA9FCD163228B100FB0DF5 /* InfoPlist.strings */,
 				5FFA9FD0163228B100FB0DF5 /* main.m */,

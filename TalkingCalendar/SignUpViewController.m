@@ -30,7 +30,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	accounts=[[Accounts alloc]init];
 }
 
 - (void)viewDidUnload
@@ -48,15 +47,16 @@
 }
 
 - (IBAction)create:(id)sender {
+    accounts=[[Accounts alloc]init];
     if([accounts insertusername:[userName text] password:[password text]]){
     }
     else{
-        UIAlertView *notValid=[[UIAlertView alloc]initWithTitle:@"Authentication"
+        UIAlertView *exists=[[UIAlertView alloc]initWithTitle:@"Authentication"
                                                         message:@"The username already exists"
                                                        delegate:nil
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil, nil];
-        [notValid show];
+        [exists show];
     }
 
 }

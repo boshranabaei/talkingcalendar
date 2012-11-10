@@ -31,7 +31,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    accounts=[[Accounts alloc]init];
+
 
 }
 
@@ -50,9 +50,10 @@
 
 
 -(IBAction)login:(id)sender{
-
+   accounts=[[Accounts alloc]init];
    if([accounts validateUsername:[userName text] password:[password text]]){
         NSLog(@"Congrates!");
+       
       // [self performSegueWithIdentifier:@"loggedin" sender:self];
     }
    else{
