@@ -12,6 +12,7 @@
 		2A4A93541648707800EC2717 /* AuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4A93531648707800EC2717 /* AuthenticationViewController.m */; };
 		2A4A935D164877FF00EC2717 /* talkingcalendar.db in Resources */ = {isa = PBXBuildFile; fileRef = 2A4A935C164877FF00EC2717 /* talkingcalendar.db */; };
 		2A4A936316487B4800EC2717 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A4A936216487B4800EC2717 /* libsqlite3.dylib */; };
+		2AA7D7A5164DCF2E00781A58 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA7D7A4164DCF2E00781A58 /* SignUpViewController.m */; };
 		5FFA9FC5163228B100FB0DF5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FFA9FC4163228B100FB0DF5 /* UIKit.framework */; };
 		5FFA9FC7163228B100FB0DF5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FFA9FC6163228B100FB0DF5 /* Foundation.framework */; };
 		5FFA9FC9163228B100FB0DF5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FFA9FC8163228B100FB0DF5 /* CoreGraphics.framework */; };
@@ -57,6 +58,8 @@
 		2A4A93531648707800EC2717 /* AuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationViewController.m; sourceTree = "<group>"; };
 		2A4A935C164877FF00EC2717 /* talkingcalendar.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = talkingcalendar.db; sourceTree = "<group>"; };
 		2A4A936216487B4800EC2717 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		2AA7D7A3164DCF2E00781A58 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		2AA7D7A4164DCF2E00781A58 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		5FFA9FC0163228B100FB0DF5 /* TalkingCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TalkingCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FFA9FC4163228B100FB0DF5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5FFA9FC6163228B100FB0DF5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -166,6 +169,8 @@
 				5FFAA01A1634B63000FB0DF5 /* MonthViewController.m */,
 				5FFAA01D1634B64800FB0DF5 /* YearViewController.h */,
 				5FFAA01E1634B64800FB0DF5 /* YearViewController.m */,
+				2AA7D7A3164DCF2E00781A58 /* SignUpViewController.h */,
+				2AA7D7A4164DCF2E00781A58 /* SignUpViewController.m */,
 				5FFA9FCB163228B100FB0DF5 /* Supporting Files */,
 			);
 			path = TalkingCalendar;
@@ -327,6 +332,7 @@
 				5FFAA02C1634D4E000FB0DF5 /* MainViewController.m in Sources */,
 				2A4A93541648707800EC2717 /* AuthenticationViewController.m in Sources */,
 				2A3A144F164CA4D20025AB72 /* Accounts.m in Sources */,
+				2AA7D7A5164DCF2E00781A58 /* SignUpViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
