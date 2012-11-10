@@ -14,10 +14,11 @@
 {
     self = [super init];
     if (self) {
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"talkingcalendar" ofType:@"db"];
+
+        //const char *dbpath = [@"/Users/lamalexl/Desktop/talkingcalendar/TalkingCalendar/talkingcalendar.db" UTF8String];
         
-        const char *dbpath = [@"/Users/lamalexl/Desktop/talkingcalendar/TalkingCalendar/talkingcalendar.db" UTF8String];
-        
-        if (sqlite3_open(dbpath, &contactDB) == SQLITE_OK){
+        if (sqlite3_open([path UTF8String], &contactDB) == SQLITE_OK){
             //Connection Successful
         }
         

@@ -161,6 +161,7 @@
 				5FFA9FC1163228B100FB0DF5 /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		5FFA9FC1163228B100FB0DF5 /* Products */ = {
 			isa = PBXGroup;
