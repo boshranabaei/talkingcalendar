@@ -7,7 +7,7 @@
 //
 
 #import "AuthenticationViewController.h"
-
+#import "MainViewController.h"
 @interface AuthenticationViewController ()
 
 @end
@@ -55,8 +55,11 @@
     accounts=[[Accounts alloc]init];
    if([accounts validateUsername:[userName text] password:[password text]]){
         NSLog(@"Congrates!");
-       
-      // [self performSegueWithIdentifier:@"loggedin" sender:self];
+      /* MainViewController * m=[[MainViewController alloc]initWithNibName:nil bundle:nil];
+       [self presentModalViewController:m animated:YES];
+      */
+       [self performSegueWithIdentifier:@"gotomain" sender:self];
+      
     }
    else{
        UIAlertView *notValid=[[UIAlertView alloc]initWithTitle:@"Authentication"

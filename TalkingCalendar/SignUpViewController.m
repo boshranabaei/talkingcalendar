@@ -63,6 +63,7 @@
     else{
     accounts=[[Accounts alloc]init];
     if([accounts insertusername:[userName text] password:[password text]]){
+        [self performSegueWithIdentifier:@"zz" sender:self];
     }
     else{
         UIAlertView *exists=[[UIAlertView alloc]initWithTitle:@"signUp"
