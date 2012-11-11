@@ -50,7 +50,9 @@
 
 
 -(IBAction)login:(id)sender{
-   accounts=[[Accounts alloc]init];
+    [password resignFirstResponder];
+    [userName resignFirstResponder];
+    accounts=[[Accounts alloc]init];
    if([accounts validateUsername:[userName text] password:[password text]]){
         NSLog(@"Congrates!");
        
@@ -67,5 +69,15 @@
         
      
   }
+
+- (IBAction)dissmissKeyboard:(id)sender {
+    [password resignFirstResponder];
+    [userName resignFirstResponder];
+}
+
+- (BOOL) textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
 
 @end

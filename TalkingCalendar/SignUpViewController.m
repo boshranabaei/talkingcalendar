@@ -47,6 +47,10 @@
 }
 
 - (IBAction)create:(id)sender {
+    [userName resignFirstResponder];
+    [password resignFirstResponder];
+    [passConfirm resignFirstResponder];
+    
     if(![[password text]isEqualToString:[passConfirm text]]){
         UIAlertView *notEq=[[UIAlertView alloc]initWithTitle:@"password"
                                                message:@"Password and confirmated password don't match!"
@@ -70,4 +74,15 @@
     }}
 
 }
+
+- (IBAction)dismissKeyboard:(id)sender {
+    [userName resignFirstResponder];
+    [password resignFirstResponder];
+    [passConfirm resignFirstResponder];
+}
+- (BOOL) textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
+
 @end

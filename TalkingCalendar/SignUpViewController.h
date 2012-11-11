@@ -15,5 +15,6 @@
 @property Accounts * accounts;
 
 - (IBAction)create:(id)sender;
-
+- (IBAction)dismissKeyboard:(id)sender;
+- (BOOL) textFieldShouldReturn:(UITextField *)textField;
 @end

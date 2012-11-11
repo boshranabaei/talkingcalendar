@@ -16,5 +16,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *password;
 
 -(IBAction)login:(id)sender;
-
+- (IBAction)dissmissKeyboard:(id)sender;
+- (BOOL) textFieldShouldReturn:(UITextField *)textField;
 @end
