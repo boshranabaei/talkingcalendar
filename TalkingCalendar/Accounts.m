@@ -66,17 +66,32 @@
 
 -(BOOL)insertusername:(NSString*)username password: (NSString*)password{
 
+    
+    NSString *check=[[NSString alloc]initWithFormat:@"select * from accounts where username=\"%@\" and password=\"%@\";",username,password];
+     
+    const char *c_stmt = [check UTF8String];
+    sqlite3_stmt *s;
+    
+    
+    if (sqlite3_prepare_v2(contactDB, c_stmt, -1, &s, NULL)==SQLITE_OK){
+        if(sqlite3_step(s)==SQLITE_ROW){
+            sqlite3_finalize(s);
+            sqlite3_close(contactDB);
+            return NO;//Already exists
+        }
+    }
+    
     NSString *querySQL=[[NSString alloc]initWithFormat:@"insert into accounts values (\"%@\" ,\"%@\");",username,password];
-
+    
     const char *query_stmt = [querySQL UTF8String];
     sqlite3_stmt *statement;
+    
     
     if (sqlite3_prepare_v2(contactDB, query_stmt, -1, &statement, NULL)==SQLITE_OK){
             
     }
      
     if(SQLITE_DONE == sqlite3_step(statement)){
-        NSLog(@"shod");
         sqlite3_finalize(statement);
         sqlite3_close(contactDB);
         return YES;
@@ -89,8 +104,5 @@
    
     return NO;
 }
-/*
--(void)dealloc{
-    sqlite3_close(contactDB);
-}*/
+
 @end

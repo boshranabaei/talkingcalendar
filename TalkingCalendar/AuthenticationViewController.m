@@ -54,10 +54,6 @@
     [userName resignFirstResponder];
     accounts=[[Accounts alloc]init];
    if([accounts validateUsername:[userName text] password:[password text]]){
-        NSLog(@"Congrates!");
-      /* MainViewController * m=[[MainViewController alloc]initWithNibName:nil bundle:nil];
-       [self presentModalViewController:m animated:YES];
-      */
        [self performSegueWithIdentifier:@"gotomain" sender:self];
       
     }
