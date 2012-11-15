@@ -67,7 +67,7 @@
 -(BOOL)insertusername:(NSString*)username password: (NSString*)password{
 
     
-    NSString *check=[[NSString alloc]initWithFormat:@"select * from accounts where username=\"%@\" and password=\"%@\";",username,password];
+    NSString *check=[[NSString alloc]initWithFormat:@"select * from accounts where username=\"%@\";",username];
      
     const char *c_stmt = [check UTF8String];
     sqlite3_stmt *s;
