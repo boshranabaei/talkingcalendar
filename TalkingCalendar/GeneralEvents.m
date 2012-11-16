@@ -37,9 +37,7 @@
             if (![[NSFileManager defaultManager] copyItemAtPath:sourcePath toPath:targetPath error:&error]) {
                 NSLog(@"Error: %@", error);
             }
-            
         }
-        
         
         //NSString *dbpath = [[NSBundle mainBundle] pathForResource:@"talkingcalendar" ofType:@"db"];
         //NSLog(dbpath);

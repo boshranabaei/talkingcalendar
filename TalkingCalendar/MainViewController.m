@@ -35,7 +35,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
- ge=[[GeneralEvents alloc]init];
+    //Help!
+    //Get today date
+    //convert it to string
+    
+    ge=[[GeneralEvents alloc]init];
    
 	[reminder setText:[ge searchGEfor:@"1/1"]];
 }
