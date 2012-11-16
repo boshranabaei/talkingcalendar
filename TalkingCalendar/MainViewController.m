@@ -35,6 +35,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //Help!
+    //Get today date
+    //convert it to string
     
     //get today
     //make it string
