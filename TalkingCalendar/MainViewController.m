@@ -35,6 +35,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //get today
+    //make it string
+    //with format: month/day
+    // instantiate a NSDateFormatter
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    // set the dateFormatter format
+    [dateFormatter setDateFormat:@"EEEE,dd,MMMM,yyyy"];
  ge=[[GeneralEvents alloc]init];
    
 	[reminder setText:[ge searchGEfor:@"1/1"]];
