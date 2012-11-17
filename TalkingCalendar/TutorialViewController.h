@@ -1,14 +1,15 @@
 //
-//  SyncViewController.h
+//  TutorialViewController.h
 //  TalkingCalendar
 //
-//  Created by Boshra Nabaei on 11/14/12.
+//  Created by Pamela Lee on 11/16/12.
 //  Copyright (c) 2012 Vito Wang. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface SyncViewController : UIViewController
+@interface TutorialViewController : UIViewController
+
 @property BOOL tutorialMode;
 
 @end
