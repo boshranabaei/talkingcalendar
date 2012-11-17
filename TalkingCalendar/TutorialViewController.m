@@ -30,6 +30,8 @@
 
 
 -(IBAction)doubleTap:(id)sender {
+     NSLog(@"Tutorial Mode has been turned on.");
+    /*
     if (tutorialMode) {
         tutorialMode = NO;
     }
@@ -38,6 +40,7 @@
         NSLog(@"Tutorial Mode has been turned on.");
 
     }
+     */
 
 }
 
