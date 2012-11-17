@@ -15,40 +15,7 @@
 {
     self = [super init];
     if (self) {
-        
-        
-        NSString *libraryPath = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) lastObject];
-        NSString *targetPath = [libraryPath stringByAppendingPathComponent:@"talkingcalendar.db"];
-        NSString *sourcePath = [[NSBundle mainBundle] pathForResource:@"talkingcalendar" ofType:@"db"];
-        NSError *error = nil;
-        
-        if ([[NSFileManager defaultManager] fileExistsAtPath:targetPath]) {
-            // database doesn't exist in library path... so must copy it from the bundle
-            [[NSFileManager defaultManager] removeItemAtPath:targetPath error:NULL];
-            
-            
-           if (![[NSFileManager defaultManager] copyItemAtPath:sourcePath toPath:targetPath error:&error]) {
-               NSLog(@"Error: %@", error);
-            }
-        }
-        else{
-            
-            if (![[NSFileManager defaultManager] copyItemAtPath:sourcePath toPath:targetPath error:&error]) {
-                NSLog(@"Error: %@", error);
-            }
-        }
-        
-        //NSString *dbpath = [[NSBundle mainBundle] pathForResource:@"talkingcalendar" ofType:@"db"];
-        //NSLog(dbpath);
-       // const char *dbpath = [@"Users/bnabaei/Desktop/talkingcalendar/TalkingCalendar/talkingcalendar.db" UTF8String];
-        //NSLog(targetPath);
-        if (sqlite3_open([targetPath UTF8String] , &contactDB) == SQLITE_OK){
-            
-        }
-        
-        else{
-            //Handle Error
-        }
+
     }
     return self;
 }
@@ -56,6 +23,38 @@
 
 -(NSString *)searchGEfor:(NSString *)date{
     
+    NSString *libraryPath = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *targetPath = [libraryPath stringByAppendingPathComponent:@"talkingcalendar.db"];
+    NSString *sourcePath = [[NSBundle mainBundle] pathForResource:@"talkingcalendar" ofType:@"db"];
+    NSError *error = nil;
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:targetPath]) {
+        // database doesn't exist in library path... so must copy it from the bundle
+        [[NSFileManager defaultManager] removeItemAtPath:targetPath error:NULL];
+        
+        
+        if (![[NSFileManager defaultManager] copyItemAtPath:sourcePath toPath:targetPath error:&error]) {
+            NSLog(@"Error: %@", error);
+        }
+    }
+    else{
+        
+        if (![[NSFileManager defaultManager] copyItemAtPath:sourcePath toPath:targetPath error:&error]) {
+            NSLog(@"Error: %@", error);
+        }
+    }
+    
+    //NSString *dbpath = [[NSBundle mainBundle] pathForResource:@"talkingcalendar" ofType:@"db"];
+    //NSLog(dbpath);
+    // const char *dbpath = [@"Users/bnabaei/Desktop/talkingcalendar/TalkingCalendar/talkingcalendar.db" UTF8String];
+    //NSLog(targetPath);
+    if (sqlite3_open([targetPath UTF8String] , &contactDB) == SQLITE_OK){
+        
+    }
+    
+    else{
+        //Handle Error
+    }
     NSString *querySQL=[[NSString alloc]initWithFormat:@"select description from generalevents where date=\"@%\";",date];
     
     const char *query_stmt = [querySQL UTF8String];
@@ -68,13 +67,17 @@
             sqlite3_close(contactDB);
             return description;
         }
-        return @"No upcoming events today or tomorrow";
+        sqlite3_finalize(statement);
+        sqlite3_close(contactDB);
+        return @"No upcoming events";
         
     }
     sqlite3_finalize(statement);
     sqlite3_close(contactDB);
     return @"internal error";
 }
+
+
 
 
 @end

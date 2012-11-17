@@ -209,8 +209,8 @@
     [super viewDidUnload];
 }
 - (IBAction)addEvent:(id)sender {
-    rpaudio=[[RecAndPlay alloc]init];
-    [rpaudio setDate:currentDate];
-    [rpaudio recordAudio];
+  //  rpaudio=[[RecAndPlay alloc]init];
+  //  [rpaudio setDate:currentDate];
+  //  [rpaudio recordAudio];
 }
 @end

@@ -14,6 +14,7 @@
 
 @implementation MainViewController
 @synthesize reminder;
+@synthesize reminderTomorrow;
 @synthesize ge;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -28,9 +29,7 @@
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
-    if([segue.identifier isEqualToString:@"goWeekView"]){
-        //set currentDate to nil;
-    }
+
 }
 - (void)viewDidLoad
 {
@@ -61,9 +60,11 @@
     [engine setSpeechRate:150];
     
     
-    NSString * holidays =[[NSString alloc]initWithFormat:@"To toggle the tutorial, shake the phone. %@", [ge searchGEfor:currentdayInMonth1]];
+    NSString * holidays =[[NSString alloc]initWithFormat:@"To toggle the tutorial, shake the phone. %Today: %@. Tomorrow: %@", [ge searchGEfor:currentdayInMonth1],[ge searchGEfor:tomorrow2]];
     [engine speak:holidays];
+    
 	[reminder setText:[ge searchGEfor:currentdayInMonth1]];
+    [reminderTomorrow setText:[ge searchGEfor:tomorrow2]];
     // This function (ge) returns a string - read out this string.
 }
 
@@ -75,6 +76,7 @@
 
 - (void)viewDidUnload {
     [self setReminder:nil];
+    [self setReminderTomorrow:nil];
     [super viewDidUnload];
 }
 

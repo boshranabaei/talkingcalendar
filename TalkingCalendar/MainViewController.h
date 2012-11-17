@@ -15,6 +15,7 @@
 
 }
 @property (weak, nonatomic) IBOutlet UILabel *reminder;
+@property (weak, nonatomic) IBOutlet UILabel *reminderTomorrow;
 @property GeneralEvents * ge;
 
 @end

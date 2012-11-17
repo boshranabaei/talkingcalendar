@@ -33,5 +33,5 @@
 @property  NSDate *currentDate;
 
 
-@property RecAndPlay* rpaudio;
+//@property RecAndPlay* rpaudio;
 @end
