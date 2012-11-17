@@ -525,6 +525,7 @@
                             <outletCollection property="gestureRecognizers" destination="fXD-Wg-x4h" appends="YES" id="EbO-tk-MAZ"/>
                             <outletCollection property="gestureRecognizers" destination="fc2-9N-UFJ" appends="YES" id="0gH-uJ-orQ"/>
                             <outletCollection property="gestureRecognizers" destination="M3H-eI-nQw" appends="YES" id="dTl-br-uGr"/>
+                            <outletCollection property="gestureRecognizers" destination="El7-Oq-9eT" appends="YES" id="abd-8S-Wsz"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="ZIy-Qf-qDv"/>
@@ -552,6 +553,11 @@
                         <segue destination="urA-Hx-Wsu" kind="modal" identifier="goWeekView" id="nZc-3T-wia"/>
                     </connections>
                 </swipeGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="3" id="El7-Oq-9eT">
+                    <connections>
+                        <action selector="addEvent:" destination="2" id="ZM7-g0-T71"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="165" y="187"/>
         </scene>
@@ -560,7 +566,7 @@
             <objects>
                 <viewController title="setting" id="Xvt-rj-jps" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2ZC-jY-Iqz">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Setting" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MhH-7i-d6V">
@@ -850,6 +856,9 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="Xuc-Wr-f3t"/>
+        <segue reference="nZc-3T-wia"/>
+        <segue reference="auC-YW-nJ6"/>
         <segue reference="kY2-g0-h9n"/>
         <segue reference="G6x-zo-OjY"/>
         <segue reference="ZJa-vG-JIx"/>
