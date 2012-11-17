@@ -14,7 +14,9 @@
 @end
 
 @implementation TutorialViewController
+@synthesize tap;
 
+@synthesize test;
 @synthesize tutorialMode;
 
 
@@ -29,7 +31,7 @@
 }
 
 
--(IBAction)doubleTap:(id)sender {
+/*-(IBAction)doubleTap:(id)sender {
      NSLog(@"Tutorial Mode has been turned on.");
     /*
     if (tutorialMode) {
@@ -40,9 +42,9 @@
         NSLog(@"Tutorial Mode has been turned on.");
 
     }
-     */
+     *
 
-}
+}*/
 
 
 
@@ -64,6 +66,8 @@
 
 - (void)viewDidUnload
 {
+    [self setTap:nil];
+    [self setTest:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -73,4 +77,9 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (IBAction)doubleTap:(id)sender {
+    
+    NSLog(@"Tutorial Mode has been turned on.");
+
+}
 @end

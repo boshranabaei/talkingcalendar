@@ -10,6 +10,13 @@
 
 @interface TutorialViewController : UIViewController
 
+
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tap;
+
+- (IBAction)doubleTap:(id)sender;
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *test;
+
 @property BOOL tutorialMode;
+
 
 @end
