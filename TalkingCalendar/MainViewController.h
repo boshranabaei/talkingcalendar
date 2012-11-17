@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "GeneralEvents.h"
+#import "ESpeakEngine.h"
 
-@interface MainViewController : UIViewController
+@interface MainViewController : UIViewController {
+    ESpeakEngine * engine;
+
+}
 @property (weak, nonatomic) IBOutlet UILabel *reminder;
 @property GeneralEvents * ge;
 @end

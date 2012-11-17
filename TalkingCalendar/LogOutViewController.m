@@ -7,12 +7,23 @@
 //
 
 #import "LogOutViewController.h"
+#import "SyncViewController.h"
 
 @interface LogOutViewController ()
 
 @end
 
 @implementation LogOutViewController
+@synthesize tutorialMode;
+
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    if([segue.identifier isEqualToString:@"logoutToSync"]){
+        SyncViewController *svc2 = [segue destinationViewController];
+        svc2.tutorialMode = self.tutorialMode;
+    }
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,6 +37,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSLog(@"TutorialMode is ");
+    if (tutorialMode) {
+        NSLog(@"ON");
+    }
+    else if (!(tutorialMode)) {
+        NSLog(@"OFF");
+    }
 	// Do any additional setup after loading the view.
 }
 

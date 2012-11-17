@@ -20,33 +20,13 @@
 @synthesize tutorialMode;
 
 
-
-
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
-    if([segue.identifier isEqualToString:@"goSyncView"]){
+    if([segue.identifier isEqualToString:@"tutorialToSync"]){
         SyncViewController *svc = [segue destinationViewController];
-        svc.tutorialMode = YES;
+        svc.tutorialMode = self.tutorialMode;
     }
 }
-
-
-/*-(IBAction)doubleTap:(id)sender {
-     NSLog(@"Tutorial Mode has been turned on.");
-    /*
-    if (tutorialMode) {
-        tutorialMode = NO;
-    }
-    else {
-        tutorialMode = YES;
-        NSLog(@"Tutorial Mode has been turned on.");
-
-    }
-     *
-
-}*/
-
-
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -62,6 +42,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+
 }
 
 - (void)viewDidUnload
@@ -77,9 +58,19 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+// DEFAULT: TUTORIAL MODE IS OFF
 - (IBAction)doubleTap:(id)sender {
     
-    NSLog(@"Tutorial Mode has been turned on.");
+    NSLog(@"Tutorial Mode has been toggled.");
+    if (tutorialMode) {
+        NSLog(@"Tutorial Mode has been turned off.");
+        tutorialMode = NO;
+    }
+    else if (!(tutorialMode)) {
+        tutorialMode = YES;
+        NSLog(@"Tutorial Mode has been turned on.");
+        
+    }
 
 }
 @end

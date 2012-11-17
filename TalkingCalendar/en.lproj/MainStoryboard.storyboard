@@ -645,7 +645,7 @@
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="left" id="upO-4N-YxA" userLabel="left">
                     <connections>
-                        <segue destination="Z3M-Qb-lpS" kind="modal" identifier="goSyncView" id="RiA-DD-7DQ"/>
+                        <segue destination="Z3M-Qb-lpS" kind="modal" identifier="tutorialToSync" id="RiA-DD-7DQ"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <tapGestureRecognizer numberOfTapsRequired="2" id="UaW-WY-zMn" userLabel="doubleTap">
@@ -688,7 +688,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TYo-yd-D9j" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="Zaa-Wi-zVs" userLabel="right">
                     <connections>
-                        <segue destination="Z3M-Qb-lpS" kind="modal" id="nvk-UW-2vt"/>
+                        <segue destination="Z3M-Qb-lpS" kind="modal" identifier="logoutToSync" id="nvk-UW-2vt"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="left" id="Wxf-cf-ekE" userLabel="left">
@@ -731,12 +731,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QHq-ks-aWk" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="left" id="3eY-K1-ffl" userLabel="left">
                     <connections>
-                        <segue destination="FVx-Yf-KvI" kind="modal" id="uKb-0n-4qm"/>
+                        <segue destination="FVx-Yf-KvI" kind="modal" identifier="syncToLogout" id="uKb-0n-4qm"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="right" id="lYW-44-2jg" userLabel="right">
                     <connections>
-                        <segue destination="TLn-Ij-vNO" kind="modal" id="MCX-gG-HNr"/>
+                        <segue destination="TLn-Ij-vNO" kind="modal" identifier="syncToTutorial" id="MCX-gG-HNr"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -774,8 +774,6 @@
         <class className="DayViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DayViewController.h"/>
             <relationships>
-                <relationship kind="action" name="LeftSwipe:"/>
-                <relationship kind="action" name="RightSwipe:"/>
                 <relationship kind="outlet" name="Left" candidateClass="UISwipeGestureRecognizer"/>
                 <relationship kind="outlet" name="Right" candidateClass="UISwipeGestureRecognizer"/>
                 <relationship kind="outlet" name="curr" candidateClass="UILabel"/>
@@ -796,8 +794,6 @@
         <class className="MonthViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MonthViewController.h"/>
             <relationships>
-                <relationship kind="action" name="LeftSwipe:"/>
-                <relationship kind="action" name="RightSwipe:"/>
                 <relationship kind="action" name="l:"/>
                 <relationship kind="outlet" name="Left" candidateClass="UISwipeGestureRecognizer"/>
                 <relationship kind="outlet" name="Right" candidateClass="UISwipeGestureRecognizer"/>
@@ -830,8 +826,6 @@
         <class className="WeekViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WeekViewController.h"/>
             <relationships>
-                <relationship kind="action" name="LeftSwipe:"/>
-                <relationship kind="action" name="RightSwipe:"/>
                 <relationship kind="outlet" name="Left" candidateClass="UISwipeGestureRecognizer"/>
                 <relationship kind="outlet" name="Right" candidateClass="UISwipeGestureRecognizer"/>
                 <relationship kind="outlet" name="curr" candidateClass="UILabel"/>
@@ -842,8 +836,6 @@
         <class className="YearViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/YearViewController.h"/>
             <relationships>
-                <relationship kind="action" name="LeftSwipe:"/>
-                <relationship kind="action" name="RightSwipe:"/>
                 <relationship kind="outlet" name="Left" candidateClass="UISwipeGestureRecognizer"/>
                 <relationship kind="outlet" name="Right" candidateClass="UISwipeGestureRecognizer"/>
                 <relationship kind="outlet" name="curr" candidateClass="UILabel"/>
@@ -860,12 +852,12 @@
     <inferredMetricsTieBreakers>
         <segue reference="kY2-g0-h9n"/>
         <segue reference="G6x-zo-OjY"/>
-        <segue reference="auC-YW-nJ6"/>
-        <segue reference="RiA-DD-7DQ"/>
-        <segue reference="wcs-8G-8Nb"/>
-        <segue reference="nxu-02-vzs"/>
+        <segue reference="ZJa-vG-JIx"/>
+        <segue reference="nZc-3T-wia"/>
+        <segue reference="nvk-UW-2vt"/>
+        <segue reference="uKb-0n-4qm"/>
         <segue reference="Xuc-Wr-f3t"/>
         <segue reference="iyo-AZ-oCm"/>
-        <segue reference="nZc-3T-wia"/>
+        <segue reference="MCX-gG-HNr"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -7,7 +7,7 @@
 //
 
 #import "MainViewController.h"
-
+#import "ESpeakEngine.h"
 @interface MainViewController ()
 
 @end
@@ -54,8 +54,17 @@
      
     ge=[[GeneralEvents alloc]init];
    
-    //Text to speech
+    //Text to speech : "To toggle the Tutorial, shake the phone."
+    
+    engine = [[ESpeakEngine alloc] init];
+    [engine setLanguage:@"en"];
+    [engine setSpeechRate:150];
+    
+    
+    NSString * holidays =[[NSString alloc]initWithFormat:@"To toggle the tutorial, shake the phone. %@", [ge searchGEfor:currentdayInMonth1]];
+    [engine speak:holidays];
 	[reminder setText:[ge searchGEfor:currentdayInMonth1]];
+    // This function (ge) returns a string - read out this string.
 }
 
 - (void)didReceiveMemoryWarning
