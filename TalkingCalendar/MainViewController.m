@@ -7,7 +7,7 @@
 //
 
 #import "MainViewController.h"
-
+#import "RecAndPlay.h"
 @interface MainViewController ()
 
 @end
@@ -60,6 +60,7 @@
      ge=[[GeneralEvents alloc]init];
    
 	[reminder setText:[ge searchGEfor:currentdayInMonth1]];
+    
 }
 
 - (void)didReceiveMemoryWarning

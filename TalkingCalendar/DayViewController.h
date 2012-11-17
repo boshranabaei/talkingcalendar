@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ESpeakEngine.h"
-
+#import "RecAndPlay.h"
 @interface DayViewController : UIViewController {
 
     ESpeakEngine * engine;
@@ -22,6 +22,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *curr;
 @property (weak, nonatomic) IBOutlet UILabel *next;
+- (IBAction)addEvent:(id)sender;
 
 @property  NSDate *rightUpdateDate;
 @property  NSDate *screenUpdateDate;
@@ -30,4 +31,7 @@
 @property  NSDate *leftUpdateDate;
 @property  NSDate *dateR;
 @property  NSDate *currentDate;
+
+
+@property RecAndPlay* rpaudio;
 @end

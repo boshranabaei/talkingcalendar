@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16C1581216571693006A65CB /* RecAndPlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 16C1581116571693006A65CB /* RecAndPlay.m */; };
+		16C1581316571693006A65CB /* RecAndPlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 16C1581116571693006A65CB /* RecAndPlay.m */; };
 		1EF68D24164DCFBD003E495B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EF68D23164DCFBD003E495B /* AVFoundation.framework */; };
 		2A2919111644A6FF000462DF /* Icon-talking cal.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A2919101644A6FF000462DF /* Icon-talking cal.png */; };
 		2A3A144F164CA4D20025AB72 /* Accounts.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3A144E164CA4D20025AB72 /* Accounts.m */; };
@@ -71,6 +73,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		16C1581016571693006A65CB /* RecAndPlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecAndPlay.h; sourceTree = "<group>"; };
+		16C1581116571693006A65CB /* RecAndPlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecAndPlay.m; sourceTree = "<group>"; };
 		1EF68D23164DCFBD003E495B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		2A2919101644A6FF000462DF /* Icon-talking cal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-talking cal.png"; sourceTree = "<group>"; };
 		2A3A144D164CA4D20025AB72 /* Accounts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Accounts.h; sourceTree = "<group>"; };
@@ -198,6 +202,8 @@
 				2A3A144D164CA4D20025AB72 /* Accounts.h */,
 				2A3A144E164CA4D20025AB72 /* Accounts.m */,
 				5FFA9FD3163228B100FB0DF5 /* AppDelegate.h */,
+				16C1581016571693006A65CB /* RecAndPlay.h */,
+				16C1581116571693006A65CB /* RecAndPlay.m */,
 				5FFA9FD4163228B100FB0DF5 /* AppDelegate.m */,
 				5FFA9FDC163228B100FB0DF5 /* MainStoryboard.storyboard */,
 				2A4A93521648707800EC2717 /* AuthenticationViewController.h */,
@@ -410,6 +416,7 @@
 				2AA44CDF165472F700FF330B /* GeneralEvents.m in Sources */,
 				2AA44CE91654882100FF330B /* SyncViewController.m in Sources */,
 				2AA44CEC1654895B00FF330B /* LogOutViewController.m in Sources */,
+				16C1581216571693006A65CB /* RecAndPlay.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +429,7 @@
 				5FFAA01C1634B63000FB0DF5 /* MonthViewController.m in Sources */,
 				5FFAA0201634B64800FB0DF5 /* YearViewController.m in Sources */,
 				5FFAA02D1634D4E000FB0DF5 /* MainViewController.m in Sources */,
+				16C1581316571693006A65CB /* RecAndPlay.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

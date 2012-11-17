@@ -14,7 +14,7 @@
 
 @implementation DayViewController
 
-@synthesize prev,next,curr;
+@synthesize prev,next,curr,rpaudio;
 
 @synthesize rightUpdateDate;
 @synthesize leftUpdateDate;
@@ -103,7 +103,6 @@
     
     [curr setText:msg2];
     [prev setText:currentdayInMonth1];
-    
     
 
 }
@@ -208,5 +207,10 @@
 - (void)viewDidUnload {
     currentDate = nil;
     [super viewDidUnload];
+}
+- (IBAction)addEvent:(id)sender {
+    rpaudio=[[RecAndPlay alloc]init];
+    [rpaudio setDate:currentDate];
+    [rpaudio recordAudio];
 }
 @end

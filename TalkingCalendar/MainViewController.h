@@ -12,4 +12,5 @@
 @interface MainViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *reminder;
 @property GeneralEvents * ge;
+
 @end
