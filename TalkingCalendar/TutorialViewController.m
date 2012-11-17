@@ -1,19 +1,48 @@
 //
-//  SyncViewController.m
+//  TutorialViewController.m
 //  TalkingCalendar
 //
-//  Created by Boshra Nabaei on 11/14/12.
+//  Created by Pamela Lee on 11/16/12.
 //  Copyright (c) 2012 Vito Wang. All rights reserved.
 //
 
+#import "TutorialViewController.h"
 #import "SyncViewController.h"
 
-@interface SyncViewController ()
+@interface TutorialViewController ()
 
 @end
-//Hello
-@implementation SyncViewController
+
+@implementation TutorialViewController
+
 @synthesize tutorialMode;
+
+
+
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    if([segue.identifier isEqualToString:@"goSyncView"]){
+        SyncViewController *svc = [segue destinationViewController];
+        svc.tutorialMode = YES;
+    }
+}
+
+
+-(IBAction)doubleTap:(id)sender {
+    if (tutorialMode) {
+        tutorialMode = NO;
+    }
+    else {
+        tutorialMode = YES;
+        NSLog(@"Tutorial Mode has been turned on.");
+
+    }
+
+}
+
+
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
