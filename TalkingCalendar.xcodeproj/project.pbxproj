@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		16C1581216571693006A65CB /* RecAndPlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 16C1581116571693006A65CB /* RecAndPlay.m */; };
 		16C1581316571693006A65CB /* RecAndPlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 16C1581116571693006A65CB /* RecAndPlay.m */; };
 		1EF68D24164DCFBD003E495B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EF68D23164DCFBD003E495B /* AVFoundation.framework */; };
 		21CACD6E16570C1400735F59 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CACD6D16570C1400735F59 /* TutorialViewController.m */; };
@@ -421,7 +420,7 @@
 				2AA44CDF165472F700FF330B /* GeneralEvents.m in Sources */,
 				2AA44CE91654882100FF330B /* SyncViewController.m in Sources */,
 				2AA44CEC1654895B00FF330B /* LogOutViewController.m in Sources */,
-				16C1581216571693006A65CB /* RecAndPlay.m in Sources */,
+				21CACD6E16570C1400735F59 /* TutorialViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
