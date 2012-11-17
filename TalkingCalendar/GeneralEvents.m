@@ -56,7 +56,7 @@
 
 -(NSString *)searchGEfor:(NSString *)date{
     
-    NSString *querySQL=[[NSString alloc]initWithFormat:@"select description from generalevents where date=\"10/31\";"];
+    NSString *querySQL=[[NSString alloc]initWithFormat:@"select description from generalevents where date=\"@%\";",date];
     
     const char *query_stmt = [querySQL UTF8String];
     sqlite3_stmt *statement;
@@ -68,12 +68,12 @@
             sqlite3_close(contactDB);
             return description;
         }
-        return @"yes";
+        return @"No upcoming events today or tomorrow";
         
     }
     sqlite3_finalize(statement);
     sqlite3_close(contactDB);
-    return @"no";
+    return @"internal error";
 }
 
 
