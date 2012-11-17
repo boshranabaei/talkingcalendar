@@ -19,8 +19,10 @@
         
         NSString *libraryPath = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) lastObject];
         NSString *targetPath = [libraryPath stringByAppendingPathComponent:@"talkingcalendar.db"];
+        NSString *sourcePath = [[NSBundle mainBundle] pathForResource:@"talkingcalendar" ofType:@"db"];
+        NSError *error = nil;
         
-        if (![[NSFileManager defaultManager] fileExistsAtPath:targetPath]) {
+        if ([[NSFileManager defaultManager] fileExistsAtPath:targetPath]) {
             // database doesn't exist in library path... so must copy it from the bundle
             [[NSFileManager defaultManager] removeItemAtPath:targetPath error:NULL];
             
