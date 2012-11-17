@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ESpeakEngine.h"
-#import "RecAndPlay.h"
+
 @interface DayViewController : UIViewController {
 
     ESpeakEngine * engine;

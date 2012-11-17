@@ -525,7 +525,6 @@
                             <outletCollection property="gestureRecognizers" destination="fXD-Wg-x4h" appends="YES" id="EbO-tk-MAZ"/>
                             <outletCollection property="gestureRecognizers" destination="fc2-9N-UFJ" appends="YES" id="0gH-uJ-orQ"/>
                             <outletCollection property="gestureRecognizers" destination="M3H-eI-nQw" appends="YES" id="dTl-br-uGr"/>
-                            <outletCollection property="gestureRecognizers" destination="El7-Oq-9eT" appends="YES" id="abd-8S-Wsz"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="ZIy-Qf-qDv"/>
@@ -780,6 +779,9 @@
         <class className="DayViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DayViewController.h"/>
             <relationships>
+                <relationship kind="action" name="LeftSwipe:"/>
+                <relationship kind="action" name="RightSwipe:"/>
+                <relationship kind="action" name="addEvent:"/>
                 <relationship kind="outlet" name="Left" candidateClass="UISwipeGestureRecognizer"/>
                 <relationship kind="outlet" name="Right" candidateClass="UISwipeGestureRecognizer"/>
                 <relationship kind="outlet" name="curr" candidateClass="UILabel"/>

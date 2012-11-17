@@ -14,7 +14,7 @@
 
 @implementation DayViewController
 
-@synthesize prev,next,curr,rpaudio;
+@synthesize prev,next,curr;
 
 @synthesize rightUpdateDate;
 @synthesize leftUpdateDate;
