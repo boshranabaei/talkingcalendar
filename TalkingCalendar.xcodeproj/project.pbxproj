@@ -10,6 +10,7 @@
 		16C1581216571693006A65CB /* RecAndPlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 16C1581116571693006A65CB /* RecAndPlay.m */; };
 		16C1581316571693006A65CB /* RecAndPlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 16C1581116571693006A65CB /* RecAndPlay.m */; };
 		1EF68D24164DCFBD003E495B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EF68D23164DCFBD003E495B /* AVFoundation.framework */; };
+		21CACD6E16570C1400735F59 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CACD6D16570C1400735F59 /* TutorialViewController.m */; };
 		2A2919111644A6FF000462DF /* Icon-talking cal.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A2919101644A6FF000462DF /* Icon-talking cal.png */; };
 		2A3A144F164CA4D20025AB72 /* Accounts.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3A144E164CA4D20025AB72 /* Accounts.m */; };
 		2A43B3AC164E0534002E061F /* espeak-data in Resources */ = {isa = PBXBuildFile; fileRef = 2A43B3AB164E0534002E061F /* espeak-data */; };
@@ -76,6 +77,8 @@
 		16C1581016571693006A65CB /* RecAndPlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecAndPlay.h; sourceTree = "<group>"; };
 		16C1581116571693006A65CB /* RecAndPlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecAndPlay.m; sourceTree = "<group>"; };
 		1EF68D23164DCFBD003E495B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		21CACD6C16570C1400735F59 /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
+		21CACD6D16570C1400735F59 /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
 		2A2919101644A6FF000462DF /* Icon-talking cal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-talking cal.png"; sourceTree = "<group>"; };
 		2A3A144D164CA4D20025AB72 /* Accounts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Accounts.h; sourceTree = "<group>"; };
 		2A3A144E164CA4D20025AB72 /* Accounts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Accounts.m; sourceTree = "<group>"; };
@@ -218,6 +221,8 @@
 				5FFAA02B1634D4E000FB0DF5 /* MainViewController.m */,
 				5FFAA0191634B63000FB0DF5 /* MonthViewController.h */,
 				5FFAA01A1634B63000FB0DF5 /* MonthViewController.m */,
+				21CACD6C16570C1400735F59 /* TutorialViewController.h */,
+				21CACD6D16570C1400735F59 /* TutorialViewController.m */,
 				5FFAA01D1634B64800FB0DF5 /* YearViewController.h */,
 				5FFAA01E1634B64800FB0DF5 /* YearViewController.m */,
 				2AA44CEA1654895B00FF330B /* LogOutViewController.h */,

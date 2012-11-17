@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SyncViewController : UIViewController
+@property BOOL tutorialMode;
 
 @end

@@ -35,14 +35,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //Help!
-    //Get today date
-    //convert it to string
-    
-    //get today
-    //make it string
-    //with format: month/day
-    // instantiate a NSDateFormatter
+
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     // set the dateFormatter format
     [dateFormatter setDateFormat:@"MM/dd"];
@@ -55,10 +48,13 @@
     NSString *currentdayInMonth1 = [[NSString alloc] initWithFormat:@"%@",dateInString];
     NSString *dateInString2 = [dateFormatter stringFromDate: tomorrowDate];
     NSString *tomorrow2 = [[NSString alloc] initWithFormat:@"%@",dateInString2];
-    NSLog(currentdayInMonth1);
-    NSLog(tomorrow2);
-     ge=[[GeneralEvents alloc]init];
+  
+    //NSLog(currentdayInMonth1);
+    //NSLog(tomorrow2);
+     
+    ge=[[GeneralEvents alloc]init];
    
+    //Text to speech
 	[reminder setText:[ge searchGEfor:currentdayInMonth1]];
     
 }

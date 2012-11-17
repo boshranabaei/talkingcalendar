@@ -13,6 +13,7 @@
 @end
 //Hello
 @implementation SyncViewController
+@synthesize tutorialMode;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
