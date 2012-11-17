@@ -45,10 +45,21 @@
     // instantiate a NSDateFormatter
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     // set the dateFormatter format
-    [dateFormatter setDateFormat:@"EEEE,dd,MMMM,yyyy"];
- ge=[[GeneralEvents alloc]init];
+    [dateFormatter setDateFormat:@"MM/dd"];
+    NSTimeInterval aDay = 24*60*60;
+    NSDate *today=[[NSDate alloc] init];
+    NSDate *tomorrowDate;
+    tomorrowDate = [today dateByAddingTimeInterval:aDay];
+    
+    NSString *dateInString = [dateFormatter stringFromDate: today];
+    NSString *currentdayInMonth1 = [[NSString alloc] initWithFormat:@"%@",dateInString];
+    NSString *dateInString2 = [dateFormatter stringFromDate: tomorrowDate];
+    NSString *tomorrow2 = [[NSString alloc] initWithFormat:@"%@",dateInString2];
+    NSLog(currentdayInMonth1);
+    NSLog(tomorrow2);
+     ge=[[GeneralEvents alloc]init];
    
-	[reminder setText:[ge searchGEfor:@"1/1"]];
+	[reminder setText:[ge searchGEfor:currentdayInMonth1]];
 }
 
 - (void)didReceiveMemoryWarning

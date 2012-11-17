@@ -15,32 +15,39 @@
     self = [super init];
     if (self) {
         
-        
         NSString *libraryPath = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) lastObject];
         NSString *targetPath = [libraryPath stringByAppendingPathComponent:@"talkingcalendar.db"];
+        NSString *sourcePath = [[NSBundle mainBundle] pathForResource:@"talkingcalendar" ofType:@"db"];
+        NSError *error = nil;
         
-        if (![[NSFileManager defaultManager] fileExistsAtPath:targetPath]) {
+        if ([[NSFileManager defaultManager] fileExistsAtPath:targetPath]) {
             // database doesn't exist in library path... so must copy it from the bundle
-            NSString *sourcePath = [[NSBundle mainBundle] pathForResource:@"talkingcalendar" ofType:@"db"];
-            NSError *error = nil;
+            [[NSFileManager defaultManager] removeItemAtPath:targetPath error:NULL];
+            
+            
+            if (![[NSFileManager defaultManager] copyItemAtPath:sourcePath toPath:targetPath error:&error]) {
+                NSLog(@"Error: %@", error);
+            }
+        }
+        else{
             
             if (![[NSFileManager defaultManager] copyItemAtPath:sourcePath toPath:targetPath error:&error]) {
                 NSLog(@"Error: %@", error);
             }
         }
         
-        
         //NSString *dbpath = [[NSBundle mainBundle] pathForResource:@"talkingcalendar" ofType:@"db"];
         //NSLog(dbpath);
-        //const char *dbpath = [@"/TalkingCalendar/talkingcalendar.db" UTF8String];
-        
-        if (sqlite3_open([targetPath UTF8String], &contactDB) == SQLITE_OK){
-            //Connection Successful
+        // const char *dbpath = [@"Users/bnabaei/Desktop/talkingcalendar/TalkingCalendar/talkingcalendar.db" UTF8String];
+        //NSLog(targetPath);
+        if (sqlite3_open([targetPath UTF8String] , &contactDB) == SQLITE_OK){
+            
         }
         
         else{
             //Handle Error
         }
+
     }
     return self;
 }
