@@ -124,15 +124,15 @@ return self;
     
     
     
-    const char * query_stmt = "insert into events values(\"Boshra\",\"4/2\",?); ";
+    const char * query_stmt = "insert into events values(\"en sha allah\",\"4/2\",?); ";
     NSData * v= [[NSData alloc]initWithContentsOfFile:soundFilePath];
     
     //const char *query_stmt =[querySQL UTF8String];
     sqlite3_stmt *statement;
     
-    
+
     if (sqlite3_prepare_v2(contactDB, query_stmt, -1, &statement, NULL)==SQLITE_OK){
-           sqlite3_bind_blob(statement, 3, (__bridge const void *)(v), 3000, nil);
+           sqlite3_bind_blob(statement, 3, (__bridge const void *)(v), [v length], nil);
     }
 
          
@@ -197,19 +197,17 @@ return self;
         //Handle Error
     }
     
-    NSString *querySQL=[[NSString alloc]initWithFormat:@"select * from accounts where "];
+    NSString *querySQL=[[NSString alloc]initWithFormat:@"select voice from events where username=\"test\";"];
     const char *query_stmt = [querySQL UTF8String];
     sqlite3_stmt *statement;
-    
+    NSData *voice;
     if (sqlite3_prepare_v2(contactDB, query_stmt, -1, &statement, NULL)==SQLITE_OK){
         if(sqlite3_step(statement)==SQLITE_ROW){
-            sqlite3_finalize(statement);
-            sqlite3_close(contactDB);
-            
+       
+            voice = [[NSData alloc] initWithBytes:sqlite3_column_blob(statement, 0) length:sqlite3_column_bytes(statement, 0)];
+            if(voice == nil) NSLog(@"No image found.");
         }
     }
-    sqlite3_finalize(statement);
-    sqlite3_close(contactDB);
     
     
     sqlite3_finalize(statement);
