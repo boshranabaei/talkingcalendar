@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		16C1581316571693006A65CB /* RecAndPlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 16C1581116571693006A65CB /* RecAndPlay.m */; };
 		1EF68D24164DCFBD003E495B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EF68D23164DCFBD003E495B /* AVFoundation.framework */; };
 		21CACD6E16570C1400735F59 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CACD6D16570C1400735F59 /* TutorialViewController.m */; };
 		2A2919111644A6FF000462DF /* Icon-talking cal.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A2919101644A6FF000462DF /* Icon-talking cal.png */; };
@@ -17,6 +16,7 @@
 		2A4A93541648707800EC2717 /* AuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4A93531648707800EC2717 /* AuthenticationViewController.m */; };
 		2A4A935D164877FF00EC2717 /* talkingcalendar.db in Resources */ = {isa = PBXBuildFile; fileRef = 2A4A935C164877FF00EC2717 /* talkingcalendar.db */; };
 		2A4A936316487B4800EC2717 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A4A936216487B4800EC2717 /* libsqlite3.dylib */; };
+		2A5A1558165868FF002F9525 /* voiceRecPlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A5A1557165868FF002F9525 /* voiceRecPlay.m */; };
 		2AA44CDF165472F700FF330B /* GeneralEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA44CDE165472F700FF330B /* GeneralEvents.m */; };
 		2AA44CE91654882100FF330B /* SyncViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA44CE81654882100FF330B /* SyncViewController.m */; };
 		2AA44CEC1654895B00FF330B /* LogOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA44CEB1654895B00FF330B /* LogOutViewController.m */; };
@@ -73,8 +73,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		16C1581016571693006A65CB /* RecAndPlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecAndPlay.h; sourceTree = "<group>"; };
-		16C1581116571693006A65CB /* RecAndPlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecAndPlay.m; sourceTree = "<group>"; };
 		1EF68D23164DCFBD003E495B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		21CACD6C16570C1400735F59 /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
 		21CACD6D16570C1400735F59 /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
@@ -87,6 +85,8 @@
 		2A4A93531648707800EC2717 /* AuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationViewController.m; sourceTree = "<group>"; };
 		2A4A935C164877FF00EC2717 /* talkingcalendar.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = talkingcalendar.db; sourceTree = "<group>"; };
 		2A4A936216487B4800EC2717 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		2A5A1556165868FF002F9525 /* voiceRecPlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = voiceRecPlay.h; sourceTree = "<group>"; };
+		2A5A1557165868FF002F9525 /* voiceRecPlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = voiceRecPlay.m; sourceTree = "<group>"; };
 		2AA44CDD165472F700FF330B /* GeneralEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralEvents.h; sourceTree = "<group>"; };
 		2AA44CDE165472F700FF330B /* GeneralEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneralEvents.m; sourceTree = "<group>"; };
 		2AA44CE71654882100FF330B /* SyncViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncViewController.h; sourceTree = "<group>"; };
@@ -204,10 +204,10 @@
 				2A3A144D164CA4D20025AB72 /* Accounts.h */,
 				2A3A144E164CA4D20025AB72 /* Accounts.m */,
 				5FFA9FD3163228B100FB0DF5 /* AppDelegate.h */,
-				16C1581016571693006A65CB /* RecAndPlay.h */,
-				16C1581116571693006A65CB /* RecAndPlay.m */,
 				5FFA9FD4163228B100FB0DF5 /* AppDelegate.m */,
 				5FFA9FDC163228B100FB0DF5 /* MainStoryboard.storyboard */,
+				2A5A1556165868FF002F9525 /* voiceRecPlay.h */,
+				2A5A1557165868FF002F9525 /* voiceRecPlay.m */,
 				2A4A93521648707800EC2717 /* AuthenticationViewController.h */,
 				2A4A93531648707800EC2717 /* AuthenticationViewController.m */,
 				2AA44CDD165472F700FF330B /* GeneralEvents.h */,
@@ -421,6 +421,7 @@
 				2AA44CE91654882100FF330B /* SyncViewController.m in Sources */,
 				2AA44CEC1654895B00FF330B /* LogOutViewController.m in Sources */,
 				21CACD6E16570C1400735F59 /* TutorialViewController.m in Sources */,
+				2A5A1558165868FF002F9525 /* voiceRecPlay.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,7 +434,6 @@
 				5FFAA01C1634B63000FB0DF5 /* MonthViewController.m in Sources */,
 				5FFAA0201634B64800FB0DF5 /* YearViewController.m in Sources */,
 				5FFAA02D1634D4E000FB0DF5 /* MainViewController.m in Sources */,
-				16C1581316571693006A65CB /* RecAndPlay.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

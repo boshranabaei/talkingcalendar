@@ -54,7 +54,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D12-nh-dPb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="down" id="cFW-jy-Mly" userLabel="down">
                     <connections>
-                        <segue destination="2" kind="modal" identifier="backDayView" id="ZJa-vG-JIx"/>
+                        <segue destination="gqB-qd-44a" kind="modal" identifier="backDayView" id="SvE-57-nCm"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="up" id="lTK-0e-o1v" userLabel="up">
@@ -75,12 +75,113 @@
             </objects>
             <point key="canvasLocation" x="148" y="-572"/>
         </scene>
+        <!--Day View Controller - dayView-->
+        <scene sceneID="mTH-O3-80f">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bos-VC-6I7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController title="dayView" id="gqB-qd-44a" customClass="DayViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vrn-sv-JAK">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sGM-Bo-WBQ">
+                                <rect key="frame" x="32" y="118" width="250" height="58"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <color key="textColor" red="0.47145288330000001" green="1" blue="0.23988852029999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KuK-Zk-6Fe">
+                                <rect key="frame" x="101" y="233" width="219" height="54"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mot-Wb-TMs">
+                                <rect key="frame" x="32" y="172" width="185" height="54"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Day View" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DVe-cW-H80">
+                                <rect key="frame" x="89" y="36" width="167" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DSX-09-PNJ">
+                                <rect key="frame" x="210" y="403" width="72" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="stop">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopRec:" destination="gqB-qd-44a" eventType="touchUpInside" id="qlW-MX-KMb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Md6-hT-pAo">
+                                <rect key="frame" x="210" y="346" width="72" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="play">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playRec:" destination="gqB-qd-44a" eventType="touchUpInside" id="18p-HS-oKB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.71232833286849251" blue="0.67688265856043461" alpha="1" colorSpace="calibratedRGB"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="aAD-rW-I0U" id="ENF-JE-vF1"/>
+                            <outletCollection property="gestureRecognizers" destination="Zyg-sz-otZ" id="nkV-V2-gKE"/>
+                            <outletCollection property="gestureRecognizers" destination="dr3-Jh-yAl" id="6gf-W4-qLQ"/>
+                            <outletCollection property="gestureRecognizers" destination="n4a-Nh-esC" id="0Xx-Pl-8jS"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="Left" destination="dr3-Jh-yAl" id="if5-Ka-slx"/>
+                        <outlet property="Right" destination="Zyg-sz-otZ" id="Ozh-hr-6Fn"/>
+                        <outlet property="curr" destination="sGM-Bo-WBQ" id="oGH-EU-OpR"/>
+                        <outlet property="next" destination="KuK-Zk-6Fe" id="x2V-bp-GTh"/>
+                        <outlet property="prev" destination="Mot-Wb-TMs" id="pKR-5m-SXS"/>
+                        <outlet property="stopRec" destination="vrn-sv-JAK" id="SMq-B6-7Sw"/>
+                    </connections>
+                </viewController>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="2.0000000000000004" id="n4a-Nh-esC">
+                    <connections>
+                        <action selector="addEvent:" destination="gqB-qd-44a" id="I9b-um-g1C"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <swipeGestureRecognizer direction="up" id="aAD-rW-I0U">
+                    <connections>
+                        <segue destination="urA-Hx-Wsu" kind="modal" identifier="goWeekView" id="NwV-hi-4gJ"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="Zyg-sz-otZ">
+                    <connections>
+                        <action selector="RightSwipe:" destination="gqB-qd-44a" id="ag1-Fs-2K7"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="dr3-Jh-yAl">
+                    <connections>
+                        <action selector="LeftSwipe:" destination="gqB-qd-44a" id="wA8-R3-38M"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="148" y="208"/>
+        </scene>
         <!--Month View Controller - monthView-->
         <scene sceneID="xR7-Df-2d4">
             <objects>
                 <viewController title="monthView" id="wAL-0L-I7a" customClass="MonthViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EuW-KH-Ilh">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Month" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="49D-Be-3Ab">
@@ -153,7 +254,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aMj-Zk-LcB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="KYZ-sq-OG3" customClass="AuthenticationViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N4b-xd-Ve0" userLabel="Authentication">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="h9Q-xU-hi5">
@@ -391,7 +492,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ejE-a0-bXW" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer numberOfTapsRequired="2" id="gdC-Km-dqq" userLabel="doubleTap">
                     <connections>
-                        <segue destination="2" kind="modal" id="auC-YW-nJ6"/>
+                        <segue destination="gqB-qd-44a" kind="modal" id="WKm-wE-Ecs"/>
                     </connections>
                 </tapGestureRecognizer>
                 <swipeGestureRecognizer direction="right" id="wz5-0l-L7W" userLabel="right">
@@ -405,7 +506,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="364" y="935"/>
+            <point key="canvasLocation" x="363" y="925"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="3J3-9y-8AM">
@@ -413,7 +514,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RU3-YS-pUq" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="bN2-W3-dwI" customClass="SignUpViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2IJ-kB-39s">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="P3H-UK-iBS">
@@ -508,87 +609,13 @@
             </objects>
             <point key="canvasLocation" x="-611" y="234"/>
         </scene>
-        <!--Day View Controller - dayView-->
-        <scene sceneID="5">
-            <objects>
-                <viewController title="dayView" id="2" customClass="DayViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mcC-Gy-aPG">
-                                <rect key="frame" x="20" y="137" width="210" height="39"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="apZ-4H-2yx">
-                                <rect key="frame" x="68" y="79" width="184" height="53"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
-                                <color key="textColor" red="0.47145288330000001" green="1" blue="0.23988852029999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wXr-SK-Hqh">
-                                <rect key="frame" x="147" y="184" width="189" height="56"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Day View" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4Ld-Xh-5Zm">
-                                <rect key="frame" x="90" y="16" width="140" height="58"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="0.54606312469999996" blue="0.41353605859999998" alpha="1" colorSpace="calibratedRGB"/>
-                        <gestureRecognizers/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="fXD-Wg-x4h" appends="YES" id="EbO-tk-MAZ"/>
-                            <outletCollection property="gestureRecognizers" destination="fc2-9N-UFJ" appends="YES" id="0gH-uJ-orQ"/>
-                            <outletCollection property="gestureRecognizers" destination="M3H-eI-nQw" appends="YES" id="dTl-br-uGr"/>
-                        </connections>
-                    </view>
-                    <navigationItem key="navigationItem" id="ZIy-Qf-qDv"/>
-                    <connections>
-                        <outlet property="Left" destination="fXD-Wg-x4h" id="c8e-Es-kl6"/>
-                        <outlet property="Right" destination="fc2-9N-UFJ" id="89X-pm-lFv"/>
-                        <outlet property="curr" destination="apZ-4H-2yx" id="hdf-47-J3G"/>
-                        <outlet property="next" destination="wXr-SK-Hqh" id="55K-UJ-5CO"/>
-                        <outlet property="prev" destination="mcC-Gy-aPG" id="Dag-lp-QsB"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="fXD-Wg-x4h" userLabel="left">
-                    <connections>
-                        <action selector="LeftSwipe:" destination="2" id="Lya-5y-2Eb"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="left" id="fc2-9N-UFJ" userLabel="right">
-                    <connections>
-                        <action selector="RightSwipe:" destination="2" id="R2a-DM-7I0"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="up" id="M3H-eI-nQw" userLabel="up">
-                    <connections>
-                        <segue destination="urA-Hx-Wsu" kind="modal" identifier="goWeekView" id="nZc-3T-wia"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="3" id="El7-Oq-9eT">
-                    <connections>
-                        <action selector="addEvent:" destination="2" id="ZM7-g0-T71"/>
-                    </connections>
-                </pongPressGestureRecognizer>
-            </objects>
-            <point key="canvasLocation" x="165" y="187"/>
-        </scene>
         <!--View Controller-->
         <scene sceneID="s0Z-by-jIQ">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C7V-vT-Y1l" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="qe0-MG-Cxf" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zwh-UK-eNW">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Setting: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Aep-68-Iup">
@@ -683,7 +710,7 @@
             <objects>
                 <viewController title="setting" id="Xvt-rj-jps" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2ZC-jY-Iqz">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Setting" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MhH-7i-d6V">
@@ -759,12 +786,18 @@
         <class className="DayViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DayViewController.h"/>
             <relationships>
+                <relationship kind="action" name="LeftSwipe:"/>
+                <relationship kind="action" name="RightSwipe:"/>
                 <relationship kind="action" name="addEvent:"/>
+                <relationship kind="action" name="playRec:"/>
+                <relationship kind="action" name="stopRec:"/>
                 <relationship kind="outlet" name="Left" candidateClass="UISwipeGestureRecognizer"/>
                 <relationship kind="outlet" name="Right" candidateClass="UISwipeGestureRecognizer"/>
                 <relationship kind="outlet" name="curr" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="next" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="playRec" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="prev" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="stopRec" candidateClass="UIView"/>
                 <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
             </relationships>
         </class>
@@ -825,13 +858,13 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="auC-YW-nJ6"/>
+        <segue reference="G6x-zo-OjY"/>
         <segue reference="DAO-ns-H1P"/>
         <segue reference="Xuc-Wr-f3t"/>
+        <segue reference="SvE-57-nCm"/>
+        <segue reference="NwV-hi-4gJ"/>
         <segue reference="iyo-AZ-oCm"/>
-        <segue reference="nZc-3T-wia"/>
-        <segue reference="Mic-6x-L1Y"/>
         <segue reference="nC7-WM-9Le"/>
-        <segue reference="G6x-zo-OjY"/>
+        <segue reference="Mic-6x-L1Y"/>
     </inferredMetricsTieBreakers>
 </document>

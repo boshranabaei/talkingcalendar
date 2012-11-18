@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ESpeakEngine.h"
+#import "voiceRecPlay.h"
 
 @interface DayViewController : UIViewController {
 
@@ -18,20 +19,24 @@
 
 }
 
-@property (weak, nonatomic) IBOutlet UILabel *prev;
 
-@property (weak, nonatomic) IBOutlet UILabel *curr;
-@property (weak, nonatomic) IBOutlet UILabel *next;
-- (IBAction)addEvent:(id)sender;
 
 @property  NSDate *rightUpdateDate;
 @property  NSDate *screenUpdateDate;
-@property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *Left;
-@property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *Right;
 @property  NSDate *leftUpdateDate;
 @property  NSDate *dateR;
 @property  NSDate *currentDate;
 
+@property (weak, nonatomic) IBOutlet UILabel *prev;
+@property (weak, nonatomic) IBOutlet UILabel *curr;
+@property (weak, nonatomic) IBOutlet UILabel *next;
+@property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *Left;
+@property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *Right;
 
-//@property RecAndPlay* rpaudio;
+@property voiceRecPlay * longPress;
+
+- (IBAction)addEvent:(id)sender;
+@property (strong, nonatomic) IBOutlet UIView *stopRec;
+@property (weak, nonatomic) IBOutlet UIButton *playRec;
+
 @end

@@ -8,11 +8,16 @@
 #import "ESpeakEngine.h"
 #import "DayViewController.h"
 #import "WeekViewController.h"
+#import "voiceRecPlay.h"
+
+
 @interface DayViewController ()
 
 @end
 
 @implementation DayViewController
+@synthesize stopRec;
+@synthesize playRec;
 
 @synthesize prev,next,curr;
 
@@ -20,6 +25,8 @@
 @synthesize leftUpdateDate;
 @synthesize screenUpdateDate;
 @synthesize dateR,currentDate;
+
+@synthesize longPress;
 
 
 - (IBAction)LeftSwipe:(id)sender {
@@ -119,7 +126,8 @@
 {
 
     [super viewDidLoad];
-
+//*********************************************Calendar and Text to speech********************
+    
 	//engine = [[ESpeakEngine alloc] init];
     //[engine setLanguage:@"en"];
     //[engine setSpeechRate:150];
@@ -186,9 +194,10 @@
     [engine setLanguage:@"en"];
     [engine setSpeechRate:150];
     [engine speak:dayView];
+//*********************************************Events********************
+    longPress=[[voiceRecPlay alloc]init];
 
 
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning
@@ -198,19 +207,29 @@
 }
 
 
-
-
-
-
-
-
 - (void)viewDidUnload {
     currentDate = nil;
+    [self setStopRec:nil];
+    [self setPlayRec:nil];
     [super viewDidUnload];
 }
 - (IBAction)addEvent:(id)sender {
-  //  rpaudio=[[RecAndPlay alloc]init];
-  //  [rpaudio setDate:currentDate];
-  //  [rpaudio recordAudio];
+    
+    
+    [longPress recordAudio];
+        
 }
+- (IBAction)stopRec:(id)sender {
+    
+    
+    [longPress stop];
+    
+}
+- (IBAction)playRec:(id)sender {
+    
+  
+    [longPress playAdiuo];
+    
+}
+
 @end
