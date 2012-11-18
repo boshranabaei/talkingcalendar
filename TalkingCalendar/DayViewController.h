@@ -26,6 +26,7 @@
 @property  NSDate *leftUpdateDate;
 @property  NSDate *dateR;
 @property  NSDate *currentDate;
+@property NSString *currentdayInMonth1;
 
 @property (weak, nonatomic) IBOutlet UILabel *prev;
 @property (weak, nonatomic) IBOutlet UILabel *curr;

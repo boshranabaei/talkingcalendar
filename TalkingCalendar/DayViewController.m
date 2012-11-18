@@ -26,6 +26,7 @@
 @synthesize screenUpdateDate;
 @synthesize dateR,currentDate;
 
+@synthesize currentdayInMonth1;
 @synthesize longPress;
 
 
@@ -44,7 +45,7 @@
     // passing the message to myLabel setter function.
     // myLabel.setText(message)    [myLabel setText:message];
     NSString *dateInString = [dateFormatter stringFromDate: currentDate];
-    NSString *currentdayInMonth1 = [[NSString alloc] initWithFormat:@"%@",dateInString];
+    currentdayInMonth1 = [[NSString alloc] initWithFormat:@"%@",dateInString];
     
     NSString *dateInString2 = [dateFormatter stringFromDate: screenUpdateDate];
     NSString *msg2 = [[NSString alloc] initWithFormat:@"%@",dateInString2];
@@ -85,7 +86,7 @@
     // passing the message to myLabel setter function.
     // myLabel.setText(message)    [myLabel setText:message];
     NSString *dateInString = [dateFormatter stringFromDate: currentDate];
-    NSString *currentdayInMonth1 = [[NSString alloc] initWithFormat:@"%@",dateInString];
+    currentdayInMonth1 = [[NSString alloc] initWithFormat:@"%@",dateInString];
     
     NSString *dateInString2 = [dateFormatter stringFromDate: screenUpdateDate];
     NSString *msg2 = [[NSString alloc] initWithFormat:@"%@",dateInString2];
@@ -166,7 +167,7 @@
     // passing the message to myLabel setter function.
     // myLabel.setText(message)    [myLabel setText:message];
     NSString *dateInString = [dateFormatter stringFromDate: currentDate];
-    NSString *currentdayInMonth1 = [[NSString alloc] initWithFormat:@"%@",dateInString];
+    currentdayInMonth1 = [[NSString alloc] initWithFormat:@"%@",dateInString];
     
     NSString *dateInString2 = [dateFormatter stringFromDate: tomorrowDate];
     NSString *msg2 = [[NSString alloc] initWithFormat:@"%@",dateInString2];
@@ -214,14 +215,16 @@
     [super viewDidUnload];
 }
 - (IBAction)addEvent:(id)sender {
-    
+    [engine speak:@"start"];
     
     [longPress recordAudio];
         
 }
 - (IBAction)stopRec:(id)sender {
+   
     
-    
+    NSString *say=[[NSString alloc]initWithFormat:@"event added to %@",currentdayInMonth1];
+    [engine speak:say];
     [longPress stop];
     
 }
