@@ -7,6 +7,7 @@
 //
 
 #import "Accounts.h"
+#import "/usr/include/sqlite3.h"
 
 @implementation Accounts
     @synthesize contactDB;
@@ -22,7 +23,7 @@
         
         if ([[NSFileManager defaultManager] fileExistsAtPath:targetPath]) {
             // database doesn't exist in library path... so must copy it from the bundle
-            [[NSFileManager defaultManager] removeItemAtPath:targetPath error:NULL];
+           // [[NSFileManager defaultManager] removeItemAtPath:targetPath error:NULL];
             
             
             if (![[NSFileManager defaultManager] copyItemAtPath:sourcePath toPath:targetPath error:&error]) {
