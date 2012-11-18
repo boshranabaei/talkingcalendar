@@ -20,5 +20,5 @@
 
 -(void)recordAudio;
 -(void)stop;
--(void)playAdiuo;
+-(void)playAudio;
 @end

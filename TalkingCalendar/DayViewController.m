@@ -228,7 +228,7 @@
 - (IBAction)playRec:(id)sender {
     
   
-    [longPress playAdiuo];
+    [longPress playAudio];
     
 }
 
