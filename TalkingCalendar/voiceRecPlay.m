@@ -67,7 +67,7 @@ return self;
 }
 -(void)stop
 {
-    
+     //***********************stop************************
     if (audioRecorder.recording)
     {
                 NSLog(@"recording stopped");
@@ -75,7 +75,90 @@ return self;
     } else if (audioPlayer.playing) {
         [audioPlayer stop];
     }
+    
+    //**********Database Connection ******************
+    sqlite3 * contactDB;
+    NSString *libraryPath = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *targetPath = [libraryPath stringByAppendingPathComponent:@"talkingcalendar.db"];
+    NSString *sourcePath = [[NSBundle mainBundle] pathForResource:@"talkingcalendar" ofType:@"db"];
+    NSError *error = nil;
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:targetPath]) {
+        // database doesn't exist in library path... so must copy it from the bundle
+        // [[NSFileManager defaultManager] removeItemAtPath:targetPath error:NULL];
+        
+        
+        if (![[NSFileManager defaultManager] copyItemAtPath:sourcePath toPath:targetPath error:&error]) {
+            NSLog(@"Error: %@", error);
+        }
+    }
+    else{
+        
+        if (![[NSFileManager defaultManager] copyItemAtPath:sourcePath toPath:targetPath error:&error]) {
+            NSLog(@"Error: %@", error);
+        }
+    }
+    
+    //NSString *dbpath = [[NSBundle mainBundle] pathForResource:@"talkingcalendar" ofType:@"db"];
+    //NSLog(dbpath);
+    // const char *dbpath = [@"Users/bnabaei/Desktop/talkingcalendar/TalkingCalendar/talkingcalendar.db" UTF8String];
+    //NSLog(targetPath);
+    if (sqlite3_open([targetPath UTF8String] , &contactDB) == SQLITE_OK){
+        
+    }
+    
+    else{
+        //Handle Error
+    }
+    
+    NSString *check=[[NSString alloc]initWithFormat:@"select * from accounts where "];
+    
+    const char *c_stmt = [check UTF8String];
+    sqlite3_stmt *s;
+    
+    
+    if (sqlite3_prepare_v2(contactDB, c_stmt, -1, &s, NULL)==SQLITE_OK){
+        if(sqlite3_step(s)==SQLITE_ROW){
+            sqlite3_finalize(s);
+            sqlite3_close(contactDB);
+            
+        }
+    }
+    
+    NSString *querySQL=[[NSString alloc]initWithFormat:@"insert into accounts values "];
+    
+    const char *query_stmt = [querySQL UTF8String];
+    sqlite3_stmt *statement;
+    
+    
+    if (sqlite3_prepare_v2(contactDB, query_stmt, -1, &statement, NULL)==SQLITE_OK){
+        
+    }
+    
+    if(SQLITE_DONE == sqlite3_step(statement)){
+        sqlite3_finalize(statement);
+        sqlite3_close(contactDB);
+        
+    }
+    else{
+        NSLog(@"Save Error: %s", sqlite3_errmsg(contactDB) );
+    }
+
+    
+    sqlite3_finalize(statement);
+    sqlite3_close(contactDB);
+   
 }
+
+
+
+
+
+
+
+
+
+
 
 -(void) playAudio
 {
@@ -113,7 +196,23 @@ return self;
     else{
         //Handle Error
     }
-    //sqlite3_finalize(statement);
+    
+    NSString *querySQL=[[NSString alloc]initWithFormat:@"select * from accounts where "];
+    const char *query_stmt = [querySQL UTF8String];
+    sqlite3_stmt *statement;
+    
+    if (sqlite3_prepare_v2(contactDB, query_stmt, -1, &statement, NULL)==SQLITE_OK){
+        if(sqlite3_step(statement)==SQLITE_ROW){
+            sqlite3_finalize(statement);
+            sqlite3_close(contactDB);
+            
+        }
+    }
+    sqlite3_finalize(statement);
+    sqlite3_close(contactDB);
+    
+    
+    sqlite3_finalize(statement);
     sqlite3_close(contactDB);
     
 //***********************Play************************
