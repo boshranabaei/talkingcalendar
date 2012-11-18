@@ -26,9 +26,7 @@
            // [[NSFileManager defaultManager] removeItemAtPath:targetPath error:NULL];
             
             
-            if (![[NSFileManager defaultManager] copyItemAtPath:sourcePath toPath:targetPath error:&error]) {
-                NSLog(@"Error: %@", error);
-            }
+            
         }
         else{
             
@@ -38,7 +36,7 @@
         }
         
         //NSString *dbpath = [[NSBundle mainBundle] pathForResource:@"talkingcalendar" ofType:@"db"];
-        //NSLog(dbpath);
+      //  NSLog(dbpath);
         // const char *dbpath = [@"Users/bnabaei/Desktop/talkingcalendar/TalkingCalendar/talkingcalendar.db" UTF8String];
         //NSLog(targetPath);
         if (sqlite3_open([targetPath UTF8String] , &contactDB) == SQLITE_OK){

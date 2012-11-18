@@ -33,9 +33,7 @@
        // [[NSFileManager defaultManager] removeItemAtPath:targetPath error:NULL];
         
         
-        if (![[NSFileManager defaultManager] copyItemAtPath:sourcePath toPath:targetPath error:&error]) {
-            NSLog(@"Error: %@", error);
-        }
+        
     }
     else{
         

@@ -22,7 +22,7 @@
         dirPaths = NSSearchPathForDirectoriesInDomains(
                                                        NSDocumentDirectory, NSUserDomainMask, YES);
         docsDir = [dirPaths objectAtIndex:0];
-        soundFilePath = [docsDir stringByAppendingPathComponent:@"sound.caf"];
+        soundFilePath = [docsDir stringByAppendingPathComponent:@"sound1.caf"];
         
         NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
         
@@ -87,10 +87,7 @@ return self;
         // database doesn't exist in library path... so must copy it from the bundle
         // [[NSFileManager defaultManager] removeItemAtPath:targetPath error:NULL];
         
-        
-        if (![[NSFileManager defaultManager] copyItemAtPath:sourcePath toPath:targetPath error:&error]) {
-            NSLog(@"Error: %@", error);
-        }
+       
     }
     else{
         
@@ -111,7 +108,7 @@ return self;
         //Handle Error
     }
     
-    NSString *check=[[NSString alloc]initWithFormat:@"select * from accounts where "];
+    /*NSString *check=[[NSString alloc]initWithFormat:@"select * from accounts where "];
     
     const char *c_stmt = [check UTF8String];
     sqlite3_stmt *s;
@@ -123,18 +120,22 @@ return self;
             sqlite3_close(contactDB);
             
         }
-    }
+    }*/
     
-    NSString *querySQL=[[NSString alloc]initWithFormat:@"insert into accounts values "];
     
-    const char *query_stmt = [querySQL UTF8String];
+    
+    const char * query_stmt = "insert into events values(\"Boshra\",\"4/2\",?); ";
+    NSData * v= [[NSData alloc]initWithContentsOfFile:soundFilePath];
+    
+    //const char *query_stmt =[querySQL UTF8String];
     sqlite3_stmt *statement;
     
     
     if (sqlite3_prepare_v2(contactDB, query_stmt, -1, &statement, NULL)==SQLITE_OK){
-        
+           sqlite3_bind_blob(statement, 3, (__bridge const void *)(v), 3000, nil);
     }
-    
+
+         
     if(SQLITE_DONE == sqlite3_step(statement)){
         sqlite3_finalize(statement);
         sqlite3_close(contactDB);
@@ -142,11 +143,12 @@ return self;
     }
     else{
         NSLog(@"Save Error: %s", sqlite3_errmsg(contactDB) );
+        sqlite3_finalize(statement);
+        sqlite3_close(contactDB);
     }
 
     
-    sqlite3_finalize(statement);
-    sqlite3_close(contactDB);
+    
    
 }
 
@@ -174,9 +176,7 @@ return self;
         // [[NSFileManager defaultManager] removeItemAtPath:targetPath error:NULL];
         
         
-        if (![[NSFileManager defaultManager] copyItemAtPath:sourcePath toPath:targetPath error:&error]) {
-            NSLog(@"Error: %@", error);
-        }
+        
     }
     else{
         
