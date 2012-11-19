@@ -12,6 +12,7 @@
 @implementation voiceRecPlay
 
 @synthesize soundFilePath;
+@synthesize voice1;
 
 -(id)init{
     self = [super init];
@@ -132,7 +133,7 @@ return self;
     
 
     if (sqlite3_prepare_v2(contactDB, query_stmt, -1, &statement, NULL)==SQLITE_OK){
-           sqlite3_bind_blob(statement, 3, (__bridge const void *)(v), [v length], nil);
+           sqlite3_bind_blob(statement, 3,&(v), [v length], nil);
     }
 
          
@@ -204,7 +205,7 @@ return self;
     if (sqlite3_prepare_v2(contactDB, query_stmt, -1, &statement, NULL)==SQLITE_OK){
         if(sqlite3_step(statement)==SQLITE_ROW){
        
-            voice = [[NSData alloc] initWithBytes:sqlite3_column_blob(statement, 0) length:sqlite3_column_bytes(statement, 0)];
+            voice = [[NSData alloc] initWithData:(__bridge NSData *)(sqlite3_column_blob(statement, 0))];
             if(voice == nil) NSLog(@"No image found.");
         }
     }
@@ -214,13 +215,15 @@ return self;
     sqlite3_close(contactDB);
     
 //***********************Play************************
+    voice1= [[NSData alloc]initWithContentsOfFile:soundFilePath];
+    
     if (!audioRecorder.recording)
     {
                 NSLog(@"play");
         NSError *error;
         
         audioPlayer = [[AVAudioPlayer alloc]
-                       initWithContentsOfURL:audioRecorder.url
+                       initWithData:voice
                        error:&error];
         
         audioPlayer.delegate = self;

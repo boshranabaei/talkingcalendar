@@ -53,8 +53,8 @@
     else{
         //Handle Error
     }
-    NSString *querySQL=[[NSString alloc]initWithFormat:@"select description from generalevents where date=\"@%\";",date];
-    
+    NSString *querySQL=[[NSString alloc]initWithFormat:@"select description from generalevents where date=\"%@\";",date];
+
     const char *query_stmt = [querySQL UTF8String];
     sqlite3_stmt *statement;
     
@@ -67,7 +67,7 @@
         }
         sqlite3_finalize(statement);
         sqlite3_close(contactDB);
-        return @"No upcoming events";
+        return @"No events";
         
     }
     sqlite3_finalize(statement);

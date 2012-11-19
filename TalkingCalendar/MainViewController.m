@@ -37,7 +37,7 @@
 
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     // set the dateFormatter format
-    [dateFormatter setDateFormat:@"MM/dd"];
+    [dateFormatter setDateFormat:@"dd/MM/YYYY"];
     NSTimeInterval aDay = 24*60*60;
     NSDate *today=[[NSDate alloc] init];
     NSDate *tomorrowDate;
@@ -57,12 +57,12 @@
     
     engine = [[ESpeakEngine alloc] init];
     [engine setLanguage:@"en"];
-    [engine setSpeechRate:150];
+    [engine setSpeechRate:165];
     
     
     NSString * holidays =[[NSString alloc]initWithFormat:@"To toggle the tutorial, shake the phone. %Today: %@. Tomorrow: %@", [ge searchGEfor:currentdayInMonth1],[ge searchGEfor:tomorrow2]];
     [engine speak:holidays];
-    
+
 	[reminder setText:[ge searchGEfor:currentdayInMonth1]];
     [reminderTomorrow setText:[ge searchGEfor:tomorrow2]];
     // This function (ge) returns a string - read out this string.
