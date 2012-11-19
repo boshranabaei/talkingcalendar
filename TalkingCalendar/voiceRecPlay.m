@@ -223,7 +223,7 @@ return self;
         NSError *error;
         
         audioPlayer = [[AVAudioPlayer alloc]
-                       initWithData:voice
+                       initWithData:voice1
                        error:&error];
         
         audioPlayer.delegate = self;
