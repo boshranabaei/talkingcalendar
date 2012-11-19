@@ -33,6 +33,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *next;
 @property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *Left;
 @property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *Right;
+@property (weak, nonatomic) IBOutlet UILabel *generalEvent;
 
 @property voiceRecPlay * longPress;
 

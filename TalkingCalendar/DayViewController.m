@@ -27,7 +27,9 @@
 @synthesize dateR,currentDate;
 
 @synthesize currentdayInMonth1;
+@synthesize generalEvent;
 @synthesize longPress;
+
 
 
 - (IBAction)LeftSwipe:(id)sender {
@@ -197,7 +199,10 @@
     [engine speak:dayView];
 //*********************************************Events********************
     longPress=[[voiceRecPlay alloc]init];
-
+    
+    
+//*********************************************GenralEvents********************   
+    //[generalEvent setText:]
 
 }
 
@@ -212,6 +217,7 @@
     currentDate = nil;
     [self setStopRec:nil];
     [self setPlayRec:nil];
+    [self setGeneralEvent:nil];
     [super viewDidUnload];
 }
 - (IBAction)addEvent:(id)sender {
@@ -230,7 +236,6 @@
 }
 - (IBAction)playRec:(id)sender {
     
-  
     [longPress playAudio];
     
 }

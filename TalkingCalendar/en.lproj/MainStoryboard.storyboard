@@ -10,7 +10,7 @@
             <objects>
                 <viewController title="weekView" id="urA-Hx-Wsu" customClass="WeekViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eYc-t4-qWo">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="week" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="E3i-ox-unL">
@@ -134,6 +134,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="3Mv-80-axc">
+                                <rect key="frame" x="48" y="300" width="234" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.59607845544815063" green="0.23137256503105164" blue="0.11764706671237946" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.71232833286849251" blue="0.67688265856043461" alpha="1" colorSpace="calibratedRGB"/>
                         <connections>
@@ -148,6 +155,7 @@
                         <outlet property="Left" destination="dr3-Jh-yAl" id="if5-Ka-slx"/>
                         <outlet property="Right" destination="Zyg-sz-otZ" id="Ozh-hr-6Fn"/>
                         <outlet property="curr" destination="sGM-Bo-WBQ" id="oGH-EU-OpR"/>
+                        <outlet property="generalEvent" destination="3Mv-80-axc" id="rZz-8d-Ggl"/>
                         <outlet property="next" destination="KuK-Zk-6Fe" id="x2V-bp-GTh"/>
                         <outlet property="prev" destination="Mot-Wb-TMs" id="pKR-5m-SXS"/>
                         <outlet property="stopRec" destination="vrn-sv-JAK" id="SMq-B6-7Sw"/>
@@ -186,7 +194,7 @@
             <objects>
                 <viewController title="monthView" id="wAL-0L-I7a" customClass="MonthViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EuW-KH-Ilh">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Month" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="49D-Be-3Ab">
@@ -715,7 +723,7 @@
             <objects>
                 <viewController title="setting" id="Xvt-rj-jps" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2ZC-jY-Iqz">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Setting" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MhH-7i-d6V">
@@ -778,81 +786,6 @@
             <point key="canvasLocation" x="-721" y="935"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="AuthenticationViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AuthenticationViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="dissmissKeyboard:"/>
-                <relationship kind="action" name="login:"/>
-                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="userName" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="DayViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DayViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="addEvent:"/>
-                <relationship kind="outlet" name="Left" candidateClass="UISwipeGestureRecognizer"/>
-                <relationship kind="outlet" name="Right" candidateClass="UISwipeGestureRecognizer"/>
-                <relationship kind="outlet" name="curr" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="next" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="playRec" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="prev" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="stopRec" candidateClass="UIView"/>
-                <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="MainViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="reminder" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="reminderTomorrow" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MonthViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MonthViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="l:"/>
-                <relationship kind="outlet" name="Left" candidateClass="UISwipeGestureRecognizer"/>
-                <relationship kind="outlet" name="Right" candidateClass="UISwipeGestureRecognizer"/>
-                <relationship kind="outlet" name="curr" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="next" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="prev" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="SignUpViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SignUpViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="create:"/>
-                <relationship kind="action" name="dismissKeyboard:"/>
-                <relationship kind="outlet" name="passConfirm" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="userName" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="WeekViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WeekViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="Left" candidateClass="UISwipeGestureRecognizer"/>
-                <relationship kind="outlet" name="Right" candidateClass="UISwipeGestureRecognizer"/>
-                <relationship kind="outlet" name="curr" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="next" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="prev" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="YearViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/YearViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="LeftSwipe:"/>
-                <relationship kind="action" name="RightSwipe:"/>
-                <relationship kind="outlet" name="Left" candidateClass="UISwipeGestureRecognizer"/>
-                <relationship kind="outlet" name="Right" candidateClass="UISwipeGestureRecognizer"/>
-                <relationship kind="outlet" name="curr" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="next" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="prev" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
