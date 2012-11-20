@@ -8,6 +8,7 @@
 
 #import "TutorialViewController.h"
 #import "SyncViewController.h"
+#import "AppDelegate.h"
 
 @interface TutorialViewController ()
 
@@ -17,15 +18,16 @@
 @synthesize tap;
 
 @synthesize test;
-@synthesize tutorialMode;
+//@synthesize tutorialMode;
 
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
+    /*
     if([segue.identifier isEqualToString:@"tutorialToSync"]){
         SyncViewController *svc = [segue destinationViewController];
         svc.tutorialMode = self.tutorialMode;
     }
+     */
 }
 
 

@@ -1,23 +1,21 @@
 //
-//  LogOutViewController.m
+//  SettingsViewController.m
 //  TalkingCalendar
 //
-//  Created by Boshra Nabaei on 11/14/12.
+//  Created by Pamela Lee on 11/20/12.
 //  Copyright (c) 2012 Vito Wang. All rights reserved.
 //
 
-#import "LogOutViewController.h"
-#import "SyncViewController.h"
-#import "AuthenticationViewController.h"
+#import "SettingsViewController.h"
 #import "AppDelegate.h"
 
-@interface LogOutViewController ()
+@interface SettingsViewController ()
 
 @end
 
-@implementation LogOutViewController
-//@synthesize tutorialMode;
+@implementation SettingsViewController
 
+//@synthesize tutorialMode;
 
 - (BOOL) canBecomeFirstResponder {
     return YES;
@@ -48,30 +46,6 @@
 }
 
 
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    /*
-    //swipe left: LogOut to Sync
-    if([segue.identifier isEqualToString:@"logOutToSyncLeft"]){
-        SyncViewController *svc2 = [segue destinationViewController];
-        svc2.tutorialMode = self.tutorialMode;
-    }
-    
-    
-    //swipe right: LogOut to Sync
-    if([segue.identifier isEqualToString:@"logOutToSyncRight"]){
-        SyncViewController *svc2 = [segue destinationViewController];
-        svc2.tutorialMode = self.tutorialMode;
-    }
-
-    
-    //double tap: LogOut to Authentication
-    if([segue.identifier isEqualToString:@"logOutToAuth"]){
-        AuthenticationViewController *avc2 = [segue destinationViewController];
-        avc2.tutorialMode = self.tutorialMode;
-    }
-    */
-    
-}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -85,14 +59,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    NSLog(@"TutorialMode is ");
-    if (tutorialMode) {
-        NSLog(@"ON");
-    }
-    else if (!(tutorialMode)) {
-        NSLog(@"OFF");
-    }
 	// Do any additional setup after loading the view.
 }
 

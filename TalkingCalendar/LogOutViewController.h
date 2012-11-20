@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface LogOutViewController : UIViewController
-@property BOOL tutorialMode;
+//@property BOOL tutorialMode;
 
 
 @end

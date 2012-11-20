@@ -8,6 +8,7 @@
 
 #import "AuthenticationViewController.h"
 #import "MainViewController.h"
+#import "AppDelegate.h"
 @interface AuthenticationViewController ()
 
 @end
@@ -16,6 +17,36 @@
 @synthesize accounts;
 @synthesize userName;
 @synthesize password;
+@synthesize tutorialMode;
+
+
+- (BOOL) canBecomeFirstResponder {
+    return YES;
+}
+
+- (void) motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+    if (event.subtype == UIEventSubtypeMotionShake) {
+        NSLog(@"Tutorial Mode has been toggled.");
+        if (tutorialMode) {
+            NSLog(@"Tutorial Mode has been turned off.");
+            tutorialMode = NO;
+        }
+        else if (!(tutorialMode)) {
+            tutorialMode = YES;
+            NSLog(@"Tutorial Mode has been turned on.");
+        }
+    }
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    [self becomeFirstResponder];
+    [super viewDidAppear:animated];
+}
+
+- (void) viewWillDisappear:(BOOL)animated {
+    [self resignFirstResponder];
+    [super viewWillDisappear:animated];
+}
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -61,8 +92,9 @@
     [userName resignFirstResponder];
     accounts=[[Accounts alloc]init];
    if([accounts validateUsername:[userName text] password:[password text]]){
+       NSLog(@"Test");
        [self performSegueWithIdentifier:@"gotomain" sender:self];
-      
+      NSLog(@"Test2");
     }
    else{
        UIAlertView *notValid=[[UIAlertView alloc]initWithTitle:@"Authentication"

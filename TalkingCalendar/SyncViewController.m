@@ -9,13 +9,14 @@
 #import "SyncViewController.h"
 #import "TutorialViewController.h"
 #import "LogOutViewController.h"
+#import "AppDelegate.h"
 
 @interface SyncViewController ()
 
 @end
 //Hello
 @implementation SyncViewController
-@synthesize tutorialMode;
+//@synthesize tutorialMode;
 
 - (BOOL) canBecomeFirstResponder {
     return YES;
@@ -36,16 +37,24 @@
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
+    /*
     if([segue.identifier isEqualToString:@"syncToTutorial"]){
         TutorialViewController *tvc = [segue destinationViewController];
         tvc.tutorialMode = self.tutorialMode;
     }
+   
     
-    if([segue.identifier isEqualToString:@"syncToLogout"]){
+    if([segue.identifier isEqualToString:@"syncToLogOutRight"]){
         LogOutViewController *lvc = [segue destinationViewController];
         lvc.tutorialMode = self.tutorialMode;
     }
+    
+    if([segue.identifier isEqualToString:@"syncToLogOutLeft"]){
+        LogOutViewController *lvc = [segue destinationViewController];
+        lvc.tutorialMode = self.tutorialMode;
+    }
+     */
+    
 }
 
 

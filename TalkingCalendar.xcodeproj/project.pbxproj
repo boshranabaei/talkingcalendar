@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1EF68D24164DCFBD003E495B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EF68D23164DCFBD003E495B /* AVFoundation.framework */; };
+		2194521B165C1A4F00AAAFA2 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2194521A165C1A4F00AAAFA2 /* SettingsViewController.m */; };
 		21CACD6E16570C1400735F59 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CACD6D16570C1400735F59 /* TutorialViewController.m */; };
 		2A2919111644A6FF000462DF /* Icon-talking cal.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A2919101644A6FF000462DF /* Icon-talking cal.png */; };
 		2A3A144F164CA4D20025AB72 /* Accounts.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3A144E164CA4D20025AB72 /* Accounts.m */; };
@@ -74,6 +75,8 @@
 
 /* Begin PBXFileReference section */
 		1EF68D23164DCFBD003E495B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		21945219165C1A4F00AAAFA2 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		2194521A165C1A4F00AAAFA2 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		21CACD6C16570C1400735F59 /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
 		21CACD6D16570C1400735F59 /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
 		2A2919101644A6FF000462DF /* Icon-talking cal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-talking cal.png"; sourceTree = "<group>"; };
@@ -206,6 +209,8 @@
 				5FFA9FD3163228B100FB0DF5 /* AppDelegate.h */,
 				5FFA9FD4163228B100FB0DF5 /* AppDelegate.m */,
 				5FFA9FDC163228B100FB0DF5 /* MainStoryboard.storyboard */,
+				21945219165C1A4F00AAAFA2 /* SettingsViewController.h */,
+				2194521A165C1A4F00AAAFA2 /* SettingsViewController.m */,
 				2A5A1556165868FF002F9525 /* voiceRecPlay.h */,
 				2A5A1557165868FF002F9525 /* voiceRecPlay.m */,
 				2A4A93521648707800EC2717 /* AuthenticationViewController.h */,
@@ -422,6 +427,7 @@
 				2AA44CEC1654895B00FF330B /* LogOutViewController.m in Sources */,
 				21CACD6E16570C1400735F59 /* TutorialViewController.m in Sources */,
 				2A5A1558165868FF002F9525 /* voiceRecPlay.m in Sources */,
+				2194521B165C1A4F00AAAFA2 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

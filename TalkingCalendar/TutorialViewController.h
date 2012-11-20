@@ -16,7 +16,7 @@
 - (IBAction)doubleTap:(id)sender;
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *test;
 
-@property BOOL tutorialMode;
+//@property BOOL tutorialMode;
 
 
 @end

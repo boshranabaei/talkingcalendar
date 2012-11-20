@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "ESpeakEngine.h"
 #import "DayViewController.h"
+#import "AppDelegate.h"
 
 @interface MainViewController ()
 
@@ -20,6 +21,37 @@
 @synthesize ge;
 @synthesize welcome;
 @synthesize userName;
+
+- (BOOL) canBecomeFirstResponder {
+    return YES;
+}
+
+- (void) motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+    if (event.subtype == UIEventSubtypeMotionShake) {
+        NSLog(@"Tutorial Mode has been toggled.");
+        if (tutorialMode) {
+            NSLog(@"Tutorial Mode has been turned off.");
+            tutorialMode = NO;
+        }
+        else if (!(tutorialMode)) {
+            tutorialMode = YES;
+            NSLog(@"Tutorial Mode has been turned on.");
+        }
+    }
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    [self becomeFirstResponder];
+    [super viewDidAppear:animated];
+}
+
+- (void) viewWillDisappear:(BOOL)animated {
+    [self resignFirstResponder];
+    [super viewWillDisappear:animated];
+}
+
+
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
