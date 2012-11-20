@@ -10,6 +10,7 @@
 #import "WeekViewController.h"
 #import "voiceRecPlay.h"
 #import "GeneralEvents.h"
+#import "AppDelegate.h"
 
 @interface DayViewController ()
 
@@ -32,7 +33,33 @@
 @synthesize userName;
 //@synthesize generalEvents;
 
+- (BOOL) canBecomeFirstResponder {
+    return YES;
+}
 
+- (void) motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+    if (event.subtype == UIEventSubtypeMotionShake) {
+        NSLog(@"Tutorial Mode has been toggled.");
+        if (tutorialMode) {
+            NSLog(@"Tutorial Mode has been turned off.");
+            tutorialMode = NO;
+        }
+        else if (!(tutorialMode)) {
+            tutorialMode = YES;
+            NSLog(@"Tutorial Mode has been turned on.");
+        }
+    }
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    [self becomeFirstResponder];
+    [super viewDidAppear:animated];
+}
+
+- (void) viewWillDisappear:(BOOL)animated {
+    [self resignFirstResponder];
+    [super viewWillDisappear:animated];
+}
 
 - (IBAction)LeftSwipe:(id)sender {
     // instantiate a NSDateFormatter

@@ -15,6 +15,7 @@
 @property Accounts *accounts;
 @property (weak, nonatomic) IBOutlet UITextField *userName;
 @property (weak, nonatomic) IBOutlet UITextField *password;
+@property BOOL tutorialMode;
 
 -(IBAction)login:(id)sender;
 - (IBAction)dissmissKeyboard:(id)sender;
