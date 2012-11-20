@@ -18,9 +18,10 @@
     UIButton *stopButton;
 }
 @property NSString *soundFilePath;
+@property NSUserDefaults *defaults;
+@property BOOL isRecording;
 
-
--(void)recordAudio;
+-(void)recordAudio:(NSString*)userName date:(NSString*)date;
 -(void)stop;
 -(void)playAudio;
 @end

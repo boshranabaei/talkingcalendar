@@ -12,63 +12,77 @@
 @implementation voiceRecPlay
 
 @synthesize soundFilePath;
+@synthesize defaults;
+@synthesize isRecording;
 
 
 -(id)init{
     self = [super init];
     if (self) {
-        NSArray *dirPaths;
-        NSString *docsDir;
-        
-        dirPaths = NSSearchPathForDirectoriesInDomains(
-                                                       NSDocumentDirectory, NSUserDomainMask, YES);
-        docsDir = [dirPaths objectAtIndex:0];
-        soundFilePath = [docsDir stringByAppendingPathComponent:@"sound1.caf"];
-        
-        NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
-        
-        NSDictionary *recordSettings = [NSDictionary
-                                        dictionaryWithObjectsAndKeys:
-                                        [NSNumber numberWithInt:AVAudioQualityMin],
-                                        AVEncoderAudioQualityKey,
-                                        [NSNumber numberWithInt:16],
-                                        AVEncoderBitRateKey,
-                                        [NSNumber numberWithInt: 2],
-                                        AVNumberOfChannelsKey,
-                                        [NSNumber numberWithFloat:44100.0],
-                                        AVSampleRateKey,
-                                        nil];
-        
-        NSError *error = nil;
-        audioRecorder = [[AVAudioRecorder alloc]
-                         initWithURL:soundFileURL
-                         settings:recordSettings
-                         error:&error];
-        
-        if (error)
-        {
-            NSLog(@"error: %@", [error localizedDescription]);
-            
-        } else {
-            [audioRecorder prepareToRecord];
-        }
-
+        isRecording=NO;
     
     }
     else{}
 return self;
 }
 
--(void)recordAudio{
+-(void)recordAudio:(NSString*)userName date:(NSString*)date{
+    if(!isRecording){
+    NSArray *dirPaths;
+    NSString *docsDir;
+    
+    dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    docsDir = [dirPaths objectAtIndex:0];
+    NSString * path =[[NSString alloc]initWithFormat:@"%@-%@.caf",userName,date];
+        NSLog(soundFilePath);
+    soundFilePath = [docsDir stringByAppendingPathComponent:[[NSString alloc]initWithFormat:@"%@-%@.caf",userName,date]];
+     NSLog(soundFilePath);
+    NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
+    
+    NSDictionary *recordSettings = [NSDictionary
+                                    dictionaryWithObjectsAndKeys:
+                                    [NSNumber numberWithInt:AVAudioQualityMin],
+                                    AVEncoderAudioQualityKey,
+                                    [NSNumber numberWithInt:16],
+                                    AVEncoderBitRateKey,
+                                    [NSNumber numberWithInt: 2],
+                                    AVNumberOfChannelsKey,
+                                    [NSNumber numberWithFloat:44100.0],
+                                    AVSampleRateKey,
+                                    nil];
+    
+    
+    NSError *error = nil;
+    audioRecorder = [[AVAudioRecorder alloc]
+                     initWithURL:soundFileURL
+                     settings:recordSettings
+                     error:&error];
+    
+    if (error)
+    {
+        NSLog(@"error: %@", [error localizedDescription]);
+        
+    } else {
+        [audioRecorder prepareToRecord];
+    }
+
+    
     if (!audioRecorder.recording)
     {
         NSLog(@"recording started");
     [audioRecorder record];
+        isRecording=YES;
+    }
+        
+    
     }
 }
--(void)stop
-{
-     //***********************stop************************
+
+
+
+-(void)stop{
+     isRecording=NO;
+     //*********************** stop ************************
     if (audioRecorder.recording)
     {
                 NSLog(@"recording stopped");
@@ -76,12 +90,19 @@ return self;
     } else if (audioPlayer.playing) {
         [audioPlayer stop];
     }
-    
-    
+    else{
+        NSLog(@"hish");
+    }
+    //*********************** store ************************
+
+    // storing the voice into NSData
+    NSData * v= [[NSData alloc]initWithContentsOfFile:soundFilePath];
+
+
     
     //------ These are the codes for adding voice as BLOB file into database, which didn't work
    
-   /* //**********Database Connection ******************
+   /* **********Database Connection ******************
     sqlite3 * contactDB;
     NSString *libraryPath = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) lastObject];
     NSString *targetPath = [libraryPath stringByAppendingPathComponent:@"talkingcalendar.db"];
@@ -113,7 +134,7 @@ return self;
         //Handle Error
     }
     
-    /*NSString *check=[[NSString alloc]initWithFormat:@"select * from accounts where "];
+    NSString *check=[[NSString alloc]initWithFormat:@"select * from accounts where "];
     
     const char *c_stmt = [check UTF8String];
     sqlite3_stmt *s;
@@ -128,8 +149,7 @@ return self;
     }
       
     const char * query_stmt = "insert into events values(\"xt\",\"4/2\",?); ";
-    NSData * v= [[NSData alloc]initWithContentsOfFile:soundFilePath];
-    
+        
     //const char *query_stmt =[querySQL UTF8String];
     sqlite3_stmt *statement;
     
@@ -164,12 +184,32 @@ return self;
 
 
 
-
-
 -(void) playAudio
 {
+    //***********************Play************************
+    NSData *voice= [[NSData alloc]initWithContentsOfFile:soundFilePath];
+    
+    if (!audioRecorder.recording)
+    {
+        NSLog(@"play");
+        NSError *error;
+        
+        audioPlayer = [[AVAudioPlayer alloc]
+                       initWithData:voice
+                       error:&error];
+        
+        audioPlayer.delegate = self;
+        
+        if (error)
+            NSLog(@"Error: %@",
+                  [error localizedDescription]);
+        else
+            [audioPlayer play];}
+
+    
+    
         //------ These are the codes for adding voice as BLOB file into database, which didn't work
-  /*  //**********Database Connection ******************
+  /*  **********Database Connection ******************
     sqlite3 * contactDB;
     NSString *libraryPath = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) lastObject];
     NSString *targetPath = [libraryPath stringByAppendingPathComponent:@"talkingcalendar.db"];
@@ -223,27 +263,9 @@ return self;
     sqlite3_finalize(statement);
     sqlite3_close(contactDB);*/
     
-//***********************Play************************
-    NSData *voice= [[NSData alloc]initWithContentsOfFile:soundFilePath];
     
-    if (!audioRecorder.recording)
-    {
-                NSLog(@"play");
-        NSError *error;
-        
-        audioPlayer = [[AVAudioPlayer alloc]
-                       initWithData:voice
-                       error:&error];
-        
-        audioPlayer.delegate = self;
-        
-        if (error)
-            NSLog(@"Error: %@",
-                  [error localizedDescription]);
-        else
-            [audioPlayer play];
-    }
 }
 
 
 @end
+

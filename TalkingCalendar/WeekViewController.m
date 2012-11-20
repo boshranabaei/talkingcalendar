@@ -208,7 +208,9 @@
     [engine speak:weekView];
     
     //************************* General Events ***************************
-    // All of the days of the week in string with this format: DD/MM/YYYY to be named correctly as Monday, Sunday,....
+    
+    // All of the days of the week in string with this format: DD-MM-YYYY to be named correctly as Monday, Sunday,....
+    
 
 }
 

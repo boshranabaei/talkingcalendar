@@ -202,7 +202,7 @@
     
     
 //*********************************************GenralEvents********************   
-    // (Today in string with this format:  DD/MM/YYYY)
+    // (Today in string with this format:  DD-MM-YYYY)
     
     
     
@@ -228,7 +228,9 @@
 - (IBAction)addEvent:(id)sender {
     [engine speak:@"start"];
     
-    [longPress recordAudio];
+    
+    
+    [longPress recordAudio:@"boshra" date:@"12-12-2014"];
         
 }
 - (IBAction)stopRec:(id)sender {
