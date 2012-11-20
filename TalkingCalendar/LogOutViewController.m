@@ -19,7 +19,7 @@
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
-    if([segue.identifier isEqualToString:@"logoutToSync"]){
+    if([segue.identifier isEqualToString:@"LogoutToSync"]){
         SyncViewController *svc2 = [segue destinationViewController];
         svc2.tutorialMode = self.tutorialMode;
     }

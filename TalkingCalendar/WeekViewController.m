@@ -212,8 +212,11 @@
     
     //************************* General Events ***************************
     
-    // All of the days of the week in string with this format: DD-MM-YYYY to be named correctly as Monday, Sunday,....
-    
+    /* All of the days of the week in string with this format: dd-MM-YYYY to be named correctly as Monday, Sunday,....
+    [dateFormatter setDateFormat:@"dddd"];
+     NSString *dateInString4 = [dateFormatter stringFromDate: currentDate];
+     NSString *msg4 = [[NSString alloc] initWithFormat:@"%@",dateInString4];
+     */
 
 }
 
