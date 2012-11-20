@@ -34,7 +34,7 @@ return self;
     dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     docsDir = [dirPaths objectAtIndex:0];
     NSString * path =[[NSString alloc]initWithFormat:@"%@-%@.caf",userName,date];
-        NSLog(soundFilePath);
+
     soundFilePath = [docsDir stringByAppendingPathComponent:[[NSString alloc]initWithFormat:@"%@-%@.caf",userName,date]];
      NSLog(soundFilePath);
     NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
@@ -96,7 +96,7 @@ return self;
     //*********************** store ************************
 
     // storing the voice into NSData
-    NSData * v= [[NSData alloc]initWithContentsOfFile:soundFilePath];
+    //NSData * v= [[NSData alloc]initWithContentsOfFile:soundFilePath];
 
 
     

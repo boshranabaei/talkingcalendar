@@ -29,7 +29,7 @@
 @synthesize currentdayInMonth1;
 @synthesize generalEvent;
 @synthesize longPress;
-
+@synthesize userNAme;
 
 
 - (IBAction)LeftSwipe:(id)sender {
@@ -230,7 +230,7 @@
     
     
     
-    [longPress recordAudio:@"boshra" date:@"12-12-2014"];
+    [longPress recordAudio:@"boshra" date:[curr text]];
         
 }
 - (IBAction)stopRec:(id)sender {

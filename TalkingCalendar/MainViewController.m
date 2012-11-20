@@ -8,6 +8,8 @@
 
 #import "MainViewController.h"
 #import "ESpeakEngine.h"
+#import "DayViewController.h"
+
 @interface MainViewController ()
 
 @end
@@ -16,6 +18,8 @@
 @synthesize reminder;
 @synthesize reminderTomorrow;
 @synthesize ge;
+@synthesize welcome;
+@synthesize userNAme;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,13 +32,17 @@
 
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
+    if([segue.identifier isEqualToString:@"mainToDay"]){
+        DayViewController * dvc=[segue destinationViewController];
+        [dvc setUserNAme:userNAme];
+
+    }
 
 }
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    [welcome setText:userNAme];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     // set the dateFormatter format
     [dateFormatter setDateFormat:@"dd-MM-YYYY"];
@@ -77,6 +85,7 @@
 - (void)viewDidUnload {
     [self setReminder:nil];
     [self setReminderTomorrow:nil];
+    [self setWelcome:nil];
     [super viewDidUnload];
 }
 

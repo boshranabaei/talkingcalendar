@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Accounts.h"
+#import "MainViewController.h"
 
 @interface AuthenticationViewController : UIViewController
 
