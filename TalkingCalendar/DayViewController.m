@@ -202,6 +202,11 @@
     
     
 //*********************************************GenralEvents********************   
+    // (Today in string with this format:  DD/MM/YYYY)
+    
+    
+    
+    
     //[generalEvent setText:]
 
 }

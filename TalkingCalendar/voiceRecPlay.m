@@ -12,7 +12,7 @@
 @implementation voiceRecPlay
 
 @synthesize soundFilePath;
-@synthesize voice1;
+
 
 -(id)init{
     self = [super init];
@@ -77,7 +77,11 @@ return self;
         [audioPlayer stop];
     }
     
-    //**********Database Connection ******************
+    
+    
+    //------ These are the codes for adding voice as BLOB file into database, which didn't work
+   
+   /* //**********Database Connection ******************
     sqlite3 * contactDB;
     NSString *libraryPath = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) lastObject];
     NSString *targetPath = [libraryPath stringByAppendingPathComponent:@"talkingcalendar.db"];
@@ -121,10 +125,8 @@ return self;
             sqlite3_close(contactDB);
             
         }
-    }*/
-    
-    
-    
+    }
+      
     const char * query_stmt = "insert into events values(\"xt\",\"4/2\",?); ";
     NSData * v= [[NSData alloc]initWithContentsOfFile:soundFilePath];
     
@@ -146,7 +148,8 @@ return self;
         NSLog(@"Save Error: %s", sqlite3_errmsg(contactDB) );
         sqlite3_finalize(statement);
         sqlite3_close(contactDB);
-    }
+    }*/
+    
 
     
     
@@ -165,7 +168,8 @@ return self;
 
 -(void) playAudio
 {
-    //**********Database Connection ******************
+        //------ These are the codes for adding voice as BLOB file into database, which didn't work
+  /*  //**********Database Connection ******************
     sqlite3 * contactDB;
     NSString *libraryPath = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) lastObject];
     NSString *targetPath = [libraryPath stringByAppendingPathComponent:@"talkingcalendar.db"];
@@ -217,10 +221,10 @@ return self;
     
     
     sqlite3_finalize(statement);
-    sqlite3_close(contactDB);
+    sqlite3_close(contactDB);*/
     
 //***********************Play************************
-    voice1= [[NSData alloc]initWithContentsOfFile:soundFilePath];
+    NSData *voice= [[NSData alloc]initWithContentsOfFile:soundFilePath];
     
     if (!audioRecorder.recording)
     {
@@ -228,7 +232,7 @@ return self;
         NSError *error;
         
         audioPlayer = [[AVAudioPlayer alloc]
-                       initWithData:voice1
+                       initWithData:voice
                        error:&error];
         
         audioPlayer.delegate = self;

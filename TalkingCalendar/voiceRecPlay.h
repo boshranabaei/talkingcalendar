@@ -18,7 +18,7 @@
     UIButton *stopButton;
 }
 @property NSString *soundFilePath;
-@property NSData *voice1;
+
 
 -(void)recordAudio;
 -(void)stop;
