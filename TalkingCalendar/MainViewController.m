@@ -37,7 +37,7 @@
 
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     // set the dateFormatter format
-    [dateFormatter setDateFormat:@"dd/MM/YYYY"];
+    [dateFormatter setDateFormat:@"dd-MM-YYYY"];
     NSTimeInterval aDay = 24*60*60;
     NSDate *today=[[NSDate alloc] init];
     NSDate *tomorrowDate;
