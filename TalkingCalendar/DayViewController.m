@@ -259,15 +259,16 @@
 }
 -(void)ViewPlay
 {
-    longPress=[[voiceRecPlay alloc]init];
-    [longPress prepareForRecord:@"boshra" date:@"12-12-2014"];
-    //while([engine isPlaying]){};
-    [longPress playAudio:@"boshra" date:@"12-12-2014"];
+    // "yuan" The Date of the "curr label" in the format DD-MM-YYYY
+    
+    [longPress prepareForRecord:userName date:currentdayInMonth1];
+    [longPress playAudio:userName date:currentdayInMonth1];
+    
 }
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
 }
 
 
