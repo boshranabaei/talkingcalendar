@@ -9,7 +9,7 @@
 #import "DayViewController.h"
 #import "WeekViewController.h"
 #import "voiceRecPlay.h"
-
+#import "GeneralEvents.h"
 
 @interface DayViewController ()
 
@@ -27,9 +27,11 @@
 @synthesize dateR,currentDate;
 
 @synthesize currentdayInMonth1;
-@synthesize generalEvent;
+@synthesize generalEventLabel;
 @synthesize longPress;
 @synthesize userName;
+//@synthesize generalEvents;
+
 
 
 - (IBAction)LeftSwipe:(id)sender {
@@ -208,12 +210,15 @@
     }
     
 //*********************************************GenralEvents********************   
-    // (Today in string with this format:  DD-MM-YYYY)
+    //generalEvents=[[GeneralEvents alloc]init];
     
+    /*NSDateFormatter *dateFormatForGE = [[NSDateFormatter alloc] init];
+    // set the dateFormatter format
+    [dateFormatForGE setDateFormat:@"dd-MM-YYYY"];
+    NSString *dateInStringForGE = [dateFormatForGE stringFromDate: currentDate];
+    NSString *GEevent=[[NSString alloc] initWithFormat:@"%@",dateInStringForGE];
     
-    
-    
-    //[generalEvent setText:]
+     [generalEventLabel setText:[generalEvents searchGEfor:GEevent]];*/
 
 }
 
@@ -228,7 +233,7 @@
     currentDate = nil;
     [self setStopRec:nil];
     [self setPlayRec:nil];
-    [self setGeneralEvent:nil];
+    [self setGeneralEventLabel:nil];
     [super viewDidUnload];
 }
 - (IBAction)addEvent:(id)sender {

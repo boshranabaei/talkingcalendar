@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ESpeakEngine.h"
 #import "voiceRecPlay.h"
+//#import "GeneralEvents.h"
 
 @interface DayViewController : UIViewController {
 
@@ -34,12 +35,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *next;
 @property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *Left;
 @property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *Right;
-@property (weak, nonatomic) IBOutlet UILabel *generalEvent;
+@property (weak, nonatomic) IBOutlet UILabel *generalEventLabel;
 
 @property voiceRecPlay * longPress;
 
 - (IBAction)addEvent:(id)sender;
 @property (strong, nonatomic) IBOutlet UIView *stopRec;
 @property (weak, nonatomic) IBOutlet UIButton *playRec;
-
+//@property GeneralEvents * generalEvents;
 @end
