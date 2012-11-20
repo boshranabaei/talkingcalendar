@@ -231,7 +231,7 @@
     engine = [[ESpeakEngine alloc] init];
     [engine setLanguage:@"en"];
     [engine setSpeechRate:150];
-    [engine speak:dayView];
+    
     
 //*********************************************Events********************
     [self ViewPlay];
@@ -243,11 +243,17 @@
     // set the dateFormatter format
     [dateFormatForGE setDateFormat:@"dd-MM-YYYY"];
     NSString *dateInStringForGE = [dateFormatForGE stringFromDate: currentDate];
-    NSString *GEevent=[[NSString alloc] initWithFormat:@"%@",dateInStringForGE];
+    NSString *GEDate= [[NSString alloc] initWithFormat:@"%@",dateInStringForGE];//@"08-10-2012";
+    NSString *GEevent=[generalEvents searchGEfor:GEDate];
     
-     [GELabel setText:[generalEvents searchGEfor:@"24/12/2012"]];
-    if(![[generalEvents searchGEfor:@"24/12/2012"] isEqualToString:@"No events"]){
-        [engine speak:[generalEvents searchGEfor:@"24/12/2012"]];
+    
+     [GELabel setText:GEevent];
+    if(![GEevent isEqualToString:@"No events"]){
+        NSString * mid=[dayView stringByAppendingString:@", the event is, "];
+        [engine speak:[mid stringByAppendingString:GEevent]];
+    }
+    else{
+        [engine speak:dayView];
     }
 
 }
