@@ -202,12 +202,9 @@
     [engine setLanguage:@"en"];
     [engine setSpeechRate:150];
     [engine speak:dayView];
+    
 //*********************************************Events********************
-    longPress=[[voiceRecPlay alloc]init];
-    [longPress prepareForRecord:@"boshra" date:@"12-12-2014"];
-    if ([longPress playAudio:@"boshra" date:@"12-12-2014"]){
-        
-    }
+    [self ViewPlay];
     
 //*********************************************GenralEvents********************   
     //generalEvents=[[GeneralEvents alloc]init];
@@ -221,7 +218,13 @@
      [generalEventLabel setText:[generalEvents searchGEfor:GEevent]];*/
 
 }
-
+-(void)ViewPlay
+{
+    longPress=[[voiceRecPlay alloc]init];
+    [longPress prepareForRecord:@"boshra" date:@"12-12-2014"];
+    while([engine isPlaying]){};
+    [longPress playAudio:@"boshra" date:@"12-12-2014"];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
