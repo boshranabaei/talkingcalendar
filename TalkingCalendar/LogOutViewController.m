@@ -57,7 +57,8 @@
     }
     
     
-    if([segue.identifier isEqualToString:@"LogoutToSync"]){
+    //swipe right: LogOut to Sync
+    if([segue.identifier isEqualToString:@"logOutToSyncRight"]){
         SyncViewController *svc2 = [segue destinationViewController];
         svc2.tutorialMode = self.tutorialMode;
     }

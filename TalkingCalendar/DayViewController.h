@@ -9,18 +9,20 @@
 #import <UIKit/UIKit.h>
 #import "ESpeakEngine.h"
 #import "voiceRecPlay.h"
-//#import "GeneralEvents.h"
+#import "GeneralEvents.h"
 
 @interface DayViewController : UIViewController {
 
     ESpeakEngine * engine;
     ESpeakEngine * engine2;
     IBOutlet UITextView *textView;
-   // IBOutlet UILabel *cDate;
+    
+
 
 }
 
 
+@property (weak, nonatomic) IBOutlet UILabel *GELabel;
 
 @property  NSDate *rightUpdateDate;
 @property  NSDate *screenUpdateDate;
@@ -29,13 +31,13 @@
 @property  NSDate *currentDate;
 @property NSString *currentdayInMonth1;
 @property NSString * userName;
+@property GeneralEvents *generalEvents;
 
 @property (weak, nonatomic) IBOutlet UILabel *prev;
 @property (weak, nonatomic) IBOutlet UILabel *curr;
 @property (weak, nonatomic) IBOutlet UILabel *next;
 @property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *Left;
 @property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *Right;
-@property (weak, nonatomic) IBOutlet UILabel *generalEventLabel;
 
 @property voiceRecPlay * longPress;
 

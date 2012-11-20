@@ -22,16 +22,19 @@
 
 @synthesize prev,next,curr;
 
+@synthesize GELabel;
 @synthesize rightUpdateDate;
 @synthesize leftUpdateDate;
 @synthesize screenUpdateDate;
 @synthesize dateR,currentDate;
 
 @synthesize currentdayInMonth1;
-@synthesize generalEventLabel;
+
 @synthesize longPress;
 @synthesize userName;
-//@synthesize generalEvents;
+@synthesize generalEvents;
+
+
 
 - (BOOL) canBecomeFirstResponder {
     return YES;
@@ -234,22 +237,25 @@
     [self ViewPlay];
     
 //*********************************************GenralEvents********************   
-    //generalEvents=[[GeneralEvents alloc]init];
+    generalEvents=[[GeneralEvents alloc]init];
     
-    /*NSDateFormatter *dateFormatForGE = [[NSDateFormatter alloc] init];
+    NSDateFormatter *dateFormatForGE = [[NSDateFormatter alloc] init];
     // set the dateFormatter format
     [dateFormatForGE setDateFormat:@"dd-MM-YYYY"];
     NSString *dateInStringForGE = [dateFormatForGE stringFromDate: currentDate];
     NSString *GEevent=[[NSString alloc] initWithFormat:@"%@",dateInStringForGE];
     
-     [generalEventLabel setText:[generalEvents searchGEfor:GEevent]];*/
+     [GELabel setText:[generalEvents searchGEfor:@"24/12/2012"]];
+    if(![[generalEvents searchGEfor:@"24/12/2012"] isEqualToString:@"No events"]){
+        [engine speak:[generalEvents searchGEfor:@"24/12/2012"]];
+    }
 
 }
 -(void)ViewPlay
 {
     longPress=[[voiceRecPlay alloc]init];
     [longPress prepareForRecord:@"boshra" date:@"12-12-2014"];
-    while([engine isPlaying]){};
+    //while([engine isPlaying]){};
     [longPress playAudio:@"boshra" date:@"12-12-2014"];
 }
 - (void)didReceiveMemoryWarning
@@ -263,7 +269,8 @@
     currentDate = nil;
     [self setStopRec:nil];
     [self setPlayRec:nil];
-    [self setGeneralEventLabel:nil];
+    GELabel = nil;
+    [self setGELabel:nil];
     [super viewDidUnload];
 }
 - (IBAction)addEvent:(id)sender {
