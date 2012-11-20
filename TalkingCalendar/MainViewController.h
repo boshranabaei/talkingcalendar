@@ -19,5 +19,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *reminderTomorrow;
 @property GeneralEvents * ge;
 @property (weak, nonatomic) IBOutlet UILabel *welcome;
-@property NSString * userNAme;
+@property NSString * userName;
 @end

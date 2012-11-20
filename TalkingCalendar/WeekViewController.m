@@ -15,7 +15,7 @@
 
 @implementation WeekViewController
 @synthesize currentDate,dateR,leftUpdateDate,rightUpdateDate,screenUpdateDate,Left,Right,prev,curr,next,swipe;
-@synthesize userNAme;
+@synthesize userName;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -137,10 +137,12 @@
         if(swipe)
             [self getSunday];
         [dvc setCurrentDate:currentDate];
+        [dvc setUserName:userName];
     }
     else if ([segue.identifier isEqualToString:@"goMonthView"]){
         MonthViewController *mvc = [segue destinationViewController];
         [mvc setCurrentDate:currentDate];
+        [mvc setUserName:userName];
     }
 
 

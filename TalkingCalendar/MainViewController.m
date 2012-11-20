@@ -19,7 +19,7 @@
 @synthesize reminderTomorrow;
 @synthesize ge;
 @synthesize welcome;
-@synthesize userNAme;
+@synthesize userName;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,15 +34,14 @@
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"mainToDay"]){
         DayViewController * dvc=[segue destinationViewController];
-        [dvc setUserNAme:userNAme];
-
+        [dvc setUserName:userName];
     }
 
 }
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [welcome setText:userNAme];
+    [welcome setText:userName];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     // set the dateFormatter format
     [dateFormatter setDateFormat:@"dd-MM-YYYY"];

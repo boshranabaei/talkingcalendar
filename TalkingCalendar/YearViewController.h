@@ -26,6 +26,6 @@
 @property  NSDate *dateR;
 @property  NSDate *currentDate;
 @property Boolean swipe;
-@property NSString * userNAme;
+@property NSString * userName;
 
 @end

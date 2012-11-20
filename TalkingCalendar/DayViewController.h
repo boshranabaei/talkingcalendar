@@ -27,7 +27,7 @@
 @property  NSDate *dateR;
 @property  NSDate *currentDate;
 @property NSString *currentdayInMonth1;
-@property NSString * userNAme;
+@property NSString * userName;
 
 @property (weak, nonatomic) IBOutlet UILabel *prev;
 @property (weak, nonatomic) IBOutlet UILabel *curr;

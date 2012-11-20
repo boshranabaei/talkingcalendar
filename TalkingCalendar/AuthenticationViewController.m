@@ -30,7 +30,7 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"gotomain"]){
     MainViewController * mvc=[segue destinationViewController];
-    [mvc setUserNAme:[userName text]];
+    [mvc setUserName:[userName text]];
     }
 }
 

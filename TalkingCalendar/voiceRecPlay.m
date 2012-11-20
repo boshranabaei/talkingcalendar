@@ -26,17 +26,16 @@
 return self;
 }
 
--(void)recordAudio:(NSString*)userName date:(NSString*)date{
-    if(!isRecording){
+-(void) prepareForRecord:(NSString*)userName date:(NSString*)date{
     NSArray *dirPaths;
     NSString *docsDir;
     
     dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     docsDir = [dirPaths objectAtIndex:0];
-    NSString * path =[[NSString alloc]initWithFormat:@"%@-%@.caf",userName,date];
-
+    
     soundFilePath = [docsDir stringByAppendingPathComponent:[[NSString alloc]initWithFormat:@"%@-%@.caf",userName,date]];
-     NSLog(soundFilePath);
+    //NSLog(soundFilePath);
+    
     NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
     
     NSDictionary *recordSettings = [NSDictionary
@@ -57,7 +56,12 @@ return self;
                      initWithURL:soundFileURL
                      settings:recordSettings
                      error:&error];
-    
+}
+
+-(void)recordAudio{
+    if(!isRecording){
+
+      NSError *error = nil;
     if (error)
     {
         NSLog(@"error: %@", [error localizedDescription]);
@@ -184,10 +188,16 @@ return self;
 
 
 
--(void) playAudio
+-(BOOL) playAudio :(NSString *)userName date:(NSString*)date
 {
     //***********************Play************************
-    NSData *voice= [[NSData alloc]initWithContentsOfFile:soundFilePath];
+    NSArray *dirPaths;
+    NSString *docsDir;
+    
+    dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    docsDir = [dirPaths objectAtIndex:0];
+    soundFilePath = [docsDir stringByAppendingPathComponent:[[NSString alloc]initWithFormat:@"%@-%@.caf",userName,date]];
+    NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
     
     if (!audioRecorder.recording)
     {
@@ -195,16 +205,21 @@ return self;
         NSError *error;
         
         audioPlayer = [[AVAudioPlayer alloc]
-                       initWithData:voice
+                       initWithContentsOfURL:soundFileURL
                        error:&error];
         
         audioPlayer.delegate = self;
         
-        if (error)
-            NSLog(@"Error: %@",
-                  [error localizedDescription]);
-        else
-            [audioPlayer play];}
+        if (error){
+            //NSLog(@"Error: %@",
+            return NO;
+        }
+        else{
+            
+            [audioPlayer play];
+            return YES;
+        }
+        }
 
     
     

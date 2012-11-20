@@ -29,7 +29,7 @@
 @synthesize currentdayInMonth1;
 @synthesize generalEvent;
 @synthesize longPress;
-@synthesize userNAme;
+@synthesize userName;
 
 
 - (IBAction)LeftSwipe:(id)sender {
@@ -122,8 +122,11 @@
     if([segue.identifier isEqualToString:@"goWeekView"]){
         WeekViewController *wvc = [segue destinationViewController];
         [wvc setCurrentDate:currentDate];
+        [wvc setUserName:userName];
     }
 }
+
+
 
 - (void)viewDidLoad
 {
@@ -199,7 +202,10 @@
     [engine speak:dayView];
 //*********************************************Events********************
     longPress=[[voiceRecPlay alloc]init];
-    
+    [longPress prepareForRecord:@"boshra" date:@"12-12-2014"];
+    if ([longPress playAudio:@"boshra" date:@"12-12-2014"]){
+        
+    }
     
 //*********************************************GenralEvents********************   
     // (Today in string with this format:  DD-MM-YYYY)
@@ -229,8 +235,7 @@
     [engine speak:@"start"];
     
     
-    
-    [longPress recordAudio:@"boshra" date:[curr text]];
+    [longPress recordAudio];
         
 }
 - (IBAction)stopRec:(id)sender {
@@ -243,7 +248,7 @@
 }
 - (IBAction)playRec:(id)sender {
     
-    [longPress playAudio];
+    [longPress playAudio:@"boshra" date:@"12-12-2014"];
     
 }
 

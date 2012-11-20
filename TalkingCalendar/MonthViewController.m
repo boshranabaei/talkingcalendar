@@ -16,7 +16,7 @@
 @implementation MonthViewController
 
 @synthesize currentDate,dateR,leftUpdateDate,rightUpdateDate,screenUpdateDate,Left,Right,prev,curr,next,swipe;
-@synthesize userNAme;
+@synthesize userName;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -120,10 +120,12 @@
     if([segue.identifier isEqualToString:@"goYearView"]){
         YearViewController *yvc = [segue destinationViewController];
         [yvc setCurrentDate:currentDate];
+        [yvc setUserName:userName];
     }
     else if([segue.identifier isEqualToString:@"backWeekView"]){
         WeekViewController *wvc= [segue destinationViewController];
         [wvc setCurrentDate:currentDate];
+        [wvc setUserName:userName];
     }
 }
 - (void)viewDidLoad

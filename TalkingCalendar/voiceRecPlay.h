@@ -21,7 +21,8 @@
 @property NSUserDefaults *defaults;
 @property BOOL isRecording;
 
--(void)recordAudio:(NSString*)userName date:(NSString*)date;
+-(void)recordAudio;
 -(void)stop;
--(void)playAudio;
+-(void)prepareForRecord:(NSString*)userName date:(NSString*)date;
+-(BOOL)playAudio:(NSString*)userName date:(NSString*)date;
 @end
