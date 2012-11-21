@@ -286,18 +286,19 @@
     [dateFormatForGE setDateFormat:@"dd-MM-YYYY"];
     NSString *dateInStringForGE = [dateFormatForGE stringFromDate: currentDate];
     NSString *GEDate= [[NSString alloc] initWithFormat:@"%@",dateInStringForGE];
-    NSString *GEevent=[generalEvents searchGEfor:GEDate];
-    
-    
+   
+    NSString *GEevent=[generalEvents searchGEfor:@"01-01-2012"];
+     [GELabel setText:GEevent];
     
     if (tutorialMode) {
         NSLog(@"Tutorial mode is on");
         if (![GEevent isEqualToString:@"No events"]) {
             // There are events.
 
-            NSString * mid =[dayView stringByAppendingString:@", To access the Week view, swipe up. To change the date, swipe left or right. To record an event on the current date, hold the screen for three seconds. Double tap the screen when you are finished. To delete an event. The event is, " ];
+            NSString * mid =[dayView stringByAppendingString:GEevent];
+            
        
-            [engine2 speak:[mid stringByAppendingString:GEevent]];
+            [engine speak:[mid stringByAppendingString:@", To access the Week view, swipe up. To change the date, swipe left or right. To record an event on the current date, hold the screen for three seconds. Double tap the screen when you are finished. To delete an event. The event is, " ]];
         }
         else {
             // There are no events.
@@ -307,23 +308,23 @@
     }
     
     else if (!(tutorialMode)) {
-        NSLog(@"No events");
         NSLog(@"Tutorial mode is off");
-        [engine speak:dayView];
+        if (![GEevent isEqualToString:@"No events"]) {
+            // There are events.
+            
+            
+            [engine speak:[dayView stringByAppendingString:GEevent]];
+        }
+        else {
+            // There are no events.
+    
+            [engine speak:dayView];
+        }
+
     }
     
     
-    /*
-     [GELabel setText:GEevent];
-    if(![GEevent isEqualToString:@"No events"]){
-        NSString * mid=[dayView stringByAppendingString:@", the event is, "];
-        [engine speak:[mid stringByAppendingString:GEevent]];
-    }
-    else{
-        [engine speak:dayView];
-    }
-     
-     */
+
     
 
 }

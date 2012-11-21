@@ -63,6 +63,7 @@
             NSString *description=[NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 0)];
             sqlite3_finalize(statement);
             sqlite3_close(contactDB);
+
             return description;
         }
         sqlite3_finalize(statement);
