@@ -34,7 +34,7 @@ return self;
     docsDir = [dirPaths objectAtIndex:0];
     
     soundFilePath = [docsDir stringByAppendingPathComponent:[[NSString alloc]initWithFormat:@"%@-%@.caf",userName,date]];
-    //NSLog(soundFilePath);
+    NSLog(soundFilePath);
     
     NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
     
@@ -89,7 +89,7 @@ return self;
      //*********************** stop ************************
     if (audioRecorder.recording)
     {
-                NSLog(@"recording stopped");
+        NSLog(@"recording stopped");
         [audioRecorder stop];
     } else if (audioPlayer.playing) {
         [audioPlayer stop];

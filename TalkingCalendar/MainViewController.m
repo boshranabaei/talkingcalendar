@@ -37,7 +37,7 @@
         else if (!(tutorialMode)) {
             tutorialMode = YES;
             NSLog(@"Tutorial Mode has been turned on.");
-            [engine speak: @"To access the Settings page, swipe left or right. To open the calendar, double tap the screen."];
+            [engine speak: @"To access the Settings page, swipe left or right. To open the calendar, double tap the screen. ."];
         }
     }
 }

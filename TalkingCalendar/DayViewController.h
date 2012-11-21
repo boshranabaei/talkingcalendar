@@ -32,6 +32,7 @@
 @property NSString *currentdayInMonth1;
 @property NSString * userName;
 @property GeneralEvents *generalEvents;
+@property NSString *dateInString;
 
 @property (weak, nonatomic) IBOutlet UILabel *prev;
 @property (weak, nonatomic) IBOutlet UILabel *curr;

@@ -109,6 +109,7 @@
     
     [curr setText:msg2];
     [prev setText:msg3];
+    [self ViewPlay];
 }
 - (IBAction)RightSwipe:(id)sender {
     // instantiate a NSDateFormatter
@@ -150,6 +151,7 @@
     
     [curr setText:msg2];
     [prev setText:currentdayInMonth1];
+    [self ViewPlay];
     
 
 }
@@ -246,6 +248,9 @@
     
     
 //*********************************************Events********************
+
+
+    longPress=[[voiceRecPlay alloc]init];
     [self ViewPlay];
     
 //*********************************************GenralEvents********************   
@@ -298,10 +303,12 @@
 }
 -(void)ViewPlay
 {
-    // "yuan" The Date of the "curr label" in the format DD-MM-YYYY
+    NSDateFormatter *formatForRecord=[[NSDateFormatter alloc]init];
+    [formatForRecord setDateFormat:@"dd-MM-YYYY"];
+    NSString *stringForRecord = [[NSString alloc] initWithFormat:@"%@",[formatForRecord stringFromDate: currentDate]];
     
-    [longPress prepareForRecord:userName date:currentdayInMonth1];
-    [longPress playAudio:userName date:currentdayInMonth1];
+    [longPress prepareForRecord:userName date:stringForRecord];
+    [longPress playAudio:userName date:stringForRecord];
     
 }
 - (void)didReceiveMemoryWarning
