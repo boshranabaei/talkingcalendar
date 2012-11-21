@@ -34,6 +34,7 @@
 @property GeneralEvents *generalEvents;
 @property NSString *dateInString;
 @property BOOL hasEvent;
+@property BOOL isRecording;
 @property int whatConfrim;
 
 @property (weak, nonatomic) IBOutlet UILabel *prev;
@@ -48,5 +49,7 @@
 - (IBAction)addEvent:(id)sender;
 @property (strong, nonatomic) IBOutlet UIView *stopRec;
 @property (weak, nonatomic) IBOutlet UIButton *playRec;
+
+-(void)prepareForRec;
 //@property GeneralEvents * generalEvents;
 @end

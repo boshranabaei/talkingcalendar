@@ -183,7 +183,16 @@ return self;
 
 
 
-
+-(void)deleteVoice:(NSString*)userName date:(NSString*)date{
+    NSArray *dirPaths;
+    NSString *docsDir;
+    dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    docsDir = [dirPaths objectAtIndex:0];
+    NSString * delFilePath = [docsDir stringByAppendingPathComponent:[[NSString alloc]initWithFormat:@"%@-%@.caf",userName,date]];
+   
+    
+    [[NSFileManager defaultManager] removeItemAtPath:delFilePath error:NULL];
+}
 
 
 
@@ -196,8 +205,9 @@ return self;
     
     dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     docsDir = [dirPaths objectAtIndex:0];
-    soundFilePath = [docsDir stringByAppendingPathComponent:[[NSString alloc]initWithFormat:@"%@-%@.caf",userName,date]];
-    NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
+    NSString * playFilePath = [docsDir stringByAppendingPathComponent:[[NSString alloc]initWithFormat:@"%@-%@.caf",userName,date]];
+    //NSLog([[NSString alloc]initWithFormat:@"%@-%@.caf",userName,date]);
+    NSURL *soundFileURL = [NSURL fileURLWithPath:playFilePath];
     
     if (!audioRecorder.recording)
     {
@@ -277,9 +287,9 @@ return self;
     
     sqlite3_finalize(statement);
     sqlite3_close(contactDB);*/
-    
-    
+      
 }
+
 
 
 @end

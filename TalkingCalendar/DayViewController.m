@@ -11,6 +11,7 @@
 #import "voiceRecPlay.h"
 #import "GeneralEvents.h"
 #import "AppDelegate.h"
+#import "ConfirmViewController.h"
 
 @interface DayViewController ()
 
@@ -21,7 +22,7 @@
 
 @synthesize stopRec;
 @synthesize playRec;
-
+@synthesize isRecording;
 @synthesize prev,next,curr;
 
 @synthesize GELabel;
@@ -168,6 +169,11 @@
         [wvc setUserName:userName];
         
     }
+    if([segue.identifier isEqualToString:@"confirm"]){
+        ConfirmViewController *cvc = [segue destinationViewController];
+        [cvc setUserName:userName];
+        
+    }
     
 }
 
@@ -186,7 +192,7 @@
     //[engine setGender:kESpeakEngineGenerFemale];
     //[engine speak:cDate.currentdayInMonth1];
 
-
+    isRecording=NO;
     dateR=[[NSDate alloc] init];
     if(currentDate ==nil)
         currentDate=[[NSDate alloc] init];
@@ -252,9 +258,25 @@
     
 //*********************************************Events********************
 
-
+    //Problem
     longPressForRecord=[[voiceRecPlay alloc]init];
-    [self ViewPlay];
+    [self prepareForRec];
+    if(whatConfrim==1){
+        [self record];
+        hasEvent=YES;
+        [engine speak:@"start recording"];
+        [engine2 speak:@" "];
+
+    }
+    else if(whatConfrim==2){
+        [self deleteVoice];
+        [engine speak:@"event deleted"];
+        [engine2 speak:@" "];
+    }
+    else{
+        [self ViewPlay];
+    }
+    
     
 //*********************************************GenralEvents********************   
     generalEvents=[[GeneralEvents alloc]init];
@@ -305,13 +327,18 @@
     
 
 }
+
+-(void)prepareForRec{
+    NSDateFormatter *formatForRecord=[[NSDateFormatter alloc]init];
+    [formatForRecord setDateFormat:@"dd-MM-YYYY"];
+    NSString *stringForRecord = [[NSString alloc] initWithFormat:@"%@",[formatForRecord stringFromDate: currentDate]];
+    [longPressForRecord prepareForRecord:userName date:stringForRecord];
+}
 -(void)ViewPlay
 {
     NSDateFormatter *formatForRecord=[[NSDateFormatter alloc]init];
     [formatForRecord setDateFormat:@"dd-MM-YYYY"];
     NSString *stringForRecord = [[NSString alloc] initWithFormat:@"%@",[formatForRecord stringFromDate: currentDate]];
-    NSLog(@"%i",whatConfrim);
-    [longPressForRecord prepareForRecord:userName date:stringForRecord];
     hasEvent=[longPressForRecord playAudio:userName date:stringForRecord];
     
 }
@@ -332,6 +359,8 @@
     [engine stop];
 }
 - (IBAction)addEvent:(id)sender {
+    if(!isRecording){
+    isRecording=YES;
     if(hasEvent){
         
         [self performSegueWithIdentifier:@"confirm" sender:self];
@@ -342,6 +371,24 @@
         hasEvent=YES;
     [longPressForRecord recordAudio];
     }
+    
+    }
+}
+- (void)record {
+
+        [engine speak:@"start"];
+        hasEvent=YES;
+        [longPressForRecord recordAudio];
+
+}
+- (void)deleteVoice {
+    NSDateFormatter *formatForDelete=[[NSDateFormatter alloc]init];
+    [formatForDelete setDateFormat:@"dd-MM-YYYY"];
+    NSString *stringForDelete = [[NSString alloc] initWithFormat:@"%@",[formatForDelete stringFromDate: currentDate]];
+    
+    [longPressForRecord deleteVoice:userName date:stringForDelete];
+   
+    
 }
 - (IBAction)stopRec:(id)sender {
    
@@ -349,12 +396,10 @@
     NSString *say=[[NSString alloc]initWithFormat:@"event added to %@",currentdayInMonth1];
     [engine speak:say];
     [longPressForRecord stop];
+    isRecording=NO;
     
 }
-- (IBAction)playRec:(id)sender {
-    
-    [longPressForRecord playAudio:@"boshra" date:@"12-12-2014"];
-    
-}
+ 
+
 
 @end

@@ -25,4 +25,5 @@
 -(void)stop;
 -(void)prepareForRecord:(NSString*)userName date:(NSString*)date;
 -(BOOL)playAudio:(NSString*)userName date:(NSString*)date;
+-(void)deleteVoice:(NSString*)userName date:(NSString*)date;
 @end
