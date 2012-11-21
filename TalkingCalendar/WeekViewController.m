@@ -175,6 +175,7 @@
             [self getSunday];
         [dvc setCurrentDate:currentDate];
         [dvc setUserName:userName];
+        [dvc setWhatConfrim:0];
     }
     else if ([segue.identifier isEqualToString:@"goMonthView"]){
         MonthViewController *mvc = [segue destinationViewController];

@@ -33,6 +33,8 @@
 @property NSString * userName;
 @property GeneralEvents *generalEvents;
 @property NSString *dateInString;
+@property BOOL hasEvent;
+@property int whatConfrim;
 
 @property (weak, nonatomic) IBOutlet UILabel *prev;
 @property (weak, nonatomic) IBOutlet UILabel *curr;
@@ -40,7 +42,8 @@
 @property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *Left;
 @property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *Right;
 
-@property voiceRecPlay * longPress;
+@property voiceRecPlay * longPressForRecord;
+
 
 - (IBAction)addEvent:(id)sender;
 @property (strong, nonatomic) IBOutlet UIView *stopRec;

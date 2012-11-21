@@ -14,9 +14,11 @@
 
 @interface DayViewController ()
 
+
 @end
 
 @implementation DayViewController
+
 @synthesize stopRec;
 @synthesize playRec;
 
@@ -30,10 +32,11 @@
 
 @synthesize currentdayInMonth1;
 
-@synthesize longPress;
+@synthesize longPressForRecord;
 @synthesize userName;
 @synthesize generalEvents;
-
+@synthesize hasEvent;
+@synthesize whatConfrim;
 
 
 - (BOOL) canBecomeFirstResponder {
@@ -172,7 +175,7 @@
 
 - (void)viewDidLoad
 {
-
+   
     [super viewDidLoad];
 //*********************************************Calendar and Text to speech********************
     
@@ -223,7 +226,7 @@
     NSString *dateInString3 = [dateFormatter stringFromDate: yesterdayDate];
     NSString *msg3 = [[NSString alloc] initWithFormat:@"%@",dateInString3];
     
-    
+     
    
     
     
@@ -250,7 +253,7 @@
 //*********************************************Events********************
 
 
-    longPress=[[voiceRecPlay alloc]init];
+    longPressForRecord=[[voiceRecPlay alloc]init];
     [self ViewPlay];
     
 //*********************************************GenralEvents********************   
@@ -260,7 +263,7 @@
     // set the dateFormatter format
     [dateFormatForGE setDateFormat:@"dd-MM-YYYY"];
     NSString *dateInStringForGE = [dateFormatForGE stringFromDate: currentDate];
-    NSString *GEDate= [[NSString alloc] initWithFormat:@"%@",dateInStringForGE];//@"08-10-2012";
+    NSString *GEDate= [[NSString alloc] initWithFormat:@"%@",dateInStringForGE];
     NSString *GEevent=[generalEvents searchGEfor:GEDate];
     
     
@@ -299,6 +302,7 @@
     }
      
      */
+    
 
 }
 -(void)ViewPlay
@@ -306,9 +310,9 @@
     NSDateFormatter *formatForRecord=[[NSDateFormatter alloc]init];
     [formatForRecord setDateFormat:@"dd-MM-YYYY"];
     NSString *stringForRecord = [[NSString alloc] initWithFormat:@"%@",[formatForRecord stringFromDate: currentDate]];
-    
-    [longPress prepareForRecord:userName date:stringForRecord];
-    [longPress playAudio:userName date:stringForRecord];
+    NSLog(@"%i",whatConfrim);
+    [longPressForRecord prepareForRecord:userName date:stringForRecord];
+    hasEvent=[longPressForRecord playAudio:userName date:stringForRecord];
     
 }
 - (void)didReceiveMemoryWarning
@@ -328,23 +332,28 @@
     [engine stop];
 }
 - (IBAction)addEvent:(id)sender {
-    [engine speak:@"start"];
-    
-    
-    [longPress recordAudio];
+    if(hasEvent){
         
+        [self performSegueWithIdentifier:@"confirm" sender:self];
+        
+    }
+    else{
+    [engine speak:@"start"];
+        hasEvent=YES;
+    [longPressForRecord recordAudio];
+    }
 }
 - (IBAction)stopRec:(id)sender {
    
     
     NSString *say=[[NSString alloc]initWithFormat:@"event added to %@",currentdayInMonth1];
     [engine speak:say];
-    [longPress stop];
+    [longPressForRecord stop];
     
 }
 - (IBAction)playRec:(id)sender {
     
-    [longPress playAudio:@"boshra" date:@"12-12-2014"];
+    [longPressForRecord playAudio:@"boshra" date:@"12-12-2014"];
     
 }
 

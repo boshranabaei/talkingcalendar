@@ -34,7 +34,7 @@ return self;
     docsDir = [dirPaths objectAtIndex:0];
     
     soundFilePath = [docsDir stringByAppendingPathComponent:[[NSString alloc]initWithFormat:@"%@-%@.caf",userName,date]];
-    NSLog(soundFilePath);
+   
     
     NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
     
@@ -95,7 +95,7 @@ return self;
         [audioPlayer stop];
     }
     else{
-        NSLog(@"hish");
+        
     }
     //*********************** store ************************
 

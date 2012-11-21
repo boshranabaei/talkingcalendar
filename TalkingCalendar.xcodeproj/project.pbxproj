@@ -10,6 +10,7 @@
 		1EF68D24164DCFBD003E495B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EF68D23164DCFBD003E495B /* AVFoundation.framework */; };
 		2194521B165C1A4F00AAAFA2 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2194521A165C1A4F00AAAFA2 /* SettingsViewController.m */; };
 		21CACD6E16570C1400735F59 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CACD6D16570C1400735F59 /* TutorialViewController.m */; };
+		2A224B5C165C817E00FA5184 /* ConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A224B5B165C817E00FA5184 /* ConfirmViewController.m */; };
 		2A2919111644A6FF000462DF /* Icon-talking cal.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A2919101644A6FF000462DF /* Icon-talking cal.png */; };
 		2A3A144F164CA4D20025AB72 /* Accounts.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3A144E164CA4D20025AB72 /* Accounts.m */; };
 		2A43B3AC164E0534002E061F /* espeak-data in Resources */ = {isa = PBXBuildFile; fileRef = 2A43B3AB164E0534002E061F /* espeak-data */; };
@@ -79,6 +80,8 @@
 		2194521A165C1A4F00AAAFA2 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		21CACD6C16570C1400735F59 /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
 		21CACD6D16570C1400735F59 /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
+		2A224B5A165C817E00FA5184 /* ConfirmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmViewController.h; sourceTree = "<group>"; };
+		2A224B5B165C817E00FA5184 /* ConfirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmViewController.m; sourceTree = "<group>"; };
 		2A2919101644A6FF000462DF /* Icon-talking cal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-talking cal.png"; sourceTree = "<group>"; };
 		2A3A144D164CA4D20025AB72 /* Accounts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Accounts.h; sourceTree = "<group>"; };
 		2A3A144E164CA4D20025AB72 /* Accounts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Accounts.m; sourceTree = "<group>"; };
@@ -217,6 +220,8 @@
 				2A4A93531648707800EC2717 /* AuthenticationViewController.m */,
 				2AA44CDD165472F700FF330B /* GeneralEvents.h */,
 				2AA44CDE165472F700FF330B /* GeneralEvents.m */,
+				2A224B5A165C817E00FA5184 /* ConfirmViewController.h */,
+				2A224B5B165C817E00FA5184 /* ConfirmViewController.m */,
 				5FFA9FDF163228B100FB0DF5 /* DayViewController.h */,
 				5FFA9FE0163228B100FB0DF5 /* DayViewController.m */,
 				5FFAA00E1634B54C00FB0DF5 /* WeekViewController.h */,
@@ -428,6 +433,7 @@
 				21CACD6E16570C1400735F59 /* TutorialViewController.m in Sources */,
 				2A5A1558165868FF002F9525 /* voiceRecPlay.m in Sources */,
 				2194521B165C1A4F00AAAFA2 /* SettingsViewController.m in Sources */,
+				2A224B5C165C817E00FA5184 /* ConfirmViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

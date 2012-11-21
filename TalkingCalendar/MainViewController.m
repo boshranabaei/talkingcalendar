@@ -72,6 +72,7 @@
     if([segue.identifier isEqualToString:@"mainToDay"]){
         DayViewController * dvc=[segue destinationViewController];
         [dvc setUserName:userName];
+        [dvc setWhatConfrim:0];
     }
 
 }

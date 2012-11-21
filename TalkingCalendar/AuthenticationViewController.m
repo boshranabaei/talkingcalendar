@@ -108,9 +108,9 @@
     [userName resignFirstResponder];
     accounts=[[Accounts alloc]init];
    if([accounts validateUsername:[userName text] password:[password text]]){
-       NSLog(@"Test");
+       
        [self performSegueWithIdentifier:@"gotomain" sender:self];
-      NSLog(@"Test2");
+      
     }
    else{
        UIAlertView *notValid=[[UIAlertView alloc]initWithTitle:@"Authentication"
