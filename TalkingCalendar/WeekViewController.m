@@ -9,6 +9,7 @@
 #import "WeekViewController.h"
 #import "DayViewController.h"
 #import "MonthViewController.h"
+#import "ESpeakEngine.h"
 #import "AppDelegate.h"
 @interface WeekViewController ()
 
@@ -28,10 +29,15 @@
         if (tutorialMode) {
             NSLog(@"Tutorial Mode has been turned off.");
             tutorialMode = NO;
+            [engine stop];
         }
         else if (!(tutorialMode)) {
             tutorialMode = YES;
             NSLog(@"Tutorial Mode has been turned on.");
+            
+            NSString *weekView2 = [[NSString alloc] initWithFormat:@"Swipe up or down to access the month view or the day view respectively. To change the week, swipe left or right"];
+            
+            [engine speak:weekView2];
         }
     }
 }
@@ -162,7 +168,7 @@
     return;
 }
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
+    [engine stop];
     if([segue.identifier isEqualToString:@"backDayView"]){
         DayViewController *dvc = [segue destinationViewController];
         if(swipe)
@@ -234,12 +240,23 @@
     // Do any additional setup after loading the view, typically from a nib.
 	// Do any additional setup after loading the view.
     
+
     NSString *weekView = [[NSString alloc] initWithFormat:@"Week, View, Week%@",dateInString];
     
     engine = [[ESpeakEngine alloc] init];
     [engine setLanguage:@"en"];
     [engine setSpeechRate:150];
-    [engine speak:weekView];
+    
+    if (tutorialMode) {
+        NSLog(@"Tutorial Mode is on : will speak everything");
+        NSString *weekView2 = [[NSString alloc] initWithFormat:@"Swipe up or down to access the month view or the day view respectively. To change the week, swipe left or right%@", weekView];
+
+        [engine speak:weekView2];
+    }
+    else if (!(tutorialMode)) {
+        [engine speak:weekView];
+    }
+
     
     //************************* General Events ***************************
     

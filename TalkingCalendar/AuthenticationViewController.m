@@ -9,6 +9,7 @@
 #import "AuthenticationViewController.h"
 #import "MainViewController.h"
 #import "AppDelegate.h"
+#import "ESpeakEngine.h"
 @interface AuthenticationViewController ()
 
 @end
@@ -30,10 +31,13 @@
         if (tutorialMode) {
             NSLog(@"Tutorial Mode has been turned off.");
             tutorialMode = NO;
+            [engine stop];
         }
         else if (!(tutorialMode)) {
             tutorialMode = YES;
             NSLog(@"Tutorial Mode has been turned on.");
+            
+            [engine speak:@"If you have created an account already, enter your credentials and select Log in. Otherwise, create an account by selecting the Sign up button."];
         }
     }
 }
@@ -59,6 +63,7 @@
 
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    [engine stop];
     if([segue.identifier isEqualToString:@"gotomain"]){
     MainViewController * mvc=[segue destinationViewController];
     [mvc setUserName:[userName text]];
@@ -69,8 +74,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    engine = [[ESpeakEngine alloc] init];
+    [engine setLanguage:@"en"];
+    [engine setSpeechRate:170];
 
-
+    if (!(tutorialMode)) {
+        [engine speak:@"To toggle the tutorial, shake the device"];
+    }
+    
+    else if (tutorialMode) {
+        
+        [engine speak:@"If you have created an account already, enter your credentials and select Log in. Otherwise, create an account by selecting the Sign up button."];
+    }
 }
 
 - (void)viewDidUnload

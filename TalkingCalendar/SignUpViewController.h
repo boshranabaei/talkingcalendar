@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "Accounts.h"
-@interface SignUpViewController : UIViewController
+#import "ESpeakEngine.h"
+@interface SignUpViewController : UIViewController {
+    
+    ESpeakEngine * engine;
+    ESpeakEngine * engine2;
+    IBOutlet UITextView *textView;
+}
 @property (weak, nonatomic) IBOutlet UITextField *userName;
 @property (weak, nonatomic) IBOutlet UITextField *password;
 @property (weak, nonatomic) IBOutlet UITextField *passConfirm;

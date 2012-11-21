@@ -9,6 +9,7 @@
 #import "SyncViewController.h"
 #import "TutorialViewController.h"
 #import "LogOutViewController.h"
+#import "ESpeakEngine.h"
 #import "AppDelegate.h"
 
 @interface SyncViewController ()
@@ -28,15 +29,19 @@
         if (tutorialMode) {
             NSLog(@"Tutorial Mode has been turned off.");
             tutorialMode = NO;
+            [engine stop];
         }
         else if (!(tutorialMode)) {
             tutorialMode = YES;
             NSLog(@"Tutorial Mode has been turned on.");
+            [engine speak:@"To access the log out page, swipe left or right. To sync your data, double tap the screen"];
         }
     }
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    [engine stop];
+    
     /*
     if([segue.identifier isEqualToString:@"syncToTutorial"]){
         TutorialViewController *tvc = [segue destinationViewController];
@@ -80,9 +85,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+    engine = [[ESpeakEngine alloc] init];
+    [engine setLanguage:@"en"];
+    [engine setSpeechRate:170];
+     
+     
     NSLog(@"TutorialMode is ");
     if (tutorialMode) {
         NSLog(@"ON");
+        [engine speak:@"To access the log out page, swipe left or right. To sync your data, double tap the screen"];
+        
     }
     else if (!(tutorialMode)) {
         NSLog(@"OFF");

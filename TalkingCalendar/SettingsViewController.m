@@ -8,6 +8,7 @@
 
 #import "SettingsViewController.h"
 #import "AppDelegate.h"
+#import "ESpeakEngine.h"
 
 @interface SettingsViewController ()
 
@@ -31,6 +32,7 @@
         else if (!(tutorialMode)) {
             tutorialMode = YES;
             NSLog(@"Tutorial Mode has been turned on.");
+            [engine speak:@"To access the open calendar page, swipe left or right. To open the Settings, double tap the screen."];
         }
     }
 }
@@ -59,6 +61,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    engine = [[ESpeakEngine alloc] init];
+    [engine setLanguage:@"en"];
+    [engine setSpeechRate:170];
+    
+    if (tutorialMode) {
+        [engine speak:@"To access the Open Calendar page, swipe left or right. To open the Settings, double tap the screen."];
+    }
 	// Do any additional setup after loading the view.
 }
 

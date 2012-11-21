@@ -13,6 +13,7 @@
 
 @interface MainViewController : UIViewController {
     ESpeakEngine * engine;
+    ESpeakEngine * engine2;
 
 }
 @property (weak, nonatomic) IBOutlet UILabel *reminder;

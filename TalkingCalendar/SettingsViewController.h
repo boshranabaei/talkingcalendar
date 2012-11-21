@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ESpeakEngine.h"
 
-@interface SettingsViewController : UIViewController
+@interface SettingsViewController : UIViewController {
+    ESpeakEngine * engine;
+    ESpeakEngine * engine2;
+    IBOutlet UITextView *textView;
+
+}
 
 //@property BOOL tutorialMode;
 

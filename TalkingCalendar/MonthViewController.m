@@ -8,6 +8,7 @@
 
 #import "MonthViewController.h"
 #import "YearViewController.h"
+#import "ESpeakEngine.h"
 #import "WeekViewController.h"
 #import "AppDelegate.h"
 @interface MonthViewController ()
@@ -30,10 +31,12 @@
         if (tutorialMode) {
             NSLog(@"Tutorial Mode has been turned off.");
             tutorialMode = NO;
+            [engine stop];
         }
         else if (!(tutorialMode)) {
             tutorialMode = YES;
             NSLog(@"Tutorial Mode has been turned on.");
+            [engine speak:@"Swipe up or down to access the year view or the week view respectively. To change the month, swipe left or right."];
         }
     }
 }
@@ -148,6 +151,7 @@
     
 }
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    [engine stop];
     
     if([segue.identifier isEqualToString:@"goYearView"]){
         YearViewController *yvc = [segue destinationViewController];
@@ -215,7 +219,19 @@
     engine = [[ESpeakEngine alloc] init];
     [engine setLanguage:@"en"];
     [engine setSpeechRate:150];
-    [engine speak:monthView];
+    
+    
+    if (tutorialMode) {
+        NSString *monthView2 = [[NSString alloc] initWithFormat:@"Swipe up or down to access the year view or the week view respectively. To change the month, swipe left or right%@",monthView];
+        
+        [engine speak:monthView2];
+    }
+    
+    else if (!(tutorialMode)) {
+        [engine speak:monthView];
+    }
+    
+ 
 }
 
 

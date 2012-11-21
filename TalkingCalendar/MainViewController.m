@@ -32,10 +32,12 @@
         if (tutorialMode) {
             NSLog(@"Tutorial Mode has been turned off.");
             tutorialMode = NO;
+            [engine stop];
         }
         else if (!(tutorialMode)) {
             tutorialMode = YES;
             NSLog(@"Tutorial Mode has been turned on.");
+            [engine speak: @"To access the Settings page, swipe left or right. To open the calendar, double tap the screen."];
         }
     }
 }
@@ -64,6 +66,9 @@
 
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    [engine stop];
+    [engine2 stop];
+    
     if([segue.identifier isEqualToString:@"mainToDay"]){
         DayViewController * dvc=[segue destinationViewController];
         [dvc setUserName:userName];
@@ -98,9 +103,23 @@
     [engine setLanguage:@"en"];
     [engine setSpeechRate:165];
     
+    engine2 = [[ESpeakEngine alloc] init];
+    [engine2 setLanguage:@"en"];
+    [engine2 setSpeechRate:165];
     
-    NSString * holidays =[[NSString alloc]initWithFormat:@"To toggle the tutorial, shake the phone. %Today: %@. Tomorrow: %@", [ge searchGEfor:currentdayInMonth1],[ge searchGEfor:tomorrow2]];
-    [engine speak:holidays];
+   
+    if (tutorialMode) {
+        NSLog(@"Tutorial mode is on");
+     
+        NSString * holidays =[[NSString alloc]initWithFormat:@"To access the Settings page, swipe left or right. To open the calendar, double tap the screen,%Today: %@. Tomorrow: %@", [ge searchGEfor:currentdayInMonth1],[ge searchGEfor:tomorrow2]];
+        [engine2 speak:holidays];
+        
+       }
+    else if (!(tutorialMode)) {
+                NSLog(@"Tutorial mode is off");
+        NSString * holidays =[[NSString alloc]initWithFormat:@"%Today: %@. Tomorrow: %@", [ge searchGEfor:currentdayInMonth1],[ge searchGEfor:tomorrow2]];
+        [engine speak:holidays];
+    }
 
 	[reminder setText:[ge searchGEfor:currentdayInMonth1]];
     [reminderTomorrow setText:[ge searchGEfor:tomorrow2]];

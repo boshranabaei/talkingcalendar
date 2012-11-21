@@ -8,9 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "Accounts.h"
+#import "ESpeakEngine.h"
 #import "MainViewController.h"
 
-@interface AuthenticationViewController : UIViewController
+@interface AuthenticationViewController : UIViewController {
+    
+    ESpeakEngine * engine;
+    ESpeakEngine * engine2;
+    IBOutlet UITextView *textView;
+}
 
 @property Accounts *accounts;
 @property (weak, nonatomic) IBOutlet UITextField *userName;

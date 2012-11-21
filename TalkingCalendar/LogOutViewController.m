@@ -9,6 +9,7 @@
 #import "LogOutViewController.h"
 #import "SyncViewController.h"
 #import "AuthenticationViewController.h"
+#import "EspeakEngine.h"
 #import "AppDelegate.h"
 
 @interface LogOutViewController ()
@@ -29,10 +30,12 @@
         if (tutorialMode) {
             NSLog(@"Tutorial Mode has been turned off.");
             tutorialMode = NO;
+            [engine stop];
         }
         else if (!(tutorialMode)) {
             tutorialMode = YES;
             NSLog(@"Tutorial Mode has been turned on.");
+            [engine speak:@"To access the sync page, swipe left or right. To log out of the current account, double tap the screen"];
         }
     }
 }
@@ -49,6 +52,8 @@
 
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    [engine stop];
     /*
     //swipe left: LogOut to Sync
     if([segue.identifier isEqualToString:@"logOutToSyncLeft"]){
@@ -86,9 +91,15 @@
 {
     [super viewDidLoad];
     
+    engine = [[ESpeakEngine alloc] init];
+    [engine setLanguage:@"en"];
+    [engine setSpeechRate:165];
+    
+    
     NSLog(@"TutorialMode is ");
     if (tutorialMode) {
         NSLog(@"ON");
+        [engine speak:@"To access the sync page, swipe left or right. To log out of the current account, double tap the screen"];
     }
     else if (!(tutorialMode)) {
         NSLog(@"OFF");

@@ -8,6 +8,7 @@
 
 #import "SignUpViewController.h"
 #import "MainViewController.h"
+#import "ESpeakEngine.h"
 #import "AppDelegate.h"
 @interface SignUpViewController ()
 
@@ -30,10 +31,12 @@
         if (tutorialMode) {
             NSLog(@"Tutorial Mode has been turned off.");
             tutorialMode = NO;
+            [engine stop];
         }
         else if (!(tutorialMode)) {
             tutorialMode = YES;
             NSLog(@"Tutorial Mode has been turned on.");
+            [engine speak:@"Once you have entered your information, select Create account."];
         }
     }
 }
@@ -46,6 +49,11 @@
 - (void) viewWillDisappear:(BOOL)animated {
     [self resignFirstResponder];
     [super viewWillDisappear:animated];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    [engine stop];
+
 }
 
 
@@ -62,6 +70,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    engine = [[ESpeakEngine alloc] init];
+    [engine setLanguage:@"en"];
+    [engine setSpeechRate:170];
+    
+    if (tutorialMode) {
+        [engine speak:@"Once you have entered your information, select Create account."];
+    }
 }
 
 - (void)viewDidUnload

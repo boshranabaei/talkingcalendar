@@ -42,14 +42,19 @@
 
 - (void) motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event {
     if (event.subtype == UIEventSubtypeMotionShake) {
+        
         NSLog(@"Tutorial Mode has been toggled.");
         if (tutorialMode) {
             NSLog(@"Tutorial Mode has been turned off.");
             tutorialMode = NO;
+            [engine stop];
         }
         else if (!(tutorialMode)) {
             tutorialMode = YES;
             NSLog(@"Tutorial Mode has been turned on.");
+    
+            [engine speak:@"To access the Week view, swipe up. To change the date, swipe left or right. To record an event on the current date, hold the screen for three seconds. Double tap the screen when you are finished. To delete an event."];
+            
         }
     }
 }
@@ -150,12 +155,15 @@
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    [engine stop];
     
     if([segue.identifier isEqualToString:@"goWeekView"]){
         WeekViewController *wvc = [segue destinationViewController];
         [wvc setCurrentDate:currentDate];
         [wvc setUserName:userName];
+        
     }
+    
 }
 
 
@@ -172,6 +180,7 @@
     //[engine setPitch:50];
     //[engine setGender:kESpeakEngineGenerFemale];
     //[engine speak:cDate.currentdayInMonth1];
+
 
     dateR=[[NSDate alloc] init];
     if(currentDate ==nil)
@@ -213,6 +222,9 @@
     NSString *msg3 = [[NSString alloc] initWithFormat:@"%@",dateInString3];
     
     
+   
+    
+    
     // current.
     // onScreenDate.
     // swipe left -> onScreenDate - 1
@@ -247,6 +259,31 @@
     NSString *GEevent=[generalEvents searchGEfor:GEDate];
     
     
+    
+    if (tutorialMode) {
+        NSLog(@"Tutorial mode is on");
+        if (![GEevent isEqualToString:@"No events"]) {
+            // There are events.
+
+            NSString * mid =[dayView stringByAppendingString:@", To access the Week view, swipe up. To change the date, swipe left or right. To record an event on the current date, hold the screen for three seconds. Double tap the screen when you are finished. To delete an event. The event is, " ];
+       
+            [engine2 speak:[mid stringByAppendingString:GEevent]];
+        }
+        else {
+            // There are no events.
+           NSString *dayView = [[NSString alloc] initWithFormat:@"To access the week view, swipe up. To change the date, swipe left or right. To record an event on the current date, hold the screen for three seconds. Double tap the screen when you are finished. To delete an event %@",dateInString];
+            [engine speak:dayView];
+        }
+    }
+    
+    else if (!(tutorialMode)) {
+        NSLog(@"No events");
+        NSLog(@"Tutorial mode is off");
+        [engine speak:dayView];
+    }
+    
+    
+    /*
      [GELabel setText:GEevent];
     if(![GEevent isEqualToString:@"No events"]){
         NSString * mid=[dayView stringByAppendingString:@", the event is, "];
@@ -255,6 +292,8 @@
     else{
         [engine speak:dayView];
     }
+     
+     */
 
 }
 -(void)ViewPlay
@@ -279,6 +318,7 @@
     GELabel = nil;
     [self setGELabel:nil];
     [super viewDidUnload];
+    [engine stop];
 }
 - (IBAction)addEvent:(id)sender {
     [engine speak:@"start"];

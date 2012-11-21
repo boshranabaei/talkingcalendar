@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EspeakEngine.h"
 
-@interface LogOutViewController : UIViewController
+@interface LogOutViewController : UIViewController {
+    ESpeakEngine * engine;
+    ESpeakEngine * engine2;
+    IBOutlet UITextView *textView;
+}
 //@property BOOL tutorialMode;
 
 
