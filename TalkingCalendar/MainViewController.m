@@ -90,6 +90,7 @@
 {
     [super viewDidLoad];
     [welcome setText:userName];
+    NSLog(userName);
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     // set the dateFormatter format
     [dateFormatter setDateFormat:@"dd-MM-YYYY"];

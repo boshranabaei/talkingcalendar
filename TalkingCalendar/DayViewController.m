@@ -372,7 +372,10 @@
     else{
     [engine speak:@"start"];
         hasEvent=YES;
-    [longPressForRecord recordAudio];
+    BOOL result=[longPressForRecord recordAudio];
+        if(result ==YES){
+            
+        }
     }
     
     }
@@ -388,7 +391,7 @@
     NSDateFormatter *formatForDelete=[[NSDateFormatter alloc]init];
     [formatForDelete setDateFormat:@"dd-MM-YYYY"];
     NSString *stringForDelete = [[NSString alloc] initWithFormat:@"%@",[formatForDelete stringFromDate: currentDate]];
-    
+    NSLog(stringForDelete);
     [longPressForRecord deleteVoice:userName date:stringForDelete];
    
     

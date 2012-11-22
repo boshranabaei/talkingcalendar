@@ -16,15 +16,18 @@
     UIButton *playButton;
     UIButton *recordButton;
     UIButton *stopButton;
+    NSTimer *reapter;
+    int seconds;
 }
 @property NSString *soundFilePath;
 @property NSUserDefaults *defaults;
 @property BOOL isRecording;
 
--(void)recordAudio;
+-(BOOL)recordAudio;
 -(void)stop;
 -(void)prepareForRecord:(NSString*)userName date:(NSString*)date;
 -(BOOL)playAudio:(NSString*)userName date:(NSString*)date;
 -(void)deleteVoice:(NSString*)userName date:(NSString*)date;
 -(BOOL) hasEvent :(NSString *)userName date:(NSString*)date;
+-(void)addOne;
 @end

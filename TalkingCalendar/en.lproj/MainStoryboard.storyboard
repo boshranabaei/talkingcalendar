@@ -746,12 +746,12 @@
                 </tapGestureRecognizer>
                 <swipeGestureRecognizer direction="right" id="9dF-0U-H35">
                     <connections>
-                        <segue destination="2xU-zH-GHz" kind="modal" identifier="LogoutToMain" id="waX-SR-MoN"/>
+                        <segue destination="2xU-zH-GHz" kind="modal" identifier="logoutToMain" id="waX-SR-MoN"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="left" id="Vo5-C7-af9">
                     <connections>
-                        <segue destination="DiA-Xv-83M" kind="modal" identifier="LogoutToReport" id="g1f-09-7P4"/>
+                        <segue destination="DiA-Xv-83M" kind="modal" identifier="logoutToReport" id="g1f-09-7P4"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -796,12 +796,12 @@
                 </tapGestureRecognizer>
                 <swipeGestureRecognizer direction="right" id="0f2-ys-z18">
                     <connections>
-                        <segue destination="qe0-MG-Cxf" kind="modal" identifier="ReportToLogout" id="75c-2b-BYx"/>
+                        <segue destination="qe0-MG-Cxf" kind="modal" identifier="reportToLogout" id="75c-2b-BYx"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="left" id="Gqp-Gf-4N4">
                     <connections>
-                        <segue destination="2xU-zH-GHz" kind="modal" identifier="ReportToMain" id="1gu-WV-6ao"/>
+                        <segue destination="2xU-zH-GHz" kind="modal" identifier="reportToMain" id="1gu-WV-6ao"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -826,6 +826,107 @@
             <point key="canvasLocation" x="-721" y="935"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="AuthenticationViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AuthenticationViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="dissmissKeyboard:"/>
+                <relationship kind="action" name="login:"/>
+                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="userName" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="ConfirmViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ConfirmViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doubleTab:"/>
+                <relationship kind="action" name="longPress:"/>
+                <relationship kind="action" name="swipeLeft:"/>
+                <relationship kind="action" name="swipeRight:"/>
+            </relationships>
+        </class>
+        <class className="DayViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DayViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addEvent:"/>
+                <relationship kind="outlet" name="GELabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="Left" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="Right" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="curr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="next" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="playRec" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="prev" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="stopRec" candidateClass="UIView"/>
+                <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="LogOutViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LogOutViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="MainViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="reminder" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="reminderTomorrow" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="welcome" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MonthViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MonthViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="l:"/>
+                <relationship kind="outlet" name="Left" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="Right" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="curr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="next" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="prev" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ReportViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReportViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="openEmail:"/>
+                <relationship kind="action" name="showPicker:"/>
+            </relationships>
+        </class>
+        <class className="SignUpViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SignUpViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="create:"/>
+                <relationship kind="action" name="dismissKeyboard:"/>
+                <relationship kind="outlet" name="passConfirm" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="userName" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="WeekViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WeekViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="Left" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="Right" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="curr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="next" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="prev" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="YearViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/YearViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="LeftSwipe:"/>
+                <relationship kind="action" name="RightSwipe:"/>
+                <relationship kind="outlet" name="Left" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="Right" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="curr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="next" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="prev" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
@@ -835,9 +936,9 @@
         <segue reference="iyo-AZ-oCm"/>
         <segue reference="NwV-hi-4gJ"/>
         <segue reference="WKm-wE-Ecs"/>
-        <segue reference="1gu-WV-6ao"/>
-        <segue reference="NrK-S8-lHQ"/>
-        <segue reference="VPW-cf-wa1"/>
+        <segue reference="waX-SR-MoN"/>
         <segue reference="75c-2b-BYx"/>
+        <segue reference="g1f-09-7P4"/>
+        <segue reference="VPW-cf-wa1"/>
     </inferredMetricsTieBreakers>
 </document>
