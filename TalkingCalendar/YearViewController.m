@@ -10,6 +10,7 @@
 #import "MonthViewController.h"
 #import "EspeakEngine.h"
 #import "AppDelegate.h"
+#import "MainViewController.h"
 @interface YearViewController ()
 
 @end
@@ -152,6 +153,13 @@
         [mvc setCurrentDate:currentDate];
         [mvc setUserName:userName];
     }
+    if([segue.identifier isEqualToString:@"yearToMain"]){
+        MainViewController *mvc= [segue destinationViewController];
+        [mvc setUserName:userName];
+    }
+    
+    
+    
 }
 - (void)viewDidLoad
 {
