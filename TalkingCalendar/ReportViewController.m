@@ -7,8 +7,9 @@
 //
 
 #import "ReportViewController.h"
-
-@interface ReportViewController ()
+#import <MessageUI/MessageUI.h>
+#import <MessageUI/MFMailComposeViewController.h>
+@interface ReportViewController()
 
 @end
 
@@ -42,16 +43,67 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (IBAction)sendEmail:(id)sender {
+-(IBAction)showPicker:(id)sender{
+    Class mailClass=[NSClassFromString(@"MFMailComposeViewController")];
+    if(mailClass !=nil){
+        if([mailClass canSendMail]){
+            
+        }
+   
+      else{
+        UIAlertView * cannot=[[UIAlertView alloc]initWithTitle:@"email error" message:@"can't send email" delegate:self cancelButtonTitle:@"cancel" otherButtonTitles:nil, nil];
+        [cannot show];
+      }
+    }
+    else{
+        
+    }
 }
 
-- (BOOL) textFieldShouldReturn:(UITextField *)textField{
-    [textField resignFirstResponder];
-    return YES;
+
+
+
+
+- (IBAction)openEmail:(id)sender {
+    MFMailComposeViewController *mailComposer = [[MFMailComposeViewController alloc] init];
+    [mailComposer setMailComposeDelegate:self];
+    
+    if ([MFMailComposeViewController canSendMail]){
+        
+        [mailComposer setToRecipients:[NSArray arrayWithObjects:@"yourEmail@sfu.ca",nil]];
+        // [mailComposer setToRecipients:[NSArray arrayWithObject:@"email@email.co.uk",nil]];
+        [mailComposer setSubject:@"Hi,this is a test"];
+        [mailComposer setMessageBody:@"Is this work?" isHTML:NO];
+        
+        // u can choose any sytle
+        [mailComposer setModalPresentationStyle:UIModalTransitionStyleCrossDissolve];
+        [self presentModalViewController:mailComposer animated:YES];
+ 
+    }
+    
+    else{
+
+    }
+
 }
 
-- (IBAction)dissmissKeyboard:(id)sender {
-    [email resignFirstResponder];
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    if (error) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[NSString stringWithFormat:@"Error %@", [error description]] delegate:nil cancelButtonTitle:@"Canel" otherButtonTitles:nil,nil];
+        [alert show];
+
+        [self dismissModalViewControllerAnimated:YES];
+    }
+    
+    else{
+        [self dismissModalViewControllerAnimated:YES];
+    }
+    
 }
+
+
+
+
 
 @end

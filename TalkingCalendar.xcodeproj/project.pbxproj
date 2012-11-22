@@ -22,6 +22,7 @@
 		2AA44CDF165472F700FF330B /* GeneralEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA44CDE165472F700FF330B /* GeneralEvents.m */; };
 		2AA44CEC1654895B00FF330B /* LogOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA44CEB1654895B00FF330B /* LogOutViewController.m */; };
 		2AA450C7165DBA7800DA12DD /* ReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA450C6165DBA7800DA12DD /* ReportViewController.m */; };
+		2AA450CD165DC60200DA12DD /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AA450CC165DC60200DA12DD /* MessageUI.framework */; };
 		2AA7D7A5164DCF2E00781A58 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA7D7A4164DCF2E00781A58 /* SignUpViewController.m */; };
 		5FFA9FC5163228B100FB0DF5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FFA9FC4163228B100FB0DF5 /* UIKit.framework */; };
 		5FFA9FC7163228B100FB0DF5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FFA9FC6163228B100FB0DF5 /* Foundation.framework */; };
@@ -99,6 +100,7 @@
 		2AA44CEB1654895B00FF330B /* LogOutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogOutViewController.m; sourceTree = "<group>"; };
 		2AA450C5165DBA7800DA12DD /* ReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportViewController.h; sourceTree = "<group>"; };
 		2AA450C6165DBA7800DA12DD /* ReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportViewController.m; sourceTree = "<group>"; };
+		2AA450CC165DC60200DA12DD /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		2AA7D7A3164DCF2E00781A58 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		2AA7D7A4164DCF2E00781A58 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		5FFA9FC0163228B100FB0DF5 /* TalkingCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TalkingCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AA450CD165DC60200DA12DD /* MessageUI.framework in Frameworks */,
 				2A43B3AD164E054F002E061F /* libeSpeak.a in Frameworks */,
 				1EF68D24164DCFBD003E495B /* AVFoundation.framework in Frameworks */,
 				2A4A936316487B4800EC2717 /* libsqlite3.dylib in Frameworks */,
@@ -172,8 +175,9 @@
 		5FFA9FB5163228B100FB0DF5 = {
 			isa = PBXGroup;
 			children = (
-				2A43B39E164E0526002E061F /* eSpeak.xcodeproj */,
 				1EF68D23164DCFBD003E495B /* AVFoundation.framework */,
+				2AA450CC165DC60200DA12DD /* MessageUI.framework */,
+				2A43B39E164E0526002E061F /* eSpeak.xcodeproj */,
 				2A4A936216487B4800EC2717 /* libsqlite3.dylib */,
 				2A2919101644A6FF000462DF /* Icon-talking cal.png */,
 				5FFA9FCA163228B100FB0DF5 /* TalkingCalendar */,

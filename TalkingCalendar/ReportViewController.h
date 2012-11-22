@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
+#import <MessageUI/MFMailComposeViewController.h>
 
-@interface ReportViewController : UIViewController
+@interface ReportViewController : UIViewController <MFMailComposeViewControllerDelegate>
 
-- (IBAction)sendEmail:(id)sender;
+- (IBAction)openEmail:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *email;
 - (BOOL) textFieldShouldReturn:(UITextField *)textField;
-- (IBAction)dissmissKeyboard:(id)sender;
+-(IBAction)showPicker:(id)sender;
 @end
