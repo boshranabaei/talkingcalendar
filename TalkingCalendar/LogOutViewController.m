@@ -7,7 +7,7 @@
 //
 
 #import "LogOutViewController.h"
-#import "SyncViewController.h"
+#import "ReportViewController.h"
 #import "AuthenticationViewController.h"
 #import "EspeakEngine.h"
 #import "AppDelegate.h"
@@ -35,7 +35,7 @@
         else if (!(tutorialMode)) {
             tutorialMode = YES;
             NSLog(@"Tutorial Mode has been turned on.");
-            [engine speak:@"To access the sync page, swipe left or right. To log out of the current account, double tap the screen"];
+            [engine speak:@"To access the report send page, swipe left or right. To log out of the current account, double tap the screen"];
         }
     }
 }
@@ -99,7 +99,7 @@
     NSLog(@"TutorialMode is ");
     if (tutorialMode) {
         NSLog(@"ON");
-        [engine speak:@"To access the sync page, swipe left or right. To log out of the current account, double tap the screen"];
+        [engine speak:@"To access the report send page, swipe left or right. To log out of the current account, double tap the screen"];
     }
     else if (!(tutorialMode)) {
         NSLog(@"OFF");

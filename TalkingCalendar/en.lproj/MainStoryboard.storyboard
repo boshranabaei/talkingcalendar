@@ -586,7 +586,7 @@
                 </tapGestureRecognizer>
                 <swipeGestureRecognizer direction="right" id="wz5-0l-L7W" userLabel="right">
                     <connections>
-                        <segue destination="FB5-Xi-UDC" kind="modal" id="Ppi-rD-NmA"/>
+                        <segue destination="DiA-Xv-83M" kind="modal" id="NrK-S8-lHQ"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="left" id="nKl-vI-uck" userLabel="left">
@@ -719,16 +719,9 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C7V-vT-Y1l" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="qe0-MG-Cxf" customClass="LogOutViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zwh-UK-eNW">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Setting: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Aep-68-Iup">
-                                <rect key="frame" x="20" y="20" width="91" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Log out" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="40" id="6yK-8w-3AM">
                                 <rect key="frame" x="90" y="149" width="176" height="126"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -758,56 +751,82 @@
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="left" id="Vo5-C7-af9">
                     <connections>
-                        <segue destination="FB5-Xi-UDC" kind="modal" id="1hS-iv-ZMv"/>
+                        <segue destination="DiA-Xv-83M" kind="modal" id="g1f-09-7P4"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="995" y="1498"/>
+            <point key="canvasLocation" x="1291" y="1640"/>
         </scene>
-        <!--Sync View Controller-->
-        <scene sceneID="xka-zJ-KCe">
+        <!--Report View Controller-->
+        <scene sceneID="v0z-ep-Anw">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2O3-gM-fG6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="FB5-Xi-UDC" customClass="SyncViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="YmL-mg-bZV">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qKk-4x-SVK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="DiA-Xv-83M" customClass="ReportViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mjQ-7K-Vj2">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Setting: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="44F-uo-uus">
-                                <rect key="frame" x="20" y="20" width="91" height="47"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cGZ-kw-WY7">
+                                <rect key="frame" x="0.0" y="2" width="320" height="460"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dissmissKeyboard:" destination="DiA-Xv-83M" eventType="touchUpInside" id="cF8-xW-jDy"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="To send the list of the events in next 30 days, enter you email address:" lineBreakMode="tailTruncation" numberOfLines="3" minimumFontSize="10" id="2Aa-kg-6uj">
+                                <rect key="frame" x="20" y="45" width="276" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="MF1-nr-Bc5">
+                                <rect key="frame" x="35" y="133" width="242" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="DiA-Xv-83M" id="NBZ-Nf-gXO"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Report" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="93d-88-gm0">
+                                <rect key="frame" x="130" y="45" width="52" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sync" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="40" id="Lkl-WS-xfC">
-                                <rect key="frame" x="106" y="184" width="96" height="67"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <gestureRecognizers/>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="N5J-1Z-VNf" appends="YES" id="SAc-Mm-DNU"/>
-                            <outletCollection property="gestureRecognizers" destination="Ra3-C9-o0R" appends="YES" id="UxP-Vs-EJp"/>
+                            <outletCollection property="gestureRecognizers" destination="Gqp-Gf-4N4" id="4fp-SI-0DR"/>
+                            <outletCollection property="gestureRecognizers" destination="0f2-ys-z18" id="BZH-fz-8X2"/>
                         </connections>
                     </view>
-                </viewController>
-                <swipeGestureRecognizer direction="right" id="N5J-1Z-VNf">
                     <connections>
-                        <segue destination="qe0-MG-Cxf" kind="modal" id="fD4-Bv-Kuh"/>
+                        <outlet property="email" destination="MF1-nr-Bc5" id="9x3-qG-Jyv"/>
+                    </connections>
+                </viewController>
+                <swipeGestureRecognizer direction="right" id="0f2-ys-z18">
+                    <connections>
+                        <segue destination="qe0-MG-Cxf" kind="modal" id="75c-2b-BYx"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="left" id="Ra3-C9-o0R">
+                <swipeGestureRecognizer direction="left" id="Gqp-Gf-4N4">
                     <connections>
-                        <segue destination="2xU-zH-GHz" kind="modal" id="FYK-re-JP2"/>
+                        <segue destination="2xU-zH-GHz" kind="modal" id="1gu-WV-6ao"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1099" y="227"/>
+            <point key="canvasLocation" x="1291" y="784"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iIh-Fr-elU">
@@ -828,18 +847,119 @@
             <point key="canvasLocation" x="-721" y="935"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="AuthenticationViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AuthenticationViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="dissmissKeyboard:"/>
+                <relationship kind="action" name="login:"/>
+                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="userName" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="ConfirmViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ConfirmViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doubleTab:"/>
+                <relationship kind="action" name="longPress:"/>
+                <relationship kind="action" name="swipeLeft:"/>
+                <relationship kind="action" name="swipeRight:"/>
+            </relationships>
+        </class>
+        <class className="DayViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DayViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="LeftSwipe:"/>
+                <relationship kind="action" name="addEvent:"/>
+                <relationship kind="action" name="stopRec:"/>
+                <relationship kind="outlet" name="GELabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="Left" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="Right" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="curr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="next" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="playRec" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="prev" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="stopRec" candidateClass="UIView"/>
+                <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="LogOutViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LogOutViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="MainViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="reminder" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="reminderTomorrow" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="welcome" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MonthViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MonthViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="l:"/>
+                <relationship kind="outlet" name="Left" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="Right" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="curr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="next" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="prev" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ReportViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReportViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="sendEmail:"/>
+                <relationship kind="outlet" name="email" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="SignUpViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SignUpViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="create:"/>
+                <relationship kind="action" name="dismissKeyboard:"/>
+                <relationship kind="outlet" name="passConfirm" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="userName" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="WeekViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WeekViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="Left" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="Right" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="curr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="next" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="prev" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="YearViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/YearViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="Left" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="Right" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="curr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="next" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="prev" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="NwV-hi-4gJ"/>
-        <segue reference="L9P-NI-0wO"/>
-        <segue reference="iyo-AZ-oCm"/>
-        <segue reference="waX-SR-MoN"/>
-        <segue reference="cVT-wD-aV0"/>
-        <segue reference="1hS-iv-ZMv"/>
+        <segue reference="NrK-S8-lHQ"/>
+        <segue reference="1gu-WV-6ao"/>
+        <segue reference="WKm-wE-Ecs"/>
         <segue reference="VPW-cf-wa1"/>
+        <segue reference="75c-2b-BYx"/>
+        <segue reference="iyo-AZ-oCm"/>
+        <segue reference="NwV-hi-4gJ"/>
     </inferredMetricsTieBreakers>
 </document>

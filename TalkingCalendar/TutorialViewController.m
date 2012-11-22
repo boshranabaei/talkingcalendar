@@ -7,7 +7,7 @@
 //
 
 #import "TutorialViewController.h"
-#import "SyncViewController.h"
+#import "ReportViewController.h"
 #import "AppDelegate.h"
 
 @interface TutorialViewController ()

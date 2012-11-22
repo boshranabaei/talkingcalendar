@@ -20,8 +20,8 @@
 		2A4A936316487B4800EC2717 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A4A936216487B4800EC2717 /* libsqlite3.dylib */; };
 		2A5A1558165868FF002F9525 /* voiceRecPlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A5A1557165868FF002F9525 /* voiceRecPlay.m */; };
 		2AA44CDF165472F700FF330B /* GeneralEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA44CDE165472F700FF330B /* GeneralEvents.m */; };
-		2AA44CE91654882100FF330B /* SyncViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA44CE81654882100FF330B /* SyncViewController.m */; };
 		2AA44CEC1654895B00FF330B /* LogOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA44CEB1654895B00FF330B /* LogOutViewController.m */; };
+		2AA450C7165DBA7800DA12DD /* ReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA450C6165DBA7800DA12DD /* ReportViewController.m */; };
 		2AA7D7A5164DCF2E00781A58 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA7D7A4164DCF2E00781A58 /* SignUpViewController.m */; };
 		5FFA9FC5163228B100FB0DF5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FFA9FC4163228B100FB0DF5 /* UIKit.framework */; };
 		5FFA9FC7163228B100FB0DF5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FFA9FC6163228B100FB0DF5 /* Foundation.framework */; };
@@ -95,10 +95,10 @@
 		2A5A1557165868FF002F9525 /* voiceRecPlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = voiceRecPlay.m; sourceTree = "<group>"; };
 		2AA44CDD165472F700FF330B /* GeneralEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralEvents.h; sourceTree = "<group>"; };
 		2AA44CDE165472F700FF330B /* GeneralEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneralEvents.m; sourceTree = "<group>"; };
-		2AA44CE71654882100FF330B /* SyncViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncViewController.h; sourceTree = "<group>"; };
-		2AA44CE81654882100FF330B /* SyncViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncViewController.m; sourceTree = "<group>"; };
 		2AA44CEA1654895B00FF330B /* LogOutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogOutViewController.h; sourceTree = "<group>"; };
 		2AA44CEB1654895B00FF330B /* LogOutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogOutViewController.m; sourceTree = "<group>"; };
+		2AA450C5165DBA7800DA12DD /* ReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportViewController.h; sourceTree = "<group>"; };
+		2AA450C6165DBA7800DA12DD /* ReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportViewController.m; sourceTree = "<group>"; };
 		2AA7D7A3164DCF2E00781A58 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		2AA7D7A4164DCF2E00781A58 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		5FFA9FC0163228B100FB0DF5 /* TalkingCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TalkingCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -238,8 +238,8 @@
 				2AA44CEB1654895B00FF330B /* LogOutViewController.m */,
 				2AA7D7A3164DCF2E00781A58 /* SignUpViewController.h */,
 				2AA7D7A4164DCF2E00781A58 /* SignUpViewController.m */,
-				2AA44CE71654882100FF330B /* SyncViewController.h */,
-				2AA44CE81654882100FF330B /* SyncViewController.m */,
+				2AA450C5165DBA7800DA12DD /* ReportViewController.h */,
+				2AA450C6165DBA7800DA12DD /* ReportViewController.m */,
 				5FFA9FCB163228B100FB0DF5 /* Supporting Files */,
 			);
 			path = TalkingCalendar;
@@ -428,12 +428,12 @@
 				2A3A144F164CA4D20025AB72 /* Accounts.m in Sources */,
 				2AA7D7A5164DCF2E00781A58 /* SignUpViewController.m in Sources */,
 				2AA44CDF165472F700FF330B /* GeneralEvents.m in Sources */,
-				2AA44CE91654882100FF330B /* SyncViewController.m in Sources */,
 				2AA44CEC1654895B00FF330B /* LogOutViewController.m in Sources */,
 				21CACD6E16570C1400735F59 /* TutorialViewController.m in Sources */,
 				2A5A1558165868FF002F9525 /* voiceRecPlay.m in Sources */,
 				2194521B165C1A4F00AAAFA2 /* SettingsViewController.m in Sources */,
 				2A224B5C165C817E00FA5184 /* ConfirmViewController.m in Sources */,
+				2AA450C7165DBA7800DA12DD /* ReportViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
