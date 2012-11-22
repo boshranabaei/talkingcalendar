@@ -50,7 +50,7 @@ return self;
                                     AVSampleRateKey,
                                     nil];
     
-    
+    NSLog(soundFilePath);
     NSError *error = nil;
     audioRecorder = [[AVAudioRecorder alloc]
                      initWithURL:soundFileURL
@@ -195,7 +195,25 @@ return self;
 }
 
 
+-(BOOL) hasEvent :(NSString *)userName date:(NSString*)date
+{
 
+    NSArray *dirPaths;
+    NSString *docsDir;
+    
+    dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    docsDir = [dirPaths objectAtIndex:0];
+    NSString * playFilePath = [docsDir stringByAppendingPathComponent:[[NSString alloc]initWithFormat:@"%@-%@.caf",userName,date]];
+    //NSLog([[NSString alloc]initWithFormat:@"%@-%@.caf",userName,date]);
+     if ([[NSFileManager defaultManager] fileExistsAtPath:playFilePath]) {
+         return YES;
+     }
+     else{
+         return NO;
+     }
+
+
+}
 
 -(BOOL) playAudio :(NSString *)userName date:(NSString*)date
 {

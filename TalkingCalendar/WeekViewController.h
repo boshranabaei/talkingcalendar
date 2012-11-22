@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ESpeakEngine.h"
+#import "voiceRecPlay.h"
 
 @interface WeekViewController : UIViewController {
         ESpeakEngine * engine;
@@ -27,5 +28,6 @@
 @property  NSDate *currentDate;
 @property Boolean swipe;
 @property NSString * userName;
-
+@property  NSDate *dateSun;
+@property voiceRecPlay * vrp;
 @end

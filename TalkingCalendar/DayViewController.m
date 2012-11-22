@@ -113,6 +113,7 @@
     
     [curr setText:msg2];
     [prev setText:msg3];
+    [self prepareForRec];
     [self ViewPlay];
 }
 - (IBAction)RightSwipe:(id)sender {
@@ -155,6 +156,7 @@
     
     [curr setText:msg2];
     [prev setText:currentdayInMonth1];
+    [self prepareForRec];
     [self ViewPlay];
     
 
@@ -258,7 +260,7 @@
     
 //*********************************************Events********************
 
-    //Problem
+ 
     longPressForRecord=[[voiceRecPlay alloc]init];
     [self prepareForRec];
     if(whatConfrim==1){
@@ -392,9 +394,11 @@
     
 }
 - (IBAction)stopRec:(id)sender {
-   
+    NSDateFormatter *formatForSpeak=[[NSDateFormatter alloc]init];
+    [formatForSpeak setDateFormat:@"EEEE,dd,MMMM"];
+    NSString *stringForSpeak = [[NSString alloc] initWithFormat:@"%@",[formatForSpeak stringFromDate: currentDate]];
     
-    NSString *say=[[NSString alloc]initWithFormat:@"event added to %@",currentdayInMonth1];
+    NSString *say=[[NSString alloc]initWithFormat:@"event added to %@",stringForSpeak];
     [engine speak:say];
     [longPressForRecord stop];
     isRecording=NO;

@@ -18,6 +18,8 @@
 @implementation WeekViewController
 @synthesize currentDate,dateR,leftUpdateDate,rightUpdateDate,screenUpdateDate,Left,Right,prev,curr,next,swipe;
 @synthesize userName;
+@synthesize dateSun;
+@synthesize vrp;
 
 - (BOOL) canBecomeFirstResponder {
     return YES;
@@ -96,7 +98,41 @@
     
     NSString *weekViewLeft = [[NSString alloc] initWithFormat:@"Week%@",dateInString2];
     
-    [engine speak:weekViewLeft];
+    
+    
+    [self getSunday];
+    NSDate *tmp=dateSun;
+    NSString *dateInString4;
+    NSString *msg4;
+    NSTimeInterval aDay = 24*60*60;
+    [dateFormatter setDateFormat:@"dd-MM-YYYY"];
+    dateInString4 = [dateFormatter stringFromDate: tmp];
+    msg4 = [[NSString alloc] initWithFormat:@"%@",dateInString4];
+    int howManyEvents=0;
+    if([vrp hasEvent:userName date:msg4]){
+        howManyEvents++;
+    }
+    for (int counter=1; counter<7; counter++) {
+        tmp= [tmp dateByAddingTimeInterval:aDay];
+        dateInString4 = [dateFormatter stringFromDate: tmp];
+        msg4 = [[NSString alloc] initWithFormat:@"%@",dateInString4];
+        if([vrp hasEvent:userName date:msg4]){
+            howManyEvents++;
+        }
+    }
+    
+    
+    NSString *say;
+    if(howManyEvents==0){
+        say = [[NSString alloc] initWithFormat:@"%@. No events are in this week.", weekViewLeft];
+    }
+    else{
+        say= [[NSString alloc] initWithFormat:@"%@. %i events are in this week.", weekViewLeft, howManyEvents];
+    }
+    
+    [engine speak:say];
+    
+
     
     // disappear the keyborad, push button!
     // tell the system give up the firstResponder;
@@ -136,7 +172,40 @@
     
     NSString *weekViewRight = [[NSString alloc] initWithFormat:@"Week%@",dateInString2];
     
-    [engine speak:weekViewRight];
+    [self getSunday];
+    NSDate *tmp=dateSun;
+    NSString *dateInString4;
+    NSString *msg4;
+    NSTimeInterval aDay = 24*60*60;
+    [dateFormatter setDateFormat:@"dd-MM-YYYY"];
+    dateInString4 = [dateFormatter stringFromDate: tmp];
+    msg4 = [[NSString alloc] initWithFormat:@"%@",dateInString4];
+    int howManyEvents=0;
+    if([vrp hasEvent:userName date:msg4]){
+        howManyEvents++;
+    }
+    for (int counter=1; counter<7; counter++) {
+        tmp= [tmp dateByAddingTimeInterval:aDay];
+        dateInString4 = [dateFormatter stringFromDate: tmp];
+        msg4 = [[NSString alloc] initWithFormat:@"%@",dateInString4];
+        if([vrp hasEvent:userName date:msg4]){
+            howManyEvents++;
+        }
+    }
+
+    
+    NSString *say;
+    if(howManyEvents==0){
+        say = [[NSString alloc] initWithFormat:@"%@. No events are in this week.", weekViewRight];
+    }
+    else{
+        say= [[NSString alloc] initWithFormat:@"%@. %i events are in this week.", weekViewRight, howManyEvents];
+    }
+    
+    [engine speak:say];
+    
+    
+
     
     
     // disappear the keyborad, push button!
@@ -162,7 +231,7 @@
     }
     NSTimeInterval aDay = 24*60*60;
     while ( a> 1) {
-        currentDate= [currentDate dateByAddingTimeInterval:-    aDay];
+        dateSun= [currentDate dateByAddingTimeInterval:-    aDay];
         a--;
     }
     return;
@@ -173,6 +242,7 @@
         DayViewController *dvc = [segue destinationViewController];
         if(swipe)
             [self getSunday];
+        currentDate=dateSun;
         [dvc setCurrentDate:currentDate];
         [dvc setUserName:userName];
         [dvc setWhatConfrim:0];
@@ -244,29 +314,66 @@
 
     NSString *weekView = [[NSString alloc] initWithFormat:@"Week, View, Week%@",dateInString];
     
+    //************************* General Events ***************************
+    
+    vrp=[[voiceRecPlay alloc]init];
+    
+    
+    [self getSunday];
+    NSDate *tmp=dateSun;
+    NSString *dateInString4;
+    NSString *msg4;
+    NSTimeInterval aDay = 24*60*60;
+    [dateFormatter setDateFormat:@"dd-MM-YYYY"];
+    dateInString4 = [dateFormatter stringFromDate: tmp];
+    msg4 = [[NSString alloc] initWithFormat:@"%@",dateInString4];
+    int howManyEvents=0;
+    if([vrp hasEvent:userName date:msg4]){
+        howManyEvents++;
+    }
+    for (int counter=1; counter<7; counter++) {
+        tmp= [tmp dateByAddingTimeInterval:aDay];
+        dateInString4 = [dateFormatter stringFromDate: tmp];
+        msg4 = [[NSString alloc] initWithFormat:@"%@",dateInString4];
+        if([vrp hasEvent:userName date:msg4]){
+            howManyEvents++;
+        }
+    }
+    // ############### week starts from Monday.
+
+    
+    
+      //************************* Espeak ***************************
     engine = [[ESpeakEngine alloc] init];
     [engine setLanguage:@"en"];
     [engine setSpeechRate:150];
     
     if (tutorialMode) {
         NSLog(@"Tutorial Mode is on : will speak everything");
-        NSString *weekView2 = [[NSString alloc] initWithFormat:@"Swipe up or down to access the month view or the day view respectively. To change the week, swipe left or right%@", weekView];
+        NSString *weekView2;
+        if(howManyEvents==0){
+        weekView2 = [[NSString alloc] initWithFormat:@"%@. No events are in this week. Swipe up or down to access the month view or the day view respectively. To change the week, swipe left or right", weekView];  
+        }
+        else{
+        weekView2 = [[NSString alloc] initWithFormat:@"%@. %i events are in this week. Swipe up or down to access the month view or the day view respectively. To change the week, swipe left or right", weekView, howManyEvents];
+        }
 
         [engine speak:weekView2];
     }
     else if (!(tutorialMode)) {
-        [engine speak:weekView];
+        NSString *say;
+        if(howManyEvents==0){
+            say = [[NSString alloc] initWithFormat:@"%@. No events are in this week.", weekView];
+        }
+        else{
+            say= [[NSString alloc] initWithFormat:@"%@. %i events are in this week.", weekView, howManyEvents];
+        }
+        
+        [engine speak:say];
     }
 
     
-    //************************* General Events ***************************
     
-    /* All of the days of the week in string with this format: dd-MM-YYYY to be named correctly as Monday, Sunday,....
-    [dateFormatter setDateFormat:@"dddd"];
-     NSString *dateInString4 = [dateFormatter stringFromDate: currentDate];
-     NSString *msg4 = [[NSString alloc] initWithFormat:@"%@",dateInString4];
-     */
-
 }
 
 - (void)didReceiveMemoryWarning
