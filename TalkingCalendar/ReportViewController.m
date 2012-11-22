@@ -44,7 +44,7 @@
 }
 
 -(IBAction)showPicker:(id)sender{
-    Class mailClass=[NSClassFromString(@"MFMailComposeViewController")];
+    /*Class mailClass=[NSClassFromString(@"MFMailComposeViewController")];
     if(mailClass !=nil){
         if([mailClass canSendMail]){
             
@@ -57,7 +57,7 @@
     }
     else{
         
-    }
+    }*/
 }
 
 
