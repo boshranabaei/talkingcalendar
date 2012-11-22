@@ -10,6 +10,8 @@
 #import "ESpeakEngine.h"
 #import "DayViewController.h"
 #import "AppDelegate.h"
+#import "LogOutViewController.h"
+#import "ReportViewController.h"
 
 @interface MainViewController ()
 
@@ -73,6 +75,14 @@
         DayViewController * dvc=[segue destinationViewController];
         [dvc setUserName:userName];
         [dvc setWhatConfrim:0];
+    }
+    if([segue.identifier isEqualToString:@"mainToReport"]){
+        ReportViewController * dvc=[segue destinationViewController];
+        [dvc setUserName:userName];
+    }
+    if([segue.identifier isEqualToString:@"mainToLogout"]){
+        LogOutViewController * lvc=[segue destinationViewController];
+        [lvc setUserName:userName];
     }
 
 }

@@ -9,11 +9,15 @@
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
+#import "EspeakEngine.h"
 
-@interface ReportViewController : UIViewController <MFMailComposeViewControllerDelegate>
+@interface ReportViewController : UIViewController <MFMailComposeViewControllerDelegate>{
+     ESpeakEngine * engine;
+}
 
 - (IBAction)openEmail:(id)sender;
-@property (weak, nonatomic) IBOutlet UITextField *email;
-- (BOOL) textFieldShouldReturn:(UITextField *)textField;
 -(IBAction)showPicker:(id)sender;
+@property NSString * userName;
+-(NSMutableString *)getReport;
+- (void) motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event;
 @end

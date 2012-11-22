@@ -14,7 +14,7 @@
     ESpeakEngine * engine2;
     IBOutlet UITextView *textView;
 }
-//@property BOOL tutorialMode;
+@property NSString * userName;
 
 
 @end

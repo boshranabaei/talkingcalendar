@@ -50,7 +50,7 @@ return self;
                                     AVSampleRateKey,
                                     nil];
     
-    NSLog(soundFilePath);
+    //NSLog(soundFilePath);
     NSError *error = nil;
     audioRecorder = [[AVAudioRecorder alloc]
                      initWithURL:soundFileURL

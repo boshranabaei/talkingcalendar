@@ -8,7 +8,7 @@
 
 #import "LogOutViewController.h"
 #import "ReportViewController.h"
-#import "AuthenticationViewController.h"
+#import "MainViewController.h"
 #import "EspeakEngine.h"
 #import "AppDelegate.h"
 
@@ -17,7 +17,7 @@
 @end
 
 @implementation LogOutViewController
-//@synthesize tutorialMode;
+@synthesize userName;
 
 
 - (BOOL) canBecomeFirstResponder {
@@ -35,7 +35,7 @@
         else if (!(tutorialMode)) {
             tutorialMode = YES;
             NSLog(@"Tutorial Mode has been turned on.");
-            [engine speak:@"To access the report send page, swipe left or right. To log out of the current account, double tap the screen"];
+            [engine speak:@" To log out of the current account, double tap the screen.To access the report send page, swipe left. To access the Main page, swipe right."];
         }
     }
 }
@@ -54,27 +54,22 @@
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
     [engine stop];
-    /*
-    //swipe left: LogOut to Sync
-    if([segue.identifier isEqualToString:@"logOutToSyncLeft"]){
-        SyncViewController *svc2 = [segue destinationViewController];
-        svc2.tutorialMode = self.tutorialMode;
+    
+    //swipe left: LogOut to Report
+    if([segue.identifier isEqualToString:@"logoutToReport"]){
+        ReportViewController *svc2 = [segue destinationViewController];
+        [svc2 setUserName:userName];
     }
     
     
     //swipe right: LogOut to Sync
-    if([segue.identifier isEqualToString:@"logOutToSyncRight"]){
-        SyncViewController *svc2 = [segue destinationViewController];
-        svc2.tutorialMode = self.tutorialMode;
+    if([segue.identifier isEqualToString:@"logoutToMain"]){
+        MainViewController *svc2 = [segue destinationViewController];
+    [svc2 setUserName:userName];
     }
 
     
-    //double tap: LogOut to Authentication
-    if([segue.identifier isEqualToString:@"logOutToAuth"]){
-        AuthenticationViewController *avc2 = [segue destinationViewController];
-        avc2.tutorialMode = self.tutorialMode;
-    }
-    */
+
     
 }
 
@@ -99,7 +94,7 @@
     NSLog(@"TutorialMode is ");
     if (tutorialMode) {
         NSLog(@"ON");
-        [engine speak:@"To access the report send page, swipe left or right. To log out of the current account, double tap the screen"];
+        [engine speak:@"To log out of the current account, double tap the screen.To access the report send page, swipe left. To access the Main page, swipe right."];
     }
     else if (!(tutorialMode)) {
         NSLog(@"OFF");
