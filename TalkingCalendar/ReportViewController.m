@@ -43,7 +43,7 @@
         else if (!(tutorialMode)) {
             tutorialMode = YES;
             NSLog(@"Tutorial Mode has been turned on.");
-            [engine speak:@"To send a report of your plan for next 30 day, double tap.To access the main page, swipe left. To access the Log out page, swipe right."];
+            [engine speak:@"To send a report of your plan for next 30 days, double tap.To access the main page, swipe left. To access the Log out page, swipe right."];
         }
     }
 }
@@ -77,7 +77,7 @@
     NSLog(@"TutorialMode is ");
     if (tutorialMode) {
         NSLog(@"ON");
-        [engine speak:@"To send a report of your plan for next 30 day, double tap.To access the main page, swipe left. To access the Log out page, swipe right."];
+        [engine speak:@"To send a report of your plan for next 30 days, double tap.To access the main page, swipe left. To access the Log out page, swipe right."];
     }
     else if (!(tutorialMode)) {
         NSLog(@"OFF");
@@ -88,6 +88,7 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
+    [engine stop];
     // Release any retained subviews of the main view.
 }
 

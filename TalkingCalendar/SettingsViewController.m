@@ -26,6 +26,7 @@
     if (event.subtype == UIEventSubtypeMotionShake) {
         NSLog(@"Tutorial Mode has been toggled.");
         if (tutorialMode) {
+            [engine stop];
             NSLog(@"Tutorial Mode has been turned off.");
             tutorialMode = NO;
         }
@@ -74,7 +75,9 @@
 
 - (void)viewDidUnload
 {
+    
     [super viewDidUnload];
+    [engine stop];
     // Release any retained subviews of the main view.
 }
 

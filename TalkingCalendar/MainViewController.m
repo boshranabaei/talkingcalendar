@@ -91,6 +91,13 @@
     [super viewDidLoad];
     [welcome setText:userName];
     NSLog(userName);
+    
+    
+     //[self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"testPicture.png"]]];
+    
+    
+    
+    
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     // set the dateFormatter format
     [dateFormatter setDateFormat:@"dd-MM-YYYY"];
@@ -149,6 +156,7 @@
     [self setReminderTomorrow:nil];
     [self setWelcome:nil];
     [super viewDidUnload];
+    [engine stop];
 }
 
 

@@ -105,6 +105,7 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
+    [engine stop];
     // Release any retained subviews of the main view.
 }
 

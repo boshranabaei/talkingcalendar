@@ -71,7 +71,11 @@
     swipe=YES;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     // set the dateFormatter format
-    [dateFormatter setDateFormat:@"w,MMMM,yyyy"];
+    [dateFormatter setDateFormat:@"yyyy\nMMMM\n\n\nw"];
+    
+    NSDateFormatter *dateFormatter2 = [[NSDateFormatter alloc] init];
+    // set the dateFormatter format
+    [dateFormatter2 setDateFormat:@"w"];
     
     
     NSTimeInterval aWeek = 7*24*60*60;
@@ -81,13 +85,13 @@
     
     // passing the message to myLabel setter function.
     // myLabel.setText(message)    [myLabel setText:message];
-    NSString *dateInString = [dateFormatter stringFromDate: currentDate];
+    NSString *dateInString = [dateFormatter2 stringFromDate: currentDate];
     NSString *currentdayInMonth1 = [[NSString alloc] initWithFormat:@"%@",dateInString];
     
     NSString *dateInString2 = [dateFormatter stringFromDate: screenUpdateDate];
     NSString *msg2 = [[NSString alloc] initWithFormat:@"%@",dateInString2];
     
-    NSString *dateInString3 = [dateFormatter stringFromDate: leftUpdateDate];
+    NSString *dateInString3 = [dateFormatter2 stringFromDate: leftUpdateDate];
     NSString *msg3 = [[NSString alloc] initWithFormat:@"%@",dateInString3];
     currentDate=[currentDate dateByAddingTimeInterval:-aWeek];
     
@@ -96,7 +100,20 @@
     // swipe left -> onScreenDate - 1
     // swipe right -> onScreenDate + 1
     
-    NSString *weekViewLeft = [[NSString alloc] initWithFormat:@"Week%@",dateInString2];
+    //NSString *weekViewLeft = [[NSString alloc] initWithFormat:@"Week%@",dateInString2];
+    
+    
+    
+    NSDateFormatter *dateFormatter3 = [[NSDateFormatter alloc] init];
+    [dateFormatter3 setDateFormat:@"w,yyyy"];
+    
+    NSString *testDate = [dateFormatter3 stringFromDate: currentDate];
+    NSString *testDate1 = [[NSString alloc] initWithFormat:@"%@", testDate];
+    
+    NSString *weekView2 = [[NSString alloc] initWithFormat:@"%@", testDate1];
+    
+    
+    
     
     
     
@@ -124,10 +141,10 @@
     
     NSString *say;
     if(howManyEvents==0){
-        say = [[NSString alloc] initWithFormat:@"%@. No events are in this week.", weekViewLeft];
+        say = [[NSString alloc] initWithFormat:@"%@. No events are in this week.", weekView2];
     }
     else{
-        say= [[NSString alloc] initWithFormat:@"%@. %i events are in this week.", weekViewLeft, howManyEvents];
+        say= [[NSString alloc] initWithFormat:@"%@. %i events are in this week.", weekView2, howManyEvents];
     }
     
     [engine speak:say];
@@ -146,7 +163,11 @@
     swipe=YES;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     // set the dateFormatter format
-    [dateFormatter setDateFormat:@"w,MMMM,yyyy"];
+    [dateFormatter setDateFormat:@"yyyy\nMMMM\n\n\nw"];
+    
+    NSDateFormatter *dateFormatter2 = [[NSDateFormatter alloc] init];
+    // set the dateFormatter format
+    [dateFormatter2 setDateFormat:@"w"];
     
     NSTimeInterval aWeek = 7*24*60*60;
     screenUpdateDate = [currentDate dateByAddingTimeInterval:+aWeek];
@@ -155,15 +176,24 @@
     
     // passing the message to myLabel setter function.
     // myLabel.setText(message)    [myLabel setText:message];
-    NSString *dateInString = [dateFormatter stringFromDate: currentDate];
+    NSString *dateInString = [dateFormatter2 stringFromDate: currentDate];
     NSString *currentdayInMonth1 = [[NSString alloc] initWithFormat:@"%@",dateInString];
     
     NSString *dateInString2 = [dateFormatter stringFromDate: screenUpdateDate];
     NSString *msg2 = [[NSString alloc] initWithFormat:@"%@",dateInString2];
     
-    NSString *dateInString3 = [dateFormatter stringFromDate: rightUpdateDate];
+    NSString *dateInString3 = [dateFormatter2 stringFromDate: rightUpdateDate];
     NSString *msg3 = [[NSString alloc] initWithFormat:@"%@",dateInString3];
     currentDate=[currentDate dateByAddingTimeInterval:+aWeek];
+    
+    
+    NSDateFormatter *dateFormatter3 = [[NSDateFormatter alloc] init];
+    [dateFormatter3 setDateFormat:@"w,yyyy"];
+    
+    NSString *testDate = [dateFormatter3 stringFromDate: currentDate];
+    NSString *testDate1 = [[NSString alloc] initWithFormat:@"%@", testDate];
+    
+    NSString *weekView2 = [[NSString alloc] initWithFormat:@"%@", testDate1];
     
     // current.
     // onScreenDate.
@@ -196,10 +226,10 @@
     
     NSString *say;
     if(howManyEvents==0){
-        say = [[NSString alloc] initWithFormat:@"%@. No events are in this week.", weekViewRight];
+        say = [[NSString alloc] initWithFormat:@"%@. No events are in this week.", weekView2];
     }
     else{
-        say= [[NSString alloc] initWithFormat:@"%@. %i events are in this week.", weekViewRight, howManyEvents];
+        say= [[NSString alloc] initWithFormat:@"%@. %i events are in this week.", weekView2, howManyEvents];
     }
     
     [engine speak:say];
@@ -266,7 +296,11 @@
     // instantiate a NSDateFormatter
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     // set the dateFormatter format
-    [dateFormatter setDateFormat:@"w,MMMM,yyyy"];
+    [dateFormatter setDateFormat:@"yyyy\nMMMM\n\n\nw"];
+    
+    NSDateFormatter *dateFormatter2 = [[NSDateFormatter alloc] init];
+    // set the dateFormatter format
+    [dateFormatter2 setDateFormat:@"w"];
     
     // NSString *currentdayInMonth = [dateFormatter stringFromDate:currentDateTime];
     //NSString *currentdayInMonth1 = [[NSString alloc] initWithFormat:@"%@",currentDateTime];
@@ -289,11 +323,20 @@
     NSString *dateInString = [dateFormatter stringFromDate: currentDate];
     NSString *currentdayInMonth1 = [[NSString alloc] initWithFormat:@"%@",dateInString];
     
-    NSString *dateInString2 = [dateFormatter stringFromDate: tomorrowDate];
+    NSString *dateInString2 = [dateFormatter2 stringFromDate: tomorrowDate];
     NSString *msg2 = [[NSString alloc] initWithFormat:@"%@",dateInString2];
     
-    NSString *dateInString3 = [dateFormatter stringFromDate: yesterdayDate];
+    NSString *dateInString3 = [dateFormatter2 stringFromDate: yesterdayDate];
     NSString *msg3 = [[NSString alloc] initWithFormat:@"%@",dateInString3];
+    
+    
+    NSDateFormatter *dateFormatter3 = [[NSDateFormatter alloc] init];
+    [dateFormatter3 setDateFormat:@"w,yyyy"];
+    
+    NSString *testDate = [dateFormatter3 stringFromDate: currentDate];
+    NSString *testDate1 = [[NSString alloc] initWithFormat:@"%@", testDate];
+    
+    //NSString *weekView2 = [[NSString alloc] initWithFormat:@"%@", testDate1];
     
     
     // current.
@@ -312,7 +355,7 @@
 	// Do any additional setup after loading the view.
     
 
-    NSString *weekView = [[NSString alloc] initWithFormat:@"Week, View, Week%@",dateInString];
+    NSString *weekView = [[NSString alloc] initWithFormat:@"Week, View, Week%@",testDate];
     
     //************************* General Events ***************************
     
@@ -348,11 +391,20 @@
     [engine setLanguage:@"en"];
     [engine setSpeechRate:150];
     
+    
+    
+    //NSDate *testWeek = [[NSDate alloc] init];
+    //*testWeek = [week currentDate];
+    //NSCalendar *calendar = [[NSCalendar alloc] init];
+    //NSUInteger weeks = NSWeekCAlendarUnit;
+    //NSDateComponents *components = [calendar components:weeks fromDate:[currentDate] options:0];
+    //NSUInteger *testWeek = [components week];
+    
     if (tutorialMode) {
         NSLog(@"Tutorial Mode is on : will speak everything");
         NSString *weekView2;
         if(howManyEvents==0){
-        weekView2 = [[NSString alloc] initWithFormat:@"%@. No events are in this week. Swipe up or down to access the month view or the day view respectively. To change the week, swipe left or right", weekView];  
+        weekView2 = [[NSString alloc] initWithFormat:@"%@. No events are in this week. Swipe up or down to access the month view or the day view respectively. To change the week, swipe left or right", weekView];
         }
         else{
         weekView2 = [[NSString alloc] initWithFormat:@"%@. %i events are in this week. Swipe up or down to access the month view or the day view respectively. To change the week, swipe left or right", weekView, howManyEvents];
@@ -381,6 +433,13 @@
     [super didReceiveMemoryWarning];
     
 
+}
+
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+    [engine stop];
+    // Release any retained subviews of the main view.
 }
 
 @end

@@ -40,6 +40,7 @@
 @synthesize whatConfrim;
 
 
+
 - (BOOL) canBecomeFirstResponder {
     return YES;
 }
@@ -76,8 +77,13 @@
 - (IBAction)LeftSwipe:(id)sender {
     // instantiate a NSDateFormatter
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    // set the dateFormatter format
-    [dateFormatter setDateFormat:@"EEEE,dd,MMMM,yyyy"];
+    // set the dateFormatter format                           
+    [dateFormatter setDateFormat:@"yyyy\nMMMM\nEEEE\n\ndd"];
+    
+    NSDateFormatter *dateFormatter2 = [[NSDateFormatter alloc] init];
+    
+    [dateFormatter2 setDateFormat:@"dd"];
+    
     
     
     NSTimeInterval aDay = 24*60*60;
@@ -87,13 +93,13 @@
     
     // passing the message to myLabel setter function.
     // myLabel.setText(message)    [myLabel setText:message];
-    NSString *dateInString = [dateFormatter stringFromDate: currentDate];
+    NSString *dateInString = [dateFormatter2 stringFromDate: currentDate];
     currentdayInMonth1 = [[NSString alloc] initWithFormat:@"%@",dateInString];
     
     NSString *dateInString2 = [dateFormatter stringFromDate: screenUpdateDate];
     NSString *msg2 = [[NSString alloc] initWithFormat:@"%@",dateInString2];
     
-    NSString *dateInString3 = [dateFormatter stringFromDate: leftUpdateDate];
+    NSString *dateInString3 = [dateFormatter2 stringFromDate: leftUpdateDate];
     NSString *msg3 = [[NSString alloc] initWithFormat:@"%@",dateInString3];
     currentDate=[currentDate dateByAddingTimeInterval:-aDay];
     
@@ -120,7 +126,11 @@
     // instantiate a NSDateFormatter
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     // set the dateFormatter format
-    [dateFormatter setDateFormat:@"EEEE,dd,MMMM,yyyy"];
+    [dateFormatter setDateFormat:@"yyyy\nMMMM\nEEEE\n\ndd"];
+    
+    NSDateFormatter *dateFormatter2 = [[NSDateFormatter alloc] init];
+    
+    [dateFormatter2 setDateFormat:@"dd"];
     
     
     NSTimeInterval aDay = 24*60*60;
@@ -130,13 +140,13 @@
     
     // passing the message to myLabel setter function.
     // myLabel.setText(message)    [myLabel setText:message];
-    NSString *dateInString = [dateFormatter stringFromDate: currentDate];
+    NSString *dateInString = [dateFormatter2 stringFromDate: currentDate];
     currentdayInMonth1 = [[NSString alloc] initWithFormat:@"%@",dateInString];
     
     NSString *dateInString2 = [dateFormatter stringFromDate: screenUpdateDate];
     NSString *msg2 = [[NSString alloc] initWithFormat:@"%@",dateInString2];
     
-    NSString *dateInString3 = [dateFormatter stringFromDate: rightUpdateDate];
+    NSString *dateInString3 = [dateFormatter2 stringFromDate: rightUpdateDate];
     NSString *msg3 = [[NSString alloc] initWithFormat:@"%@",dateInString3];
     currentDate=[currentDate dateByAddingTimeInterval:+aDay];
     
@@ -199,6 +209,8 @@
     //[engine setPitch:50];
     //[engine setGender:kESpeakEngineGenerFemale];
     //[engine speak:cDate.currentdayInMonth1];
+    
+    //self.UIView.backgroundColour = [UIColor colorWithPatternImage:[UIImage imageNamed:@"testPicture.jpg"]];
 
     isRecording=NO;
     dateR=[[NSDate alloc] init];
@@ -211,7 +223,12 @@
     // instantiate a NSDateFormatter
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     // set the dateFormatter format
-    [dateFormatter setDateFormat:@"EEEE,dd,MMMM"];
+    [dateFormatter setDateFormat:@"yyyy\nMMMM\nEEEE\n\ndd"];
+    
+    //set Left/Right date format
+    NSDateFormatter *dateFormatter2 = [[NSDateFormatter alloc] init];
+    
+    [dateFormatter2 setDateFormat:@"dd"];
     
     // NSString *currentdayInMonth = [dateFormatter stringFromDate:currentDateTime];
     //NSString *currentdayInMonth1 = [[NSString alloc] initWithFormat:@"%@",currentDateTime];
@@ -234,10 +251,10 @@
     NSString *dateInString = [dateFormatter stringFromDate: currentDate];
     currentdayInMonth1 = [[NSString alloc] initWithFormat:@"%@",dateInString];
     
-    NSString *dateInString2 = [dateFormatter stringFromDate: tomorrowDate];
+    NSString *dateInString2 = [dateFormatter2 stringFromDate: tomorrowDate];
     NSString *msg2 = [[NSString alloc] initWithFormat:@"%@",dateInString2];
     
-    NSString *dateInString3 = [dateFormatter stringFromDate: yesterdayDate];
+    NSString *dateInString3 = [dateFormatter2 stringFromDate: yesterdayDate];
     NSString *msg3 = [[NSString alloc] initWithFormat:@"%@",dateInString3];
     
      
@@ -286,7 +303,7 @@
     }
     
     
-//*********************************************GenralEvents********************   
+//*********************************************GeneralEvents********************   
     generalEvents=[[GeneralEvents alloc]init];
     
     NSDateFormatter *dateFormatForGE = [[NSDateFormatter alloc] init];

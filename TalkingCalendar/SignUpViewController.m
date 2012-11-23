@@ -87,6 +87,7 @@
     [self setPassword:nil];
     [self setPassConfirm:nil];
     [super viewDidUnload];
+    [engine stop];
    
 }
 

@@ -9,6 +9,7 @@
 #import "ConfirmViewController.h"
 #import "DayViewController.h"
 #import "ESpeakEngine.h"
+#import "AppDelegate.h"
 
 @interface ConfirmViewController ()
 
@@ -18,6 +19,24 @@
 
 @synthesize userName;
 @synthesize decision;
+
+
+- (void) motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+    if (event.subtype == UIEventSubtypeMotionShake) {
+        NSLog(@"Tutorial Mode has been toggled.");
+        if (tutorialMode) {
+            [engine stop];
+            NSLog(@"Tutorial Mode has been turned off.");
+            tutorialMode = NO;
+        }
+        else if (!(tutorialMode)) {
+            tutorialMode = YES;
+            NSLog(@"Tutorial Mode has been turned on.");
+            [engine speak:@"an event was saved before, to delete,  double tap, to overwrite, press for three seconds"];
+        }
+    }
+}
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -44,13 +63,20 @@
     engine = [[ESpeakEngine alloc] init];
     [engine setLanguage:@"en"];
     [engine setSpeechRate:165];
-	[engine speak:@"an event was saved before, to delete,  double tap, to overwrite, press for three seconds"];
+    if (tutorialMode) {
+        [engine speak:@"an event was saved before, to delete,  double tap, to overwrite, press for three seconds"];
+    }
+    else if (!(tutorialMode)) {
+        return;
+    }
+    
+    
 }
 
 - (void)viewDidUnload
 {
-
     [super viewDidUnload];
+    [engine stop];
     // Release any retained subviews of the main view.
 }
 

@@ -11,7 +11,7 @@
 
 @implementation AppDelegate
 
-BOOL tutorialMode = YES;
+BOOL tutorialMode;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

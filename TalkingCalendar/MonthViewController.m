@@ -69,7 +69,13 @@
     // instantiate a NSDateFormatter
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     // set the dateFormatter format
-    [dateFormatter setDateFormat:@"MMMM,yyyy"];
+    [dateFormatter setDateFormat:@"yyyy\n\n\nMMMM"];
+    
+    NSDateFormatter *dateFormatter2 = [[NSDateFormatter alloc] init];
+    // set the dateFormatter format
+    [dateFormatter2 setDateFormat:@"MMMM"];
+
+    
     
 
     NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
@@ -83,21 +89,32 @@
     [dateComponents setMonth:-2];
     leftUpdateDate = [calendar dateByAddingComponents:dateComponents toDate:currentDate options:0];
 
-    NSString *dateInString = [dateFormatter stringFromDate: currentDate];
+    NSString *dateInString = [dateFormatter2 stringFromDate: currentDate];
     NSString *currentdayInMonth1 = [[NSString alloc] initWithFormat:@"%@",dateInString];
     
     NSString *dateInString2 = [dateFormatter stringFromDate: screenUpdateDate];
     NSString *msg2 = [[NSString alloc] initWithFormat:@"%@",dateInString2];
     
-    NSString *dateInString3 = [dateFormatter stringFromDate: leftUpdateDate];
+    NSString *dateInString3 = [dateFormatter2 stringFromDate: leftUpdateDate];
     NSString *msg3 = [[NSString alloc] initWithFormat:@"%@",dateInString3];
     
     [dateComponents setMonth:-1];
     currentDate=[calendar dateByAddingComponents:dateComponents toDate:currentDate options:0];
     
-    NSString *monthViewLeft = [[NSString alloc] initWithFormat:@"%@",dateInString2];
     
-    [engine speak:monthViewLeft];
+    NSDateFormatter *dateFormatter3 = [[NSDateFormatter alloc] init];
+    [dateFormatter3 setDateFormat:@"MMMM,yyyy"];
+    
+    NSString *testDate = [dateFormatter3 stringFromDate: currentDate];
+    NSString *testDate1 = [[NSString alloc] initWithFormat:@"%@", testDate];
+    
+    NSString *monthView2 = [[NSString alloc] initWithFormat:@"%@", testDate1];
+    
+    
+    
+    //NSString *monthViewLeft = [[NSString alloc] initWithFormat:@"%@",dateInString2];
+    
+    [engine speak:monthView2];
     
     [next setText:currentdayInMonth1];
     [curr setText:msg2];
@@ -109,7 +126,14 @@
     // instantiate a NSDateFormatter
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     // set the dateFormatter format
-    [dateFormatter setDateFormat:@"MMMM,yyyy"];
+    [dateFormatter setDateFormat:@"yyyy\n\n\nMMMM"];
+    
+    NSDateFormatter *dateFormatter2 = [[NSDateFormatter alloc] init];
+    // set the dateFormatter format
+    [dateFormatter2 setDateFormat:@"MMMM"];
+    
+
+    
     
     NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
     [dateComponents setMonth:+1];
@@ -124,22 +148,35 @@
 
     
     
-    NSString *dateInString = [dateFormatter stringFromDate: currentDate];
+    NSString *dateInString = [dateFormatter2 stringFromDate: currentDate];
     NSString *currentdayInMonth1 = [[NSString alloc] initWithFormat:@"%@",dateInString];
     
+    
+    // **** screenUpdateDate and leftUpdateDate ARE NULL!!!!!!!!!!
     NSString *dateInString2 = [dateFormatter stringFromDate: screenUpdateDate];
     NSString *msg2 = [[NSString alloc] initWithFormat:@"%@",dateInString2];
     
-    NSString *dateInString3 = [dateFormatter stringFromDate: leftUpdateDate];
+    NSString *dateInString3 = [dateFormatter2 stringFromDate: leftUpdateDate];
     NSString *msg3 = [[NSString alloc] initWithFormat:@"%@",dateInString3];
     [dateComponents setMonth:+1];
     currentDate=[calendar dateByAddingComponents:dateComponents toDate:currentDate options:0];
+    
+    
+    
+    NSDateFormatter *dateFormatter3 = [[NSDateFormatter alloc] init];
+    [dateFormatter3 setDateFormat:@"MMMM,yyyy"];
+    
+    NSString *testDate = [dateFormatter3 stringFromDate: currentDate];
+    NSString *testDate1 = [[NSString alloc] initWithFormat:@"%@", testDate];
+    
+    NSString *monthView2 = [[NSString alloc] initWithFormat:@"%@", testDate1];
+    
 
     
     
     NSString *monthViewRight = [[NSString alloc] initWithFormat:@"%@",dateInString2];
     
-    [engine speak:monthViewRight];
+    [engine speak:monthView2];
     
     
     [next setText:msg3];
@@ -175,7 +212,18 @@
     // instantiate a NSDateFormatter
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     // set the dateFormatter format
-    [dateFormatter setDateFormat:@"MMMM,yyyy"];
+    [dateFormatter setDateFormat:@"yyyy\n\n\nMMMM"];
+    
+    
+    NSDateFormatter *dateFormatter2 = [[NSDateFormatter alloc] init];
+    // set the dateFormatter format
+    [dateFormatter2 setDateFormat:@"MMMM"];
+    
+    
+
+    
+    
+    
     
     NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
     [dateComponents setMonth:+1];
@@ -192,10 +240,10 @@
     NSString *dateInString = [dateFormatter stringFromDate: currentDate];
     NSString *currentdayInMonth1 = [[NSString alloc] initWithFormat:@"%@",dateInString];
     
-    NSString *dateInString2 = [dateFormatter stringFromDate: tomorrowDate];
+    NSString *dateInString2 = [dateFormatter2 stringFromDate: tomorrowDate];
     NSString *msg2 = [[NSString alloc] initWithFormat:@"%@",dateInString2];
     
-    NSString *dateInString3 = [dateFormatter stringFromDate: yesterdayDate];
+    NSString *dateInString3 = [dateFormatter2 stringFromDate: yesterdayDate];
     NSString *msg3 = [[NSString alloc] initWithFormat:@"%@",dateInString3];
     
     
@@ -214,7 +262,23 @@
     // Do any additional setup after loading the view, typically from a nib.
 	// Do any additional setup after loading the view.
     
-    NSString *monthView = [[NSString alloc] initWithFormat:@"Month, View, %@",dateInString];
+    //NSString *monthView = [[NSString alloc] initWithFormat:@"Month, View, %@",dateInString];
+    /*
+    engine = [[ESpeakEngine alloc] init];
+    [engine setLanguage:@"en"];
+    [engine setSpeechRate:150];
+    */
+    
+    
+    
+    NSDateFormatter *dateFormatter3 = [[NSDateFormatter alloc] init];
+    [dateFormatter3 setDateFormat:@"MMMM,yyyy"];
+    
+    NSString *testDate = [dateFormatter3 stringFromDate: currentDate];
+    NSString *testDate1 = [[NSString alloc] initWithFormat:@"%@", testDate];
+    
+    NSString *monthView2 = [[NSString alloc] initWithFormat:@"Month, View, %@", testDate1];
+    
     
     engine = [[ESpeakEngine alloc] init];
     [engine setLanguage:@"en"];
@@ -222,13 +286,13 @@
     
     
     if (tutorialMode) {
-        NSString *monthView2 = [[NSString alloc] initWithFormat:@"Swipe up or down to access the year view or the week view respectively. To change the month, swipe left or right%@",monthView];
+        NSString *monthView = [[NSString alloc] initWithFormat:@"Swipe up or down to access the year view or the week view respectively. To change the month, swipe left or right%@",monthView2];
         
-        [engine speak:monthView2];
+        [engine speak:monthView];
     }
     
     else if (!(tutorialMode)) {
-        [engine speak:monthView];
+           [engine speak:monthView2];
     }
     
  
@@ -240,6 +304,13 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+    [engine stop];
+    // Release any retained subviews of the main view.
 }
 
 - (IBAction)l:(id)sender {
