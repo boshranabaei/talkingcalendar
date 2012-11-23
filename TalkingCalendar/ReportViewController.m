@@ -43,7 +43,7 @@
         else if (!(tutorialMode)) {
             tutorialMode = YES;
             NSLog(@"Tutorial Mode has been turned on.");
-            [engine speak:@"To send a report of your plan for next 30 days, double tap.To access the main page, swipe left. To access the Log out page, swipe right."];
+            [engine speak:@"To send a report of your plan for next 30 day, double tap.To access the main page, swipe left. To access the Log out page, swipe right."];
         }
     }
 }
@@ -51,14 +51,14 @@
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     [engine stop];
-  
+    
     if([segue.identifier isEqualToString:@"reportToLogout"]){
         LogOutViewController *svc2 = [segue destinationViewController];
         [svc2 setUserName:userName];
     }
     
     
- 
+    
     if([segue.identifier isEqualToString:@"reportToMain"]){
         MainViewController *svc2 = [segue destinationViewController];
         [svc2 setUserName:userName];
@@ -72,23 +72,22 @@
 	engine = [[ESpeakEngine alloc] init];
     [engine setLanguage:@"en"];
     [engine setSpeechRate:165];
-    
+    [engine speak:@"send report page"];
     
     NSLog(@"TutorialMode is ");
     if (tutorialMode) {
         NSLog(@"ON");
-        [engine speak:@"To send a report of your plan for next 30 days, double tap.To access the main page, swipe left. To access the Log out page, swipe right."];
+        [engine speak:@"To send a report of your plan for next 30 day, double tap.To access the main page, swipe left. To access the Log out page, swipe right."];
     }
     else if (!(tutorialMode)) {
         NSLog(@"OFF");
     }
-
+    
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    [engine stop];
     // Release any retained subviews of the main view.
 }
 
@@ -99,19 +98,19 @@
 
 -(IBAction)showPicker:(id)sender{
     /*Class mailClass=[NSClassFromString(@"MFMailComposeViewController")];
-    if(mailClass !=nil){
-        if([mailClass canSendMail]){
-            
-        }
-   
-      else{
-        UIAlertView * cannot=[[UIAlertView alloc]initWithTitle:@"email error" message:@"can't send email" delegate:self cancelButtonTitle:@"cancel" otherButtonTitles:nil, nil];
-        [cannot show];
-      }
-    }
-    else{
-        
-    }*/
+     if(mailClass !=nil){
+     if([mailClass canSendMail]){
+     
+     }
+     
+     else{
+     UIAlertView * cannot=[[UIAlertView alloc]initWithTitle:@"email error" message:@"can't send email" delegate:self cancelButtonTitle:@"cancel" otherButtonTitles:nil, nil];
+     [cannot show];
+     }
+     }
+     else{
+     
+     }*/
 }
 
 
@@ -131,23 +130,23 @@
         NSString *dateInString = [dateFormatter stringFromDate: tmp];
         
         
-        
+        [engine speak:@"the mailer application, message content is ready"];
         
         [mailComposer setToRecipients:[NSArray arrayWithObjects:@"yourEmail@sfu.ca",nil]];
-        // [mailComposer setToRecipients:[NSArray arrayWithObject:@"email@email.co.uk",nil]];
+        
         [mailComposer setSubject:[[NSString alloc] initWithFormat:@"Plan Report (sent day: %@)",dateInString]];
         [mailComposer setMessageBody:[self getReport] isHTML:NO];
         
-        // u can choose any sytle
+        
         [mailComposer setModalPresentationStyle:UIModalTransitionStyleCrossDissolve];
         [self presentModalViewController:mailComposer animated:YES];
- 
+        
     }
     
     else{
-
+        
     }
-
+    
 }
 
 
@@ -155,22 +154,34 @@
 
 
 result error:(NSError *)error {
+    
+    
+    
     if (error) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[NSString stringWithFormat:@"Error %@", [error description]] delegate:nil cancelButtonTitle:@"Canel" otherButtonTitles:nil,nil];
         [alert show];
         [self dismissModalViewControllerAnimated:YES];
     }
-    
-    else{
-        [self dismissModalViewControllerAnimated:YES];
-        [engine speak:@"the report is sent"];
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+        {
+            [engine speak:@"report sending is cancelled"];
+        }
+            break;
+            
+        default:[engine speak:@"the report is sent"];
+            break;
     }
-    
+    [self dismissModalViewControllerAnimated:YES];
 }
+
+
+
 
 -(NSMutableString *)getReport{
     
-   voiceRecPlay* vrp=[[voiceRecPlay alloc]init];
+    voiceRecPlay* vrp=[[voiceRecPlay alloc]init];
     
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -183,7 +194,7 @@ result error:(NSError *)error {
     dateInString4 = [dateFormatter stringFromDate: tmp];
     msg4 = [[NSString alloc] initWithFormat:@"%@",dateInString4];
     GeneralEvents *ge=[[GeneralEvents alloc]init];
-
+    
     NSMutableString *content=[[NSMutableString alloc] initWithFormat:@"Hello %@,\n This message is from \"Talking Calendar Application\". Your plan for the next month is the following:",userName];
     for (int counter=1; counter<30; counter++) {
         tmp= [tmp dateByAddingTimeInterval:aDay];
@@ -193,11 +204,11 @@ result error:(NSError *)error {
         if([vrp hasEvent:userName date:msg4]){
             [content appendString:[[NSString alloc] initWithFormat:@"    \n%@ :event",dateInString4]];
             if(!([[ge searchGEfor:dateInString4]isEqualToString:@"No events"])){
-            [content appendString:[[NSString alloc] initWithFormat:@"and (%@)!",[ge searchGEfor:dateInString4]]];
-         }}
+                [content appendString:[[NSString alloc] initWithFormat:@"and (%@)!",[ge searchGEfor:dateInString4]]];
+            }}
         
     }
-   
+    
     [content appendString:@"\nTo know about the details, run \"Talking Calendar\" and listen to recorded events."];
     return content;
     

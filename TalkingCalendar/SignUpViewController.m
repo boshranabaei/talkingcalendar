@@ -75,7 +75,7 @@
     engine = [[ESpeakEngine alloc] init];
     [engine setLanguage:@"en"];
     [engine setSpeechRate:170];
-    
+    [engine speak:@"Sign up page."];
     if (tutorialMode) {
         [engine speak:@"Once you have entered your information, select Create account."];
     }

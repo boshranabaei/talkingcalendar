@@ -80,7 +80,7 @@
     [engine setSpeechRate:170];
 
     if (!(tutorialMode)) {
-        [engine speak:@"To toggle the tutorial, shake the device"];
+        [engine speak:@"Talking Calendar. Log in Page. To toggle the tutorial, shake the device"];
     }
     
     else if (tutorialMode) {

@@ -65,11 +65,11 @@
     //swipe right: LogOut to Sync
     if([segue.identifier isEqualToString:@"logoutToMain"]){
         MainViewController *svc2 = [segue destinationViewController];
-    [svc2 setUserName:userName];
+        [svc2 setUserName:userName];
     }
-
     
-
+    
+    
     
 }
 
@@ -89,7 +89,7 @@
     engine = [[ESpeakEngine alloc] init];
     [engine setLanguage:@"en"];
     [engine setSpeechRate:165];
-    
+    [engine speak:@"Log out page"];
     
     NSLog(@"TutorialMode is ");
     if (tutorialMode) {
@@ -105,7 +105,6 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    [engine stop];
     // Release any retained subviews of the main view.
 }
 
