@@ -14,6 +14,7 @@
 }
 @property NSString * userName;
 @property int decision;
+@property NSDate * currentDate;
 - (IBAction)longPress:(id)sender;
 - (IBAction)swipeRight:(id)sender;
 - (IBAction)doubleTab:(id)sender;

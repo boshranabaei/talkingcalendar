@@ -25,7 +25,7 @@
             // database doesn't exist in library path... so must copy it from the bundle
            //[[NSFileManager defaultManager] removeItemAtPath:targetPath error:NULL];
             //[[NSFileManager defaultManager] copyItemAtPath:sourcePath toPath:targetPath error:&error];
-            NSLog(sourcePath);
+            //NSLog(sourcePath);
             
         }
         else{

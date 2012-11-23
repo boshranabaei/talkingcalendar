@@ -121,6 +121,24 @@
     [prev setText:msg3];
     [self prepareForRec];
     [self ViewPlay];
+    
+    //*********************************************GeneralEvents********************
+    generalEvents=[[GeneralEvents alloc]init];
+    
+    NSDateFormatter *dateFormatForGE = [[NSDateFormatter alloc] init];
+    // set the dateFormatter format
+    [dateFormatForGE setDateFormat:@"dd-MM-YYYY"];
+    NSString *dateInStringForGE = [dateFormatForGE stringFromDate: screenUpdateDate];
+    NSString *GEDate= [[NSString alloc] initWithFormat:@"%@",dateInStringForGE];
+    NSString *GEevent=[generalEvents searchGEfor:GEDate];
+    if(![GEevent isEqualToString:@"No events"]){
+        [GELabel setText:GEevent];
+    }
+    else{
+        [GELabel setText:@" "];
+    }
+    
+    
 }
 - (IBAction)RightSwipe:(id)sender {
     // instantiate a NSDateFormatter
@@ -157,7 +175,7 @@
     
     NSString *dayViewRight = [[NSString alloc] initWithFormat:@"%@",dateInString2];
     
-    [engine speak:dayViewRight];
+   
     
     
     // disappear the keyborad, push button!
@@ -168,6 +186,29 @@
     [prev setText:currentdayInMonth1];
     [self prepareForRec];
     [self ViewPlay];
+    
+    //*********************************************GeneralEvents********************
+    generalEvents=[[GeneralEvents alloc]init];
+    
+    NSDateFormatter *dateFormatForGE = [[NSDateFormatter alloc] init];
+    // set the dateFormatter format
+    [dateFormatForGE setDateFormat:@"dd-MM-YYYY"];
+    NSString *dateInStringForGE = [dateFormatForGE stringFromDate: screenUpdateDate];
+    NSString *GEDate= [[NSString alloc] initWithFormat:@"%@",dateInStringForGE];
+    NSString *GEevent=[generalEvents searchGEfor:GEDate];
+    if(![GEevent isEqualToString:@"No events"]){
+        [GELabel setText:GEevent];
+        NSString *say=[dayViewRight stringByAppendingString:GEevent];
+        [engine speak:say];
+    }
+    else{
+        [GELabel setText:@" "];
+         [engine speak:dayViewRight];
+    }
+    
+    
+    
+    
     
 
 }
@@ -184,6 +225,7 @@
     if([segue.identifier isEqualToString:@"confirm"]){
         ConfirmViewController *cvc = [segue destinationViewController];
         [cvc setUserName:userName];
+        [cvc setCurrentDate:currentDate];
         
     }
     if([segue.identifier isEqualToString:@"dayToMain"]){
@@ -281,26 +323,7 @@
     [engine setSpeechRate:150];
     
     
-//*********************************************Events********************
 
- 
-    longPressForRecord=[[voiceRecPlay alloc]init];
-    [self prepareForRec];
-    if(whatConfrim==1){
-        [self record];
-        hasEvent=YES;
-        [engine speak:@"start recording"];
-        [engine2 speak:@" "];
-
-    }
-    else if(whatConfrim==2){
-        [self deleteVoice];
-        [engine speak:@"event deleted"];
-        [engine2 speak:@" "];
-    }
-    else{
-        [self ViewPlay];
-    }
     
     
 //*********************************************GeneralEvents********************   
@@ -311,9 +334,37 @@
     [dateFormatForGE setDateFormat:@"dd-MM-YYYY"];
     NSString *dateInStringForGE = [dateFormatForGE stringFromDate: currentDate];
     NSString *GEDate= [[NSString alloc] initWithFormat:@"%@",dateInStringForGE];
-   
-    NSString *GEevent=[generalEvents searchGEfor:@"01-01-2012"];
-     [GELabel setText:GEevent];
+    NSString *GEevent=[generalEvents searchGEfor:GEDate];
+    if(![GEevent isEqualToString:@"No events"]){
+        [GELabel setText:GEevent];
+    }
+    
+    
+    
+    
+    //*********************************************Events********************
+    
+    
+    longPressForRecord=[[voiceRecPlay alloc]init];
+    [self prepareForRec];
+    if(whatConfrim==1){
+        [self record];
+        hasEvent=YES;
+        [engine speak:@"start recording"];
+        [engine2 speak:@" "];
+        
+    }
+    else if(whatConfrim==2){
+        [self deleteVoice];
+        [engine speak:@"event deleted"];
+        [engine2 speak:@" "];
+    }
+    else{
+        [self ViewPlay];
+    
+    
+    
+    
     
     if (tutorialMode) {
         NSLog(@"Tutorial mode is on");
@@ -344,7 +395,7 @@
             // There are no events.
     
             [engine speak:dayView];
-        }
+        }}
 
     }
     

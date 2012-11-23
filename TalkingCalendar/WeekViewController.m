@@ -11,6 +11,8 @@
 #import "MonthViewController.h"
 #import "ESpeakEngine.h"
 #import "AppDelegate.h"
+#import "GeneralEvents.h"
+
 @interface WeekViewController ()
 
 @end
@@ -126,7 +128,12 @@
     dateInString4 = [dateFormatter stringFromDate: tmp];
     msg4 = [[NSString alloc] initWithFormat:@"%@",dateInString4];
     int howManyEvents=0;
+    GeneralEvents * ge=[[GeneralEvents alloc]init];
+    
     if([vrp hasEvent:userName date:msg4]){
+        howManyEvents++;
+    }
+    if(![[ge searchGEfor:msg4] isEqualToString:@"No events"]){
         howManyEvents++;
     }
     for (int counter=1; counter<7; counter++) {
@@ -136,8 +143,10 @@
         if([vrp hasEvent:userName date:msg4]){
             howManyEvents++;
         }
+        if(![[ge searchGEfor:msg4] isEqualToString:@"No events"]){
+            howManyEvents++;
+        }
     }
-    
     
     NSString *say;
     if(howManyEvents==0){
@@ -211,7 +220,12 @@
     dateInString4 = [dateFormatter stringFromDate: tmp];
     msg4 = [[NSString alloc] initWithFormat:@"%@",dateInString4];
     int howManyEvents=0;
+    GeneralEvents * ge=[[GeneralEvents alloc]init];
+    
     if([vrp hasEvent:userName date:msg4]){
+        howManyEvents++;
+    }
+    if(![[ge searchGEfor:msg4] isEqualToString:@"No events"]){
         howManyEvents++;
     }
     for (int counter=1; counter<7; counter++) {
@@ -221,10 +235,12 @@
         if([vrp hasEvent:userName date:msg4]){
             howManyEvents++;
         }
+        if(![[ge searchGEfor:msg4] isEqualToString:@"No events"]){
+            howManyEvents++;
+        }
     }
-
     
-    NSString *say;
+       NSString *say;
     if(howManyEvents==0){
         say = [[NSString alloc] initWithFormat:@"%@. No events are in this week.", weekView2];
     }
@@ -371,7 +387,12 @@
     dateInString4 = [dateFormatter stringFromDate: tmp];
     msg4 = [[NSString alloc] initWithFormat:@"%@",dateInString4];
     int howManyEvents=0;
+    GeneralEvents * ge=[[GeneralEvents alloc]init];
+    
     if([vrp hasEvent:userName date:msg4]){
+        howManyEvents++;
+    }
+    if(![[ge searchGEfor:msg4] isEqualToString:@"No events"]){
         howManyEvents++;
     }
     for (int counter=1; counter<7; counter++) {
@@ -381,8 +402,14 @@
         if([vrp hasEvent:userName date:msg4]){
             howManyEvents++;
         }
+        if(![[ge searchGEfor:msg4] isEqualToString:@"No events"]){
+            howManyEvents++;
+        }
     }
-    // ############### week starts from Monday.
+    
+
+
+
 
     
     

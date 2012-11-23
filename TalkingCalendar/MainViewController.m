@@ -90,7 +90,7 @@
 {
     [super viewDidLoad];
     [welcome setText:userName];
-    NSLog(userName);
+
     
     
      //[self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"testPicture.png"]]];

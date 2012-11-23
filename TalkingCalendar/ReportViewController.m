@@ -22,7 +22,7 @@
 
 @implementation ReportViewController
 @synthesize userName;
-// ############### Tutorial on/off doesn't work
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,6 +31,10 @@
         // Custom initialization
     }
     return self;
+}
+
+- (BOOL) canBecomeFirstResponder {
+    return YES;
 }
 - (void) motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event {
     if (event.subtype == UIEventSubtypeMotionShake) {
@@ -47,6 +51,18 @@
         }
     }
 }
+
+
+- (void) viewDidAppear:(BOOL)animated {
+    [self becomeFirstResponder];
+    [super viewDidAppear:animated];
+}
+
+- (void) viewWillDisappear:(BOOL)animated {
+    [self resignFirstResponder];
+    [super viewWillDisappear:animated];
+}
+
 
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

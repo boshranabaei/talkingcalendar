@@ -19,23 +19,8 @@
 
 @synthesize userName;
 @synthesize decision;
+@synthesize currentDate;
 
-
-- (void) motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event {
-    if (event.subtype == UIEventSubtypeMotionShake) {
-        NSLog(@"Tutorial Mode has been toggled.");
-        if (tutorialMode) {
-            [engine stop];
-            NSLog(@"Tutorial Mode has been turned off.");
-            tutorialMode = NO;
-        }
-        else if (!(tutorialMode)) {
-            tutorialMode = YES;
-            NSLog(@"Tutorial Mode has been turned on.");
-            [engine speak:@"an event was saved before, to delete,  double tap, to overwrite, press for three seconds"];
-        }
-    }
-}
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -51,7 +36,7 @@
     [engine stop];
         DayViewController * dvc=[segue destinationViewController];
         [dvc setUserName:userName];
-       
+        [dvc setCurrentDate:currentDate];
         [dvc setWhatConfrim:decision];
     
 }
@@ -63,13 +48,7 @@
     engine = [[ESpeakEngine alloc] init];
     [engine setLanguage:@"en"];
     [engine setSpeechRate:165];
-    if (tutorialMode) {
-        [engine speak:@"an event was saved before, to delete,  double tap, to overwrite, press for three seconds"];
-    }
-    else if (!(tutorialMode)) {
-        return;
-    }
-    
+    [engine speak:@"an event was saved before, to delete,  double tap, to overwrite, press for three seconds. to cancel, drag left or right"];    
     
 }
 
