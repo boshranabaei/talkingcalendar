@@ -176,6 +176,12 @@
         [cvc setUserName:userName];
         
     }
+    if([segue.identifier isEqualToString:@"dayToMain"]){
+        ConfirmViewController *cvc = [segue destinationViewController];
+        [cvc setUserName:userName];
+        
+    }
+    
     
 }
 
