@@ -11,6 +11,7 @@
 #import "DayViewController.h"
 #import "AppDelegate.h"
 #import "LogOutViewController.h"
+#import "voiceRecPlay.h"
 #import "ReportViewController.h"
 
 @interface MainViewController ()
@@ -39,7 +40,7 @@
         else if (!(tutorialMode)) {
             tutorialMode = YES;
             NSLog(@"Tutorial Mode has been turned on.");
-            [engine speak: @"To access the Settings page, swipe left or right. To open the calendar, double tap the screen. ."];
+            [engine speak: @"Main view. To send report of events, swipe right. To log out, swipe left. To open the calendar, double tap the screen. ."];
         }
     }
 }
@@ -115,7 +116,7 @@
     //NSLog(tomorrow2);
      
     ge=[[GeneralEvents alloc]init];
-   
+    
     //Text to speech : "To toggle the Tutorial, shake the phone."
     
     engine = [[ESpeakEngine alloc] init];
@@ -127,21 +128,64 @@
     [engine2 setSpeechRate:165];
     
    
+    
+    voiceRecPlay* vrp=[[voiceRecPlay alloc]init];
+    
+    NSString *GEevent=[ge searchGEfor:currentdayInMonth1];
+    
+    
+    BOOL todayHasVoiceEvent=NO;
+    BOOL tomHasVoiceEvent=NO;
+    
+    if([vrp hasEvent:userName date:currentdayInMonth1]) todayHasVoiceEvent=YES;
+    if([vrp hasEvent:userName date:tomorrow2]) tomHasVoiceEvent=YES;
+    NSString *todayEvents;
+    NSString *tomEvents;
+    
+    if([vrp hasEvent:userName date:currentdayInMonth1] && ![GEevent isEqualToString:@"No events"])
+       todayEvents=[[NSString alloc]initWithFormat:@"%@ and one another event",[ge searchGEfor:currentdayInMonth1]];
+    
+    if([vrp hasEvent:userName date:currentdayInMonth1] && [GEevent isEqualToString:@"No events"])
+        todayEvents=@"one event";
+    
+    if(![vrp hasEvent:userName date:currentdayInMonth1] && ![GEevent isEqualToString:@"No events"])
+        todayEvents=[ge searchGEfor:currentdayInMonth1];
+    
+    if(![vrp hasEvent:userName date:currentdayInMonth1] && [GEevent isEqualToString:@"No events"])
+        todayEvents=[ge searchGEfor:currentdayInMonth1];
+    
+    
+    if([vrp hasEvent:userName date:tomorrow2] && ![GEevent isEqualToString:@"No events"])
+        tomEvents=[[NSString alloc]initWithFormat:@"%@ and one another event",[ge searchGEfor:tomorrow2]];
+    
+    if([vrp hasEvent:userName date:tomorrow2] && [GEevent isEqualToString:@"No events"])
+        tomEvents=@"one event";
+    
+    if(![vrp hasEvent:userName date:tomorrow2] && ![GEevent isEqualToString:@"No events"])
+        tomEvents=[ge searchGEfor:tomorrow2];
+    
+    if(![vrp hasEvent:userName date:tomorrow2] && [GEevent isEqualToString:@"No events"])
+        tomEvents=[ge searchGEfor:tomorrow2];
+    
+
+                  
+                  
     if (tutorialMode) {
         NSLog(@"Tutorial mode is on");
-     
-        NSString * holidays =[[NSString alloc]initWithFormat:@"To access the Settings page, swipe left or right. To open the calendar, double tap the screen,%Today: %@. Tomorrow: %@", [ge searchGEfor:currentdayInMonth1],[ge searchGEfor:tomorrow2]];
+        
+        
+        NSString * holidays =[[NSString alloc]initWithFormat:@"Main View. Main view. To send report of events, swipe right. To log out, swipe left.  To open the calendar, double tap the screen,Today: %@. Tomorrow: %@",todayEvents ,tomEvents];
         [engine2 speak:holidays];
         
        }
     else if (!(tutorialMode)) {
                 NSLog(@"Tutorial mode is off");
-        NSString * holidays =[[NSString alloc]initWithFormat:@"%Today: %@. Tomorrow: %@", [ge searchGEfor:currentdayInMonth1],[ge searchGEfor:tomorrow2]];
+        NSString * holidays =[[NSString alloc]initWithFormat:@"Main View. Today: %@. Tomorrow: %@", todayEvents,tomEvents];
         [engine speak:holidays];
     }
 
-	[reminder setText:[ge searchGEfor:currentdayInMonth1]];
-    [reminderTomorrow setText:[ge searchGEfor:tomorrow2]];
+	[reminder setText:todayEvents];
+    [reminderTomorrow setText:[ge searchGEfor:tomEvents]];
     // This function (ge) returns a string - read out this string.
 }
 
