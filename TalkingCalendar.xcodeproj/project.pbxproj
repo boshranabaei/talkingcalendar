@@ -11,6 +11,9 @@
 		1EF68D24164DCFBD003E495B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EF68D23164DCFBD003E495B /* AVFoundation.framework */; };
 		2194521B165C1A4F00AAAFA2 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2194521A165C1A4F00AAAFA2 /* SettingsViewController.m */; };
 		21CACD6E16570C1400735F59 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CACD6D16570C1400735F59 /* TutorialViewController.m */; };
+		2A0D0B431660453B002DBC0C /* Gerenal.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A0D0B421660453B002DBC0C /* Gerenal.png */; };
+		2A0D0B4516604541002DBC0C /* LoginPage.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A0D0B4416604541002DBC0C /* LoginPage.png */; };
+		2A0D0B4716604546002DBC0C /* signin.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A0D0B4616604546002DBC0C /* signin.png */; };
 		2A224B5C165C817E00FA5184 /* ConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A224B5B165C817E00FA5184 /* ConfirmViewController.m */; };
 		2A2919111644A6FF000462DF /* Icon-talking cal.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A2919101644A6FF000462DF /* Icon-talking cal.png */; };
 		2A3A144F164CA4D20025AB72 /* Accounts.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3A144E164CA4D20025AB72 /* Accounts.m */; };
@@ -83,6 +86,9 @@
 		2194521A165C1A4F00AAAFA2 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		21CACD6C16570C1400735F59 /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
 		21CACD6D16570C1400735F59 /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
+		2A0D0B421660453B002DBC0C /* Gerenal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gerenal.png; sourceTree = "<group>"; };
+		2A0D0B4416604541002DBC0C /* LoginPage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoginPage.png; sourceTree = "<group>"; };
+		2A0D0B4616604546002DBC0C /* signin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signin.png; sourceTree = "<group>"; };
 		2A224B5A165C817E00FA5184 /* ConfirmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmViewController.h; sourceTree = "<group>"; };
 		2A224B5B165C817E00FA5184 /* ConfirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmViewController.m; sourceTree = "<group>"; };
 		2A2919101644A6FF000462DF /* Icon-talking cal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-talking cal.png"; sourceTree = "<group>"; };
@@ -165,6 +171,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A0D0B41166044ED002DBC0C /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				2A0D0B4616604546002DBC0C /* signin.png */,
+				2A0D0B4416604541002DBC0C /* LoginPage.png */,
+				2A0D0B421660453B002DBC0C /* Gerenal.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		2A43B39F164E0526002E061F /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +230,7 @@
 		5FFA9FCA163228B100FB0DF5 /* TalkingCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				2A0D0B41166044ED002DBC0C /* Images */,
 				2A3A144D164CA4D20025AB72 /* Accounts.h */,
 				2A3A144E164CA4D20025AB72 /* Accounts.m */,
 				5FFA9FD3163228B100FB0DF5 /* AppDelegate.h */,
@@ -390,6 +407,9 @@
 				2A4A935D164877FF00EC2717 /* talkingcalendar.db in Resources */,
 				2A43B3AC164E0534002E061F /* espeak-data in Resources */,
 				16C6DD26165F121E00D93094 /* testPicture.png in Resources */,
+				2A0D0B431660453B002DBC0C /* Gerenal.png in Resources */,
+				2A0D0B4516604541002DBC0C /* LoginPage.png in Resources */,
+				2A0D0B4716604546002DBC0C /* signin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
