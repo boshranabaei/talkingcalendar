@@ -207,7 +207,7 @@
                         </connections>
                     </view>
                 </viewController>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="yHY-VV-czi">
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="3.0000000000000013" id="yHY-VV-czi">
                     <connections>
                         <action selector="longPress:" destination="dwb-AR-FLI" id="XKY-qR-gbk"/>
                     </connections>

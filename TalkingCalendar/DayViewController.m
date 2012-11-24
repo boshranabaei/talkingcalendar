@@ -486,7 +486,8 @@
         [repeater invalidate];
         NSLog(@"ddd%d",seconds);
         [self stop];
-        [engine speak: @"30 seconds"];
+        if(seconds>=7)
+            [engine speak: @"30 seconds"];
     }
 }
 
@@ -497,10 +498,6 @@
             [longPressForRecord recordAudio];
             seconds=0;
             repeater=[NSTimer scheduledTimerWithTimeInterval:(1.0/1.0) target:self selector:@selector(addOneForRecording) userInfo:nil repeats:YES];
-        
-        
-    
-
 
 }
 - (void)deleteVoice {
