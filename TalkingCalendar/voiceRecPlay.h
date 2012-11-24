@@ -13,14 +13,10 @@
 <AVAudioRecorderDelegate, AVAudioPlayerDelegate>{
     AVAudioRecorder *audioRecorder;
     AVAudioPlayer *audioPlayer;
-    UIButton *playButton;
-    UIButton *recordButton;
-    UIButton *stopButton;
     NSTimer *reapter;
     int seconds;
 }
 @property NSString *soundFilePath;
-@property NSUserDefaults *defaults;
 @property BOOL isRecording;
 
 -(BOOL)recordAudio;
