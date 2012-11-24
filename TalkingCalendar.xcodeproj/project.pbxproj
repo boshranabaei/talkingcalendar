@@ -10,7 +10,6 @@
 		16C6DD26165F121E00D93094 /* testPicture.png in Resources */ = {isa = PBXBuildFile; fileRef = 16C6DD25165F121E00D93094 /* testPicture.png */; };
 		1EF68D24164DCFBD003E495B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EF68D23164DCFBD003E495B /* AVFoundation.framework */; };
 		2194521B165C1A4F00AAAFA2 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2194521A165C1A4F00AAAFA2 /* SettingsViewController.m */; };
-		21CACD6E16570C1400735F59 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CACD6D16570C1400735F59 /* TutorialViewController.m */; };
 		2A0D0B431660453B002DBC0C /* Gerenal.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A0D0B421660453B002DBC0C /* Gerenal.png */; };
 		2A0D0B4516604541002DBC0C /* LoginPage.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A0D0B4416604541002DBC0C /* LoginPage.png */; };
 		2A0D0B49166057D5002DBC0C /* LogOut.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A0D0B48166057D5002DBC0C /* LogOut.png */; };
@@ -88,8 +87,6 @@
 		1EF68D23164DCFBD003E495B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		21945219165C1A4F00AAAFA2 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		2194521A165C1A4F00AAAFA2 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
-		21CACD6C16570C1400735F59 /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
-		21CACD6D16570C1400735F59 /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
 		2A0D0B421660453B002DBC0C /* Gerenal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gerenal.png; sourceTree = "<group>"; };
 		2A0D0B4416604541002DBC0C /* LoginPage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoginPage.png; sourceTree = "<group>"; };
 		2A0D0B48166057D5002DBC0C /* LogOut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogOut.png; sourceTree = "<group>"; };
@@ -266,8 +263,6 @@
 				5FFAA02B1634D4E000FB0DF5 /* MainViewController.m */,
 				5FFAA0191634B63000FB0DF5 /* MonthViewController.h */,
 				5FFAA01A1634B63000FB0DF5 /* MonthViewController.m */,
-				21CACD6C16570C1400735F59 /* TutorialViewController.h */,
-				21CACD6D16570C1400735F59 /* TutorialViewController.m */,
 				5FFAA01D1634B64800FB0DF5 /* YearViewController.h */,
 				5FFAA01E1634B64800FB0DF5 /* YearViewController.m */,
 				2AA44CEA1654895B00FF330B /* LogOutViewController.h */,
@@ -473,7 +468,6 @@
 				2AA7D7A5164DCF2E00781A58 /* SignUpViewController.m in Sources */,
 				2AA44CDF165472F700FF330B /* GeneralEvents.m in Sources */,
 				2AA44CEC1654895B00FF330B /* LogOutViewController.m in Sources */,
-				21CACD6E16570C1400735F59 /* TutorialViewController.m in Sources */,
 				2A5A1558165868FF002F9525 /* voiceRecPlay.m in Sources */,
 				2194521B165C1A4F00AAAFA2 /* SettingsViewController.m in Sources */,
 				2A224B5C165C817E00FA5184 /* ConfirmViewController.m in Sources */,
