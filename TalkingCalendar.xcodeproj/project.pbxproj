@@ -13,10 +13,11 @@
 		21CACD6E16570C1400735F59 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CACD6D16570C1400735F59 /* TutorialViewController.m */; };
 		2A0D0B431660453B002DBC0C /* Gerenal.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A0D0B421660453B002DBC0C /* Gerenal.png */; };
 		2A0D0B4516604541002DBC0C /* LoginPage.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A0D0B4416604541002DBC0C /* LoginPage.png */; };
-		2A0D0B4716604546002DBC0C /* signin.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A0D0B4616604546002DBC0C /* signin.png */; };
 		2A0D0B49166057D5002DBC0C /* LogOut.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A0D0B48166057D5002DBC0C /* LogOut.png */; };
 		2A0D0B4B166057DE002DBC0C /* ReportPage.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A0D0B4A166057DE002DBC0C /* ReportPage.png */; };
 		2A0D0B4D166057E2002DBC0C /* testMainOpenCal.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A0D0B4C166057E2002DBC0C /* testMainOpenCal.png */; };
+		2A0D0B6716606FBF002DBC0C /* confirmation.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A0D0B6616606FBF002DBC0C /* confirmation.png */; };
+		2A0D0B69166070BD002DBC0C /* signup.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A0D0B68166070BD002DBC0C /* signup.png */; };
 		2A224B5C165C817E00FA5184 /* ConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A224B5B165C817E00FA5184 /* ConfirmViewController.m */; };
 		2A2919111644A6FF000462DF /* Icon-talking cal.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A2919101644A6FF000462DF /* Icon-talking cal.png */; };
 		2A3A144F164CA4D20025AB72 /* Accounts.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3A144E164CA4D20025AB72 /* Accounts.m */; };
@@ -91,10 +92,11 @@
 		21CACD6D16570C1400735F59 /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
 		2A0D0B421660453B002DBC0C /* Gerenal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gerenal.png; sourceTree = "<group>"; };
 		2A0D0B4416604541002DBC0C /* LoginPage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoginPage.png; sourceTree = "<group>"; };
-		2A0D0B4616604546002DBC0C /* signin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signin.png; sourceTree = "<group>"; };
 		2A0D0B48166057D5002DBC0C /* LogOut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogOut.png; sourceTree = "<group>"; };
 		2A0D0B4A166057DE002DBC0C /* ReportPage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ReportPage.png; sourceTree = "<group>"; };
 		2A0D0B4C166057E2002DBC0C /* testMainOpenCal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testMainOpenCal.png; sourceTree = "<group>"; };
+		2A0D0B6616606FBF002DBC0C /* confirmation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = confirmation.png; sourceTree = "<group>"; };
+		2A0D0B68166070BD002DBC0C /* signup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signup.png; sourceTree = "<group>"; };
 		2A224B5A165C817E00FA5184 /* ConfirmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmViewController.h; sourceTree = "<group>"; };
 		2A224B5B165C817E00FA5184 /* ConfirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmViewController.m; sourceTree = "<group>"; };
 		2A2919101644A6FF000462DF /* Icon-talking cal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-talking cal.png"; sourceTree = "<group>"; };
@@ -180,10 +182,11 @@
 		2A0D0B41166044ED002DBC0C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				2A0D0B68166070BD002DBC0C /* signup.png */,
+				2A0D0B6616606FBF002DBC0C /* confirmation.png */,
 				2A0D0B4C166057E2002DBC0C /* testMainOpenCal.png */,
 				2A0D0B4A166057DE002DBC0C /* ReportPage.png */,
 				2A0D0B48166057D5002DBC0C /* LogOut.png */,
-				2A0D0B4616604546002DBC0C /* signin.png */,
 				2A0D0B4416604541002DBC0C /* LoginPage.png */,
 				2A0D0B421660453B002DBC0C /* Gerenal.png */,
 			);
@@ -418,10 +421,11 @@
 				16C6DD26165F121E00D93094 /* testPicture.png in Resources */,
 				2A0D0B431660453B002DBC0C /* Gerenal.png in Resources */,
 				2A0D0B4516604541002DBC0C /* LoginPage.png in Resources */,
-				2A0D0B4716604546002DBC0C /* signin.png in Resources */,
 				2A0D0B49166057D5002DBC0C /* LogOut.png in Resources */,
 				2A0D0B4B166057DE002DBC0C /* ReportPage.png in Resources */,
 				2A0D0B4D166057E2002DBC0C /* testMainOpenCal.png in Resources */,
+				2A0D0B6716606FBF002DBC0C /* confirmation.png in Resources */,
+				2A0D0B69166070BD002DBC0C /* signup.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

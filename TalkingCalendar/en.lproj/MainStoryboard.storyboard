@@ -192,34 +192,10 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="What do you want to do?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" id="zrM-WS-7in">
-                                <rect key="frame" x="56" y="139" width="209" height="46"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="confirmation.png" id="m3T-wY-quS">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="To delete an event, double tap" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="el2-g7-bjl">
-                                <rect key="frame" x="44" y="286" width="232" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="To overwrite, hold for 3 sec" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="qqG-Ku-mlh">
-                                <rect key="frame" x="52" y="344" width="217" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="To cancel, drag left or right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="osD-2O-ATY">
-                                <rect key="frame" x="58" y="315" width="205" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -549,65 +525,24 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Main Menu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NaM-YQ-h02">
-                                <rect key="frame" x="68" y="20" width="180" height="37"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Open Calendar" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="20N-kL-iSG">
-                                <rect key="frame" x="29" y="143" width="262" height="133"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Upcoming Events:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="IDE-Sd-za3">
-                                <rect key="frame" x="27" y="321" width="144" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="&lt;event>" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="3p6-Vv-XEm">
-                                <rect key="frame" x="123" y="397" width="228" height="25"/>
+                                <rect key="frame" x="164" y="344" width="156" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.11372549831867218" green="0.43137258291244507" blue="0.11764706671237946" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="&lt;event>" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Vyi-zy-xlU">
-                                <rect key="frame" x="95" y="370" width="210" height="22"/>
+                                <rect key="frame" x="123" y="321" width="197" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.12156863510608673" green="0.32941177487373352" blue="0.090196080505847931" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Today:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="fFx-r2-0IV">
-                                <rect key="frame" x="27" y="371" width="52" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Tomorrow:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="kgJ-9T-zsR">
-                                <rect key="frame" x="27" y="400" width="83" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Welcome" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="LeJ-wg-9nk">
-                                <rect key="frame" x="82" y="65" width="76" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.97254908084869385" green="0.29019609093666077" blue="0.12156863510608673" alpha="1" colorSpace="deviceRGB"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" red="0.23921570180000001" green="0.62352943419999995" blue="0.91372555489999996" alpha="1" colorSpace="deviceRGB"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="&lt;username>" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="DbP-vs-yZZ">
-                                <rect key="frame" x="161" y="56" width="171" height="38"/>
+                                <rect key="frame" x="159" y="88" width="141" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" red="0.96862751245498657" green="0.18823531270027161" blue="0.12156863510608673" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" red="0.23921570180000001" green="0.62352943419999995" blue="0.91372555489999996" alpha="1" colorSpace="deviceRGB"/>
@@ -656,7 +591,7 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="signin.png" id="Amw-qs-JKE">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="signup.png" id="Amw-qs-JKE">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -700,7 +635,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="0F5-Qt-dJ2">
-                                <rect key="frame" x="78" y="104" width="165" height="31"/>
+                                <rect key="frame" x="78" y="112" width="165" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -709,7 +644,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="Ujk-OJ-gWm">
-                                <rect key="frame" x="78" y="240" width="165" height="31"/>
+                                <rect key="frame" x="78" y="232" width="165" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -718,7 +653,7 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Enter username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="9aX-VP-MxQ">
-                                <rect key="frame" x="30" y="75" width="151" height="21"/>
+                                <rect key="frame" x="30" y="88" width="151" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.30980393290000002" green="0.32941177490000001" blue="0.094117656349999995" alpha="1" colorSpace="deviceRGB"/>
@@ -732,7 +667,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Confirm password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="CzO-vB-CsF">
-                                <rect key="frame" x="30" y="211" width="170" height="21"/>
+                                <rect key="frame" x="30" y="203" width="170" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.30980393290000002" green="0.32941177490000001" blue="0.094117656349999995" alpha="1" colorSpace="deviceRGB"/>
@@ -776,20 +711,10 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Log out" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="40" id="6yK-8w-3AM">
-                                <rect key="frame" x="72" y="167" width="176" height="126"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Main Menu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="kSg-1c-h6u">
-                                <rect key="frame" x="68" y="20" width="184" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="LogOut.png" id="whF-3c-Z53">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -827,20 +752,10 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Main Menu" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" minimumFontSize="10" id="2Aa-kg-6uj">
-                                <rect key="frame" x="63" y="48" width="184" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="544343" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="93d-88-gm0">
-                                <rect key="frame" x="26" y="177" width="268" height="105"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="ReportPage.png" id="v6j-Ru-a5l">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <connections>
@@ -889,22 +804,123 @@
     </scenes>
     <resources>
         <image name="Gerenal.png" width="480" height="720"/>
+        <image name="LogOut.png" width="480" height="720"/>
         <image name="LoginPage.png" width="480" height="720"/>
-        <image name="signin.png" width="480" height="720"/>
+        <image name="ReportPage.png" width="480" height="720"/>
+        <image name="confirmation.png" width="480" height="720"/>
+        <image name="signup.png" width="480" height="720"/>
         <image name="testMainOpenCal.png" width="480" height="720"/>
     </resources>
+    <classes>
+        <class className="AuthenticationViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AuthenticationViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="dissmissKeyboard:"/>
+                <relationship kind="action" name="login:"/>
+                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="userName" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="ConfirmViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ConfirmViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doubleTab:"/>
+                <relationship kind="action" name="longPress:"/>
+                <relationship kind="action" name="swipeLeft:"/>
+                <relationship kind="action" name="swipeRight:"/>
+            </relationships>
+        </class>
+        <class className="DayViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DayViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addEvent:"/>
+                <relationship kind="outlet" name="GELabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="Left" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="Right" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="curr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="next" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="playRec" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="prev" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="stopRec" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="LogOutViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LogOutViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="MainViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="reminder" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="reminderTomorrow" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="welcome" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MonthViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MonthViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="l:"/>
+                <relationship kind="outlet" name="Left" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="Right" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="curr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="next" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="prev" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ReportViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReportViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="openEmail:"/>
+                <relationship kind="action" name="showPicker:"/>
+            </relationships>
+        </class>
+        <class className="SignUpViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SignUpViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="create:"/>
+                <relationship kind="action" name="dismissKeyboard:"/>
+                <relationship kind="outlet" name="passConfirm" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="userName" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="WeekViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WeekViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="Left" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="Right" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="curr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="next" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="prev" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="YearViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/YearViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="Left" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="Right" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="curr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="next" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="prev" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="WKm-wE-Ecs"/>
-        <segue reference="1gu-WV-6ao"/>
-        <segue reference="NrK-S8-lHQ"/>
-        <segue reference="NwV-hi-4gJ"/>
+        <segue reference="L9P-NI-0wO"/>
         <segue reference="iyo-AZ-oCm"/>
+        <segue reference="NwV-hi-4gJ"/>
+        <segue reference="cJH-Qf-4ma"/>
         <segue reference="Xuc-Wr-f3t"/>
-        <segue reference="cVT-wD-aV0"/>
+        <segue reference="g1f-09-7P4"/>
+        <segue reference="75c-2b-BYx"/>
     </inferredMetricsTieBreakers>
 </document>

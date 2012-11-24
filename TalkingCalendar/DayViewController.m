@@ -356,10 +356,10 @@
     longPressForRecord=[[voiceRecPlay alloc]init];
     [self prepareForRec];
     if(whatConfrim==1){
-        [self record];
-        hasEvent=YES;
         [engine speak:@"start recording"];
         [engine2 speak:@" "];
+        [self record];
+        hasEvent=YES;
         
     }
     else if(whatConfrim==2){
@@ -492,10 +492,15 @@
 
 
 - (void)record {
+            [engine speak:@"start"];
+            hasEvent=YES;
+            [longPressForRecord recordAudio];
+            seconds=0;
+            repeater=[NSTimer scheduledTimerWithTimeInterval:(1.0/1.0) target:self selector:@selector(addOneForRecording) userInfo:nil repeats:YES];
+        
+        
+    
 
-        [engine speak:@"start"];
-        hasEvent=YES;
-        [longPressForRecord recordAudio];
 
 }
 - (void)deleteVoice {
