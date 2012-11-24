@@ -121,6 +121,7 @@
     [prev setText:msg3];
     [self prepareForRec];
     [self ViewPlay];
+    repeater=[NSTimer scheduledTimerWithTimeInterval:(1.0/1.0) target:self selector:@selector(addOneForPlaying) userInfo:nil repeats:YES];
     
     //*********************************************GeneralEvents********************
     generalEvents=[[GeneralEvents alloc]init];
@@ -207,7 +208,7 @@
     }
     
     
-    
+        repeater=[NSTimer scheduledTimerWithTimeInterval:(1.0/1.0) target:self selector:@selector(addOneForPlaying) userInfo:nil repeats:YES];
     
     
 
@@ -360,7 +361,7 @@
         [engine2 speak:@" "];
     }
     else{
-        [self ViewPlay];
+        repeater=[NSTimer scheduledTimerWithTimeInterval:(1.0/1.0) target:self selector:@selector(addOneForPlaying) userInfo:nil repeats:YES];
     
     
     
@@ -454,6 +455,34 @@
     
     }
 }
+
+-(void)addOneForPlaying
+{
+    seconds++;
+    NSLog(@"%d",seconds);
+    if(![engine isPlaying])
+    {
+        [repeater invalidate];
+        NSLog(@"Not Playing,ddd%d",seconds);
+        seconds=0;
+        [self ViewPlay];
+    }
+}
+
+-(void)addOneForRecording
+{
+    seconds++;
+    NSLog(@"%d",seconds);
+    if((seconds>=30 )|| ![longPressForRecord isRecording])
+    {
+        [repeater invalidate];
+        NSLog(@"ddd%d",seconds);
+        [longPressForRecord stop];
+        [engine speak: @"30 seconds"];
+    }
+}
+
+
 - (void)record {
 
         [engine speak:@"start"];
@@ -465,7 +494,7 @@
     NSDateFormatter *formatForDelete=[[NSDateFormatter alloc]init];
     [formatForDelete setDateFormat:@"dd-MM-YYYY"];
     NSString *stringForDelete = [[NSString alloc] initWithFormat:@"%@",[formatForDelete stringFromDate: currentDate]];
-    NSLog(stringForDelete);
+
     [longPressForRecord deleteVoice:userName date:stringForDelete];
    
     

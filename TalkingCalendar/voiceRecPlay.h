@@ -13,8 +13,6 @@
 <AVAudioRecorderDelegate, AVAudioPlayerDelegate>{
     AVAudioRecorder *audioRecorder;
     AVAudioPlayer *audioPlayer;
-    NSTimer *reapter;
-    int seconds;
 }
 @property NSString *soundFilePath;
 @property BOOL isRecording;
@@ -25,5 +23,5 @@
 -(BOOL)playAudio:(NSString*)userName date:(NSString*)date;
 -(void)deleteVoice:(NSString*)userName date:(NSString*)date;
 -(BOOL) hasEvent :(NSString *)userName date:(NSString*)date;
--(void)addOne;
+
 @end

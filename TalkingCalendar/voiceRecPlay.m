@@ -59,7 +59,6 @@ return self;
 
 -(BOOL)recordAudio{
     BOOL result=YES;
-    seconds=1;
     
     if(!isRecording){
 
@@ -78,8 +77,7 @@ return self;
         NSLog(@"recording started");
     [audioRecorder record];
         isRecording=YES;
-    reapter=[NSTimer scheduledTimerWithTimeInterval:(1.0/1.0) target:self selector:@selector(addOne) userInfo:nil repeats:YES];
-        NSLog(@"recording stopped %d",seconds);
+          NSLog(@"recording stopped");
         result=NO;
         return result;
     }
@@ -87,17 +85,7 @@ return self;
     
     }
 }
--(void)addOne
-{
-    seconds++;
-    NSLog(@"%d",seconds);
-    if(seconds>=5)
-    {
-        [reapter invalidate];
-        NSLog(@"ddd%d",seconds);
-        [audioRecorder stop];
-    }
-}
+
 
 
 -(void)stop{

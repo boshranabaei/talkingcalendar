@@ -15,6 +15,8 @@
 
     ESpeakEngine * engine;
     ESpeakEngine * engine2;
+    int seconds;
+    NSTimer* repeater;
 }
 
 
@@ -41,10 +43,15 @@
 
 @property voiceRecPlay * longPressForRecord;
 
-
-- (IBAction)addEvent:(id)sender;
 @property (strong, nonatomic) IBOutlet UIView *stopRec;
 @property (weak, nonatomic) IBOutlet UIButton *playRec;
+
+
+- (IBAction)addEvent:(id)sender;
+-(void)addOneForPlaying;
+-(void)addOneForRecording;
+
+
 
 -(void)prepareForRec;
 //@property GeneralEvents * generalEvents;
