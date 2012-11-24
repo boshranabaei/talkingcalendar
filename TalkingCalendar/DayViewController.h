@@ -15,10 +15,6 @@
 
     ESpeakEngine * engine;
     ESpeakEngine * engine2;
-    IBOutlet UITextView *textView;
-    
-
-
 }
 
 

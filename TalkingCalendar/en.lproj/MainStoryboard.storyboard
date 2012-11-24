@@ -920,7 +920,6 @@
                 <relationship kind="outlet" name="playRec" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="prev" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="stopRec" candidateClass="UIView"/>
-                <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
             </relationships>
         </class>
         <class className="LogOutViewController" superclassName="UIViewController">
@@ -979,8 +978,6 @@
         <class className="YearViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/YearViewController.h"/>
             <relationships>
-                <relationship kind="action" name="LeftSwipe:"/>
-                <relationship kind="action" name="RightSwipe:"/>
                 <relationship kind="outlet" name="Left" candidateClass="UISwipeGestureRecognizer"/>
                 <relationship kind="outlet" name="Right" candidateClass="UISwipeGestureRecognizer"/>
                 <relationship kind="outlet" name="curr" candidateClass="UILabel"/>

@@ -12,7 +12,6 @@
 @implementation voiceRecPlay
 
 @synthesize soundFilePath;
-@synthesize defaults;
 @synthesize isRecording;
 
 
