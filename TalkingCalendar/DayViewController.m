@@ -364,6 +364,7 @@
     }
     else if(whatConfrim==2){
         [self deleteVoice];
+        hasEvent=NO;
         [engine speak:@"event deleted"];
         [engine2 speak:@" "];
     }
@@ -444,6 +445,7 @@
     [engine stop];
 }
 - (IBAction)addEvent:(id)sender {
+    NSLog(@"addevent");
     if(!isRecording){
     isRecording=YES;
     if(hasEvent){
@@ -452,14 +454,13 @@
         
     }
     else{
-    [engine speak:@"start"];
+        [engine speak:@"start"];
         hasEvent=YES;
-    BOOL result=[longPressForRecord recordAudio];
-        if(result ==YES){
-            
-        }
+        [longPressForRecord recordAudio];
+        seconds=0;
+        repeater=[NSTimer scheduledTimerWithTimeInterval:(1.0/1.0) target:self selector:@selector(addOneForRecording) userInfo:nil repeats:YES];
     }
-    
+        
     }
 }
 
@@ -480,11 +481,11 @@
 {
     seconds++;
     NSLog(@"%d",seconds);
-    if((seconds>=30 )|| ![longPressForRecord isRecording])
+    if((seconds>=7 )|| !isRecording)
     {
         [repeater invalidate];
         NSLog(@"ddd%d",seconds);
-        [longPressForRecord stop];
+        [self stop];
         [engine speak: @"30 seconds"];
     }
 }
@@ -507,6 +508,13 @@
     
 }
 - (IBAction)stopRec:(id)sender {
+    if([longPressForRecord isRecording]){
+        [self stop];}
+    
+}
+ 
+- (void) stop
+{
     NSDateFormatter *formatForSpeak=[[NSDateFormatter alloc]init];
     [formatForSpeak setDateFormat:@"EEEE,dd,MMMM"];
     NSString *stringForSpeak = [[NSString alloc] initWithFormat:@"%@",[formatForSpeak stringFromDate: currentDate]];
@@ -515,9 +523,6 @@
     [engine speak:say];
     [longPressForRecord stop];
     isRecording=NO;
-    
 }
- 
-
 
 @end

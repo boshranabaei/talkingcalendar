@@ -46,7 +46,7 @@
 @property (strong, nonatomic) IBOutlet UIView *stopRec;
 @property (weak, nonatomic) IBOutlet UIButton *playRec;
 
-
+- (void) stop;
 - (IBAction)addEvent:(id)sender;
 -(void)addOneForPlaying;
 -(void)addOneForRecording;
