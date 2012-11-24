@@ -49,7 +49,7 @@ return self;
                                     AVSampleRateKey,
                                     nil];
     
-    //NSLog(soundFilePath);
+    NSLog(soundFilePath);
     NSError *error = nil;
     audioRecorder = [[AVAudioRecorder alloc]
                      initWithURL:soundFileURL
@@ -77,7 +77,6 @@ return self;
         NSLog(@"recording started");
     [audioRecorder record];
         isRecording=YES;
-          NSLog(@"recording stopped");
         result=NO;
         return result;
     }
