@@ -545,6 +545,10 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="testMainOpenCal.png" id="xpY-vv-TiD">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Main Menu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NaM-YQ-h02">
                                 <rect key="frame" x="68" y="20" width="180" height="37"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
@@ -830,7 +834,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Report" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="93d-88-gm0">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="544343" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="93d-88-gm0">
                                 <rect key="frame" x="26" y="177" width="268" height="105"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
@@ -887,6 +891,7 @@
         <image name="Gerenal.png" width="480" height="720"/>
         <image name="LoginPage.png" width="480" height="720"/>
         <image name="signin.png" width="480" height="720"/>
+        <image name="testMainOpenCal.png" width="480" height="720"/>
     </resources>
     <classes>
         <class className="AuthenticationViewController" superclassName="UIViewController">
