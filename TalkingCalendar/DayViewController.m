@@ -249,7 +249,7 @@
 
 - (void)viewDidLoad
 {
-   
+    
     [super viewDidLoad];
 //*********************************************Calendar and Text to speech********************
     
@@ -371,7 +371,7 @@
     else{
         repeater=[NSTimer scheduledTimerWithTimeInterval:(1.0/1.0) target:self selector:@selector(addOneForPlaying) userInfo:nil repeats:YES];
     
-    
+    whatConfrim=0;
     
     
     
@@ -445,8 +445,9 @@
     [engine stop];
 }
 - (IBAction)addEvent:(id)sender {
+    if(![longPressForRecord isRecording]){
     NSLog(@"addevent");
-    if(!isRecording){
+    
     isRecording=YES;
     if(hasEvent){
         
@@ -481,7 +482,7 @@
 {
     seconds++;
     NSLog(@"%d",seconds);
-    if((seconds>=7 )|| !isRecording)
+    if((seconds>=30 )|| ![longPressForRecord isRecording])
     {
         [repeater invalidate];
         NSLog(@"ddd%d",seconds);

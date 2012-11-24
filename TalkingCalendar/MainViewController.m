@@ -185,7 +185,7 @@
     }
 
 	[reminder setText:todayEvents];
-    [reminderTomorrow setText:[ge searchGEfor:tomEvents]];
+    [reminderTomorrow setText:tomEvents];
     // This function (ge) returns a string - read out this string.
 }
 
