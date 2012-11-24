@@ -75,6 +75,9 @@
 }
 
 - (IBAction)LeftSwipe:(id)sender {
+    [engine stop];
+     [longPressForRecord stop];
+    [repeater invalidate];
     // instantiate a NSDateFormatter
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     // set the dateFormatter format                           
@@ -120,11 +123,11 @@
     [curr setText:msg2];
     [prev setText:msg3];
     [self prepareForRec];
-    [self ViewPlay];
-    repeater=[NSTimer scheduledTimerWithTimeInterval:(1.0/1.0) target:self selector:@selector(addOneForPlaying) userInfo:nil repeats:YES];
+   
+    
     
     //*********************************************GeneralEvents********************
-    generalEvents=[[GeneralEvents alloc]init];
+   generalEvents=[[GeneralEvents alloc]init];
     
     NSDateFormatter *dateFormatForGE = [[NSDateFormatter alloc] init];
     // set the dateFormatter format
@@ -139,10 +142,14 @@
         [GELabel setText:@" "];
     }
     
+    repeater=[NSTimer scheduledTimerWithTimeInterval:(1.0/1.0) target:self selector:@selector(addOneForPlaying) userInfo:nil repeats:YES];
     
 }
 - (IBAction)RightSwipe:(id)sender {
     // instantiate a NSDateFormatter
+     [longPressForRecord stop];
+    [engine stop];
+    [repeater invalidate];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     // set the dateFormatter format
     [dateFormatter setDateFormat:@"yyyy\nMMMM\nEEEE\n\ndd"];
@@ -186,7 +193,7 @@
     [curr setText:msg2];
     [prev setText:currentdayInMonth1];
     [self prepareForRec];
-    [self ViewPlay];
+    
     
     //*********************************************GeneralEvents********************
     generalEvents=[[GeneralEvents alloc]init];
@@ -208,7 +215,7 @@
     }
     
     
-        repeater=[NSTimer scheduledTimerWithTimeInterval:(1.0/1.0) target:self selector:@selector(addOneForPlaying) userInfo:nil repeats:YES];
+    repeater=[NSTimer scheduledTimerWithTimeInterval:(1.0/1.0) target:self selector:@selector(addOneForPlaying) userInfo:nil repeats:YES];
     
     
 
